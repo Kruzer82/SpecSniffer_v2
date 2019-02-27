@@ -19,7 +19,7 @@ namespace SpecSniffer_v2
         {
             //long initialization
             CamCapture = new VideoCapture();
-            this._imageBox = imgBox;
+            _imageBox = imgBox;
         }
 
 

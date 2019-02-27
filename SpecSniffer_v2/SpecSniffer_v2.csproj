@@ -67,6 +67,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="DiskDrive.cs" />
+    <Compile Include="Microphone.cs" />
     <Compile Include="Resources.cs" />
     <Compile Include="PC.cs" />
     <Compile Include="GetSpec.cs" />

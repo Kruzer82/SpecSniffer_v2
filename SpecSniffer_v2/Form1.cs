@@ -17,10 +17,8 @@ namespace SpecSniffer_v2
         {
             InitializeComponent();
 
-            Stopwatch timer = new Stopwatch();
             Pc pc = new Pc();
             DiskDrive hdd=new DiskDrive();
-            
 
             #region set spec
 
@@ -47,7 +45,6 @@ namespace SpecSniffer_v2
             hdd.GetDisks();
 
             #endregion
-
 
             
             #region show spec
@@ -80,6 +77,9 @@ namespace SpecSniffer_v2
 
 
             #endregion
+
+
+
 
             audioTest.PlayStop();
         }

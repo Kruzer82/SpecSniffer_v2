@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NAudio.CoreAudioApi;
+using System;
 using System.Windows.Forms;
-using NAudio.CoreAudioApi;
 
 namespace SpecSniffer_v2
 {
     class Audio
     {
-        private NAudio.Wave.WaveFileReader _wave = null;
-        private NAudio.Wave.DirectSoundOut _output = null;
-        private bool _isPlaying = false;
-        private MMDevice _device = null;
+        private NAudio.Wave.WaveFileReader _wave;
+        private NAudio.Wave.DirectSoundOut _output;
+        private bool _isPlaying;
+        private MMDevice _device;
         private string _soundFilePath;
 
 
@@ -21,7 +17,7 @@ namespace SpecSniffer_v2
 
         public Audio(string soundFilePath)
         {
-            this._soundFilePath = soundFilePath;
+            _soundFilePath = soundFilePath;
 
         }
 
