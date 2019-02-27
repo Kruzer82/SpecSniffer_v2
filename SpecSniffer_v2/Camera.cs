@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Emgu.CV;
+﻿using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV.UI;
+using System;
+using System.Windows.Forms;
 
 namespace SpecSniffer_v2
 {
@@ -16,7 +12,7 @@ namespace SpecSniffer_v2
 
         private ImageBox _imageBox;
         private Mat _noCamImage;
-        private bool _isCapturing = false;
+        private bool _isCapturing;
         private VideoCapture CamCapture { get; }
 
         public Camera()
@@ -65,6 +61,7 @@ namespace SpecSniffer_v2
 
         private Mat SetCamImage(string text)
         {
+
             _noCamImage = new Mat(450, 700, DepthType.Cv8U, 3);
             _noCamImage.SetTo(new Bgr(100, 90, 80).MCvScalar);
             CvInvoke.PutText(
@@ -80,7 +77,7 @@ namespace SpecSniffer_v2
 
         private void ProcessFrame(object sender, EventArgs e)
         {
-            if (_isCapturing != false)
+            if (_isCapturing)
                 _imageBox.Image = CamCapture.QuerySmallFrame();
         }
     }

@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Emgu.CV;
-using Emgu.CV.CvEnum;
-using Emgu.CV.Structure;
-using Emgu.CV.UI;
+using NAudio.CoreAudioApi;
+using SpecSniffer_v2.Properties;
 
 namespace SpecSniffer_v2
 {
@@ -18,7 +12,7 @@ namespace SpecSniffer_v2
     public partial class Form1 : Form
     {
         //long initialization
-      private readonly Camera capture = new Camera();
+     // private readonly Camera capture = new Camera();
 
         public Form1()
         {
@@ -26,6 +20,7 @@ namespace SpecSniffer_v2
             Stopwatch timer = new Stopwatch();
             Pc pc = new Pc();
             DiskDrive hdd=new DiskDrive();
+
             pc.Manufacturer = GetSpec.Manufacturer();
             pc.Model = GetSpec.Model();
             pc.Serial = GetSpec.Serial();
@@ -79,17 +74,62 @@ namespace SpecSniffer_v2
             OsBuildTextBox.Text = pc.OsBuild;
             OsNameTextBox.Text = pc.OsName;
             OsLangTextBox.Text = pc.OsLanguage;
-            
         }
-        private void button2_Click(object sender, EventArgs e)
+
+
+        private NAudio.Wave.WaveFileReader wave = null;
+        private NAudio.Wave.DirectSoundOut output = null;
+        private bool audioPlay = true;
+        private void AudioPlay()
         {
-            capture.StartCapture(CamBox);
-
-
+            if (audioPlay == true)
+            {
+                SoundTimer.Enabled = true;
+                MMDeviceEnumerator enumerator = new MMDeviceEnumerator();
+                var devices = enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
+                wave = new NAudio.Wave.WaveFileReader();
+                output = new NAudio.Wave.DirectSoundOut();
+                output.Init(new NAudio.Wave.WaveChannel32(wave));
+                try
+                {
+                    output.Play();
+                    audioPlay = false;
+                }
+                catch (Exception) {  }
+            }
+            else
+            {
+                AudioStop();
+                audioPlay = true;
+            }
         }
+        MMDevice device = null;
 
-        private void button3_Click(object sender, EventArgs e)
+        private void AudioStop()
         {
+            output.Stop();
+            output.Dispose();
+            SoundTimer.Enabled = false;
         }
+        private void timerAudio_Tick_1(object sender, EventArgs e)
+        {
+            device = GetDefaultAudioEndpoint();
+
+            if (device != null)
+                progressBar1.Value = (int)(Math.Round(device.AudioMeterInformation.MasterPeakValue * 100));
+            else
+            {
+                output.Stop();
+                output.Dispose();
+                SoundTimer.Enabled = false;
+                progressBar1.Value = 0;
+            }
+        }
+        public MMDevice GetDefaultAudioEndpoint()
+        {
+            MMDeviceEnumerator enumerator = new MMDeviceEnumerator();
+            return enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Console);
+        }
+
     }
 }

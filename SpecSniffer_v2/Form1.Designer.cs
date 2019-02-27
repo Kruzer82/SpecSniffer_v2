@@ -87,17 +87,19 @@
             this.Diagnostics = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.CamBox = new Emgu.CV.UI.ImageBox();
             this.drivers = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.CamBox = new Emgu.CV.UI.ImageBox();
-            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.SoundTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -114,16 +116,17 @@
             this.tabControl1.SuspendLayout();
             this.Diagnostics.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CamBox)).BeginInit();
             this.tableLayoutPanel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CamBox)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 539);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(993, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(984, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -133,7 +136,7 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(993, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(984, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -156,7 +159,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(993, 515);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 515);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -188,7 +191,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(482, 509);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(478, 509);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel10
@@ -544,7 +547,7 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(482, 80);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(478, 80);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
             // HddNameMultiTextBox
@@ -813,7 +816,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(482, 80);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(478, 80);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // GpuMultiTextBox
@@ -845,10 +848,10 @@
             this.tabControl1.Controls.Add(this.drivers);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(491, 3);
+            this.tabControl1.Location = new System.Drawing.Point(487, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(499, 509);
+            this.tabControl1.Size = new System.Drawing.Size(494, 509);
             this.tabControl1.TabIndex = 1;
             // 
             // Diagnostics
@@ -858,7 +861,7 @@
             this.Diagnostics.Margin = new System.Windows.Forms.Padding(0);
             this.Diagnostics.Name = "Diagnostics";
             this.Diagnostics.Padding = new System.Windows.Forms.Padding(3);
-            this.Diagnostics.Size = new System.Drawing.Size(491, 477);
+            this.Diagnostics.Size = new System.Drawing.Size(486, 477);
             this.Diagnostics.TabIndex = 0;
             this.Diagnostics.Text = "Diagnostics";
             this.Diagnostics.UseVisualStyleBackColor = true;
@@ -876,43 +879,26 @@
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.86624F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.13376F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(485, 471);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(480, 471);
             this.tableLayoutPanel13.TabIndex = 0;
             // 
             // tableLayoutPanel14
             // 
             this.tableLayoutPanel14.ColumnCount = 1;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.Controls.Add(this.progressBar1, 0, 1);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 248);
             this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 4;
+            this.tableLayoutPanel14.RowCount = 5;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(485, 223);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(480, 223);
             this.tableLayoutPanel14.TabIndex = 0;
-            // 
-            // drivers
-            // 
-            this.drivers.Location = new System.Drawing.Point(4, 28);
-            this.drivers.Name = "drivers";
-            this.drivers.Padding = new System.Windows.Forms.Padding(3);
-            this.drivers.Size = new System.Drawing.Size(386, 477);
-            this.drivers.TabIndex = 1;
-            this.drivers.Text = "Install Drivers";
-            this.drivers.UseVisualStyleBackColor = true;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(386, 477);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Save Specification";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel15
             // 
@@ -927,19 +913,8 @@
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.84297F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(485, 248);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(480, 248);
             this.tableLayoutPanel15.TabIndex = 1;
-            // 
-            // CamBox
-            // 
-            this.CamBox.BackColor = System.Drawing.Color.DimGray;
-            this.CamBox.Location = new System.Drawing.Point(0, 0);
-            this.CamBox.Margin = new System.Windows.Forms.Padding(0);
-            this.CamBox.Name = "CamBox";
-            this.CamBox.Size = new System.Drawing.Size(256, 242);
-            this.CamBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.CamBox.TabIndex = 3;
-            this.CamBox.TabStop = false;
             // 
             // tableLayoutPanel16
             // 
@@ -951,7 +926,7 @@
             this.tableLayoutPanel16.Controls.Add(this.button4, 0, 2);
             this.tableLayoutPanel16.Controls.Add(this.button3, 0, 1);
             this.tableLayoutPanel16.Controls.Add(this.button2, 0, 0);
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(256, 0);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(254, 0);
             this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 6;
@@ -962,74 +937,111 @@
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(229, 242);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(226, 242);
             this.tableLayoutPanel16.TabIndex = 4;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(223, 34);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Location = new System.Drawing.Point(3, 43);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(223, 34);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Location = new System.Drawing.Point(3, 83);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(223, 34);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Location = new System.Drawing.Point(3, 123);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(223, 34);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button6.Location = new System.Drawing.Point(3, 163);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(223, 34);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
             this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button7.Location = new System.Drawing.Point(3, 203);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(223, 36);
+            this.button7.Size = new System.Drawing.Size(220, 36);
             this.button7.TabIndex = 5;
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button6.Location = new System.Drawing.Point(3, 163);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(220, 34);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button5.Location = new System.Drawing.Point(3, 123);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(220, 34);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.Location = new System.Drawing.Point(3, 83);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(220, 34);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.Location = new System.Drawing.Point(3, 43);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(220, 34);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(220, 34);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // CamBox
+            // 
+            this.CamBox.BackColor = System.Drawing.Color.DimGray;
+            this.CamBox.Location = new System.Drawing.Point(0, 0);
+            this.CamBox.Margin = new System.Windows.Forms.Padding(0);
+            this.CamBox.Name = "CamBox";
+            this.CamBox.Size = new System.Drawing.Size(254, 242);
+            this.CamBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.CamBox.TabIndex = 3;
+            this.CamBox.TabStop = false;
+            // 
+            // drivers
+            // 
+            this.drivers.Location = new System.Drawing.Point(4, 28);
+            this.drivers.Name = "drivers";
+            this.drivers.Padding = new System.Windows.Forms.Padding(3);
+            this.drivers.Size = new System.Drawing.Size(491, 477);
+            this.drivers.TabIndex = 1;
+            this.drivers.Text = "Install Drivers";
+            this.drivers.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(491, 477);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Save Specification";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(3, 43);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(474, 23);
+            this.progressBar1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 561);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -1063,9 +1075,10 @@
             this.tabControl1.ResumeLayout(false);
             this.Diagnostics.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CamBox)).EndInit();
             this.tableLayoutPanel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CamBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1142,6 +1155,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Timer SoundTimer;
     }
 }
 
