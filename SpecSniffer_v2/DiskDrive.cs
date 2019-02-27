@@ -168,9 +168,9 @@ namespace SpecSniffer_v2
             {
                 var driveToAdd = new DiskDrive
                 {
-                    Model = Msg.WmiError,
-                    Size = Msg.WmiError,
-                    Serial = Msg.WmiError
+                    Model = Resources.WmiError,
+                    Size = Resources.WmiError,
+                    Serial = Resources.WmiError
                 };
                 HDDs.Add(0, driveToAdd);
             }

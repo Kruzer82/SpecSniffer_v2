@@ -10,45 +10,50 @@ namespace SpecSniffer_v2
     public class Camera
     {
 
-        private ImageBox _imageBox;
+        private readonly ImageBox _imageBox;
         private Mat _noCamImage;
         private bool _isCapturing;
         private VideoCapture CamCapture { get; }
 
-        public Camera()
+        public Camera(ImageBox imgBox)
         {
             //long initialization
             CamCapture = new VideoCapture();
+            this._imageBox = imgBox;
         }
 
 
 
-        public void StartCapture(ImageBox imgBox)
+        public void StartStop()
         {
-            _imageBox = imgBox;
             if (_isCapturing == false)
             {
-                try
-                {
-                    if (CamCapture.QuerySmallFrame() != null)
-                    {
-                        Application.Idle += ProcessFrame;
-                    }
-                    else
-                    {
-                        _imageBox.Image = SetCamImage("404: Camera not found.");
-                    }
-
-                    _isCapturing = true;
-                }
-                catch (Exception)
-                {
-                    _imageBox.Image = SetCamImage("Camera capture error ...");
-                }
+                Start();
             }
             else
             {
                 StopCapture();
+            }
+        }
+
+        private void Start()
+        {
+            try
+            {
+                if (CamCapture.QuerySmallFrame() != null)
+                {
+                    Application.Idle += ProcessFrame;
+                }
+                else
+                {
+                    _imageBox.Image = SetCamImage("404: Camera not found.");
+                }
+
+                _isCapturing = true;
+            }
+            catch (Exception)
+            {
+                _imageBox.Image = SetCamImage("Camera capture error ...");
             }
         }
 

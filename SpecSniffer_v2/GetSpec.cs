@@ -117,7 +117,7 @@ namespace SpecSniffer_v2
 
         public static string ResName()
         {
-            var resolution = Msg.WmiError;
+            var resolution = Resources.WmiError;
 
             var resNameDictionary = new Dictionary<string, string>()
             {

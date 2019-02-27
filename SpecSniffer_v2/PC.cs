@@ -29,7 +29,7 @@ namespace SpecSniffer_v2
         public string Manufacturer
         {
             get => _manufacturer;
-            set => _manufacturer = string.IsNullOrWhiteSpace(value) ? Msg.WmiNoData : value;
+            set => _manufacturer = string.IsNullOrWhiteSpace(value) ? Resources.WmiNoData : value;
         }
 
         public string Model
@@ -133,7 +133,7 @@ namespace SpecSniffer_v2
                 }
                 else
                 {
-                    _model = Msg.WmiNoData;
+                    _model = Resources.WmiNoData;
                 }
             }
         }
@@ -281,37 +281,37 @@ namespace SpecSniffer_v2
 
         public Pc()
         {
-            Manufacturer = Msg.PcNotLoaded;
-            Model = Msg.PcNotLoaded;
-            Serial = Msg.PcNotLoaded;
-            Cpu = Msg.PcNotLoaded;
-            Ram = Msg.PcNotLoaded;
-            OpticalDrive = Msg.PcNotLoaded;
-            ResolutionName = Msg.PcNotLoaded;
-            Diagonal = Msg.PcNotLoaded;
-            OsName = Msg.PcNotLoaded;
-            OsBuild = Msg.PcNotLoaded;
-            OsLanguage = Msg.PcNotLoaded;
-            OsLicenceKey = Msg.PcNotLoaded;
+            Manufacturer = Resources.PcNotLoaded;
+            Model = Resources.PcNotLoaded;
+            Serial = Resources.PcNotLoaded;
+            Cpu = Resources.PcNotLoaded;
+            Ram = Resources.PcNotLoaded;
+            OpticalDrive = Resources.PcNotLoaded;
+            ResolutionName = Resources.PcNotLoaded;
+            Diagonal = Resources.PcNotLoaded;
+            OsName = Resources.PcNotLoaded;
+            OsBuild = Resources.PcNotLoaded;
+            OsLanguage = Resources.PcNotLoaded;
+            OsLicenceKey = Resources.PcNotLoaded;
 
-            GpuList.Add(Msg.PcNotLoaded);
+            GpuList.Add(Resources.PcNotLoaded);
             BatteryHealth = 0;
             BatteryCharge = 0;
             BatteryChargeRate = 0;
 
-            Hdd1Size = Msg.NoHdd;
-            Hdd1Model = Msg.NoHdd;
-            Hdd1Serial = Msg.NoHdd;
-            Hdd2Size = Msg.NoHdd;
-            Hdd2Model = Msg.NoHdd;
-            Hdd2Serial = Msg.NoHdd;
+            Hdd1Size = Resources.NoHdd;
+            Hdd1Model = Resources.NoHdd;
+            Hdd1Serial = Resources.NoHdd;
+            Hdd2Size = Resources.NoHdd;
+            Hdd2Model = Resources.NoHdd;
+            Hdd2Serial = Resources.NoHdd;
 
             Wlan = false;
             Wwan = false;
             BlueTooth = false;
             Camera = false;
             FingerPrint = false;
-            DriverStatus = Msg.PcNotLoaded;
+            DriverStatus = Resources.PcNotLoaded;
 
         }
     }

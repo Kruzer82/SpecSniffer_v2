@@ -87,6 +87,7 @@
             this.Diagnostics = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.button7 = new System.Windows.Forms.Button();
@@ -98,7 +99,6 @@
             this.CamBox = new Emgu.CV.UI.ImageBox();
             this.drivers = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SoundTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -900,6 +900,15 @@
             this.tableLayoutPanel14.Size = new System.Drawing.Size(480, 223);
             this.tableLayoutPanel14.TabIndex = 0;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(3, 43);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(474, 38);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 0;
+            this.progressBar1.Value = 1;
+            // 
             // tableLayoutPanel15
             // 
             this.tableLayoutPanel15.ColumnCount = 2;
@@ -1016,7 +1025,7 @@
             this.drivers.Location = new System.Drawing.Point(4, 28);
             this.drivers.Name = "drivers";
             this.drivers.Padding = new System.Windows.Forms.Padding(3);
-            this.drivers.Size = new System.Drawing.Size(491, 477);
+            this.drivers.Size = new System.Drawing.Size(486, 477);
             this.drivers.TabIndex = 1;
             this.drivers.Text = "Install Drivers";
             this.drivers.UseVisualStyleBackColor = true;
@@ -1025,17 +1034,15 @@
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(491, 477);
+            this.tabPage1.Size = new System.Drawing.Size(486, 477);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Save Specification";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // progressBar1
+            // SoundTimer
             // 
-            this.progressBar1.Location = new System.Drawing.Point(3, 43);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(474, 23);
-            this.progressBar1.TabIndex = 0;
+            this.SoundTimer.Enabled = true;
+            this.SoundTimer.Tick += new System.EventHandler(this.SoundTimer_Tick);
             // 
             // Form1
             // 
