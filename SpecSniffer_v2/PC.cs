@@ -29,7 +29,7 @@ namespace SpecSniffer_v2
         public string Manufacturer
         {
             get => _manufacturer;
-            set => _manufacturer = string.IsNullOrWhiteSpace(value) ? Resources.WmiNoData : value;
+            set => _manufacturer = string.IsNullOrWhiteSpace(value) ? Resources.WmiNoData : value.ToUpper();
         }
 
         public string Model
