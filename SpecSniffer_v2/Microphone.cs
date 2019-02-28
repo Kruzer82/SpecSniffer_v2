@@ -37,13 +37,13 @@ namespace SpecSniffer_v2
             if (_isRecording)
             {
                 _micTimer.Enabled = false;
-                _isRecording = true;
+                
                 StopRecord();
             }
             else
             {
                 _micTimer.Enabled = true;
-                _isRecording = false;
+                
                 StartRecord();
             }
         }
@@ -60,7 +60,7 @@ namespace SpecSniffer_v2
                     _waveIn.StartRecording();
                     _waveIn.WaveFormat = new WaveFormat(4, 16, 1); // (44100, 16, 1);
                     _waveIn.DataAvailable += new EventHandler<WaveInEventArgs>(waveIn_DataAvailable);
-
+                    _isRecording = true;
                 }
                 catch (Exception)
                 {
@@ -71,6 +71,7 @@ namespace SpecSniffer_v2
         private void StopRecord()
         {
             _waveIn.StopRecording();
+            _isRecording = false;
         }
 
         private void waveIn_DataAvailable(object sender, WaveInEventArgs e)
