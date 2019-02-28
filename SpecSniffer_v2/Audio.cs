@@ -5,7 +5,7 @@ using NAudio.Wave;
 
 namespace SpecSniffer_v2
 {
-    class Audio
+    public class Audio
     {
         private WaveFileReader _wave;
         private DirectSoundOut _output;

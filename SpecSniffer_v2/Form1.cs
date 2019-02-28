@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
-using NAudio.CoreAudioApi;
-using NAudio.Wave;
 
 namespace SpecSniffer_v2
 {
-
     public partial class Form1 : Form
     {
         //long initialization
         private readonly Camera _capture = new Camera();
         private readonly Audio _audio = new Audio();
-        Microphone _mic=new Microphone();
+        private readonly Microphone _mic = new Microphone();
+
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +18,7 @@ namespace SpecSniffer_v2
             var pc = new Pc();
             var hdd = new DiskDrive();
 
-            #region set spec
+            #region #### Set Spec ####
 
             pc.Manufacturer = GetSpec.Manufacturer();
             pc.Model = GetSpec.Model();
@@ -49,8 +44,7 @@ namespace SpecSniffer_v2
 
             #endregion
 
-
-            #region show spec
+            #region #### Display Spec ####
 
             ModelTextBox.Text = pc.Model;
             SerialTextBox.Text = pc.Serial;
@@ -62,8 +56,8 @@ namespace SpecSniffer_v2
             ResNameTextBox.Text = pc.ResolutionName;
             OsBuildTextBox.Text = pc.OsBuild;
             OsLangTextBox.Text = pc.OsLanguage;
-            BatteryHealthTextBox.Text = pc.BatteryHealth + "%";
-            PowerLeftTextBox.Text = pc.BatteryCharge + "%";
+            BatteryHealthTextBox.Text = pc.BatteryHealth + @"%";
+            PowerLeftTextBox.Text = pc.BatteryCharge + @"%";
             ChargeRateTextBox.Text = pc.BatteryChargeRate.ToString();
             WlanCheckBox.Checked = pc.Wlan;
             WwanCheckBox.Checked = pc.Wwan;
@@ -78,86 +72,26 @@ namespace SpecSniffer_v2
             OsNameTextBox.Text = pc.OsName;
             OsLangTextBox.Text = pc.OsLanguage;
 
-
             #endregion
-
-            
-
         }
 
-        #region Microphone
-        //int n = 4000; //number of x-axis pints
-        //WaveIn wi;
-        //Queue<double> myQ;
-        //private bool micStart = true;
-        //private void MicStart()
-        //{
-        //    if (micStart == true)
-        //    {
-        //        MicTimer.Enabled = true;
-        //        myQ = new Queue<double>(Enumerable.Repeat(0.0, n).ToList()); // fill myQ w/ zeros
-        //        MicChart.ChartAreas[0].AxisY.Minimum = -10000;
-        //        MicChart.ChartAreas[0].AxisY.Maximum = 10000;
-        //        wi = new WaveIn();
-        //        try
-        //        {
-        //            wi.StartRecording();
-        //            wi.WaveFormat = new WaveFormat(44100, 16, 1); // (44100, 16, 1);
-        //            wi.DataAvailable += new EventHandler<WaveInEventArgs>(wi_DataAvailable);
-
-        //        }
-        //        catch (NAudio.MmException) { MicChart.Visible = false; }
-        //        catch (Exception) { }
-
-        //        void wi_DataAvailable(object sender, WaveInEventArgs e)
-        //        {
-        //            for (int i = 0; i < e.BytesRecorded; i += 2)
-        //            {
-        //                myQ.Enqueue(BitConverter.ToInt16(e.Buffer, i));
-        //                myQ.Dequeue();
-        //            }
-        //        }
-        //        micStart = false;
-        //    }
-        //    else
-        //    {
-        //        MicTimer.Enabled = false;
-        //        MicStop();
-        //        micStart = true;
-        //    }
-        //}
-
-        ////private void MicrophoneTimer_Tick(object sender, EventArgs e)
-        ////{
-        ////    try { MicChart.Series["Series1"].Points.DataBindY(myQ); }
-        ////    catch { MessageBox.Show("No bytes recorded"); }
-        ////}
-
-        //private void MicStop()
-        //{
-        //    wi.StopRecording();
-        //    wi.Dispose();
-        //    wi = null;
-        //}
-
-        //private void btnMic_Click(object sender, EventArgs e)
-        //{
-        //    MicStart();
-
-        //}
-        #endregion
-
-
+        #region #### Timer Events ####
 
         //audio visualization
         private void SoundTimer_Tick(object sender, EventArgs e)
         {
             _audio.ProgressBarTick(progressBar1);
         }
+
         private void MicrophoneTimer_Tick(object sender, EventArgs e)
         {
             _mic.ChartTick();
         }
+
+        #endregion
+
+        #region #### Button Events ####
+
         private void button2_Click(object sender, EventArgs e)
         {
             _capture.StartStopCapture(CamBox);
@@ -170,7 +104,9 @@ namespace SpecSniffer_v2
 
         private void button4_Click(object sender, EventArgs e)
         {
-            _mic.StartStopRecord(MicChart,MicTimer);
+            _mic.StartStopRecord(MicChart, MicTimer);
         }
+
+        #endregion
     }
 }

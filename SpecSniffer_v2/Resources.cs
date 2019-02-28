@@ -7,7 +7,7 @@ using System.Text;
 
 namespace SpecSniffer_v2
 {
-    class Resources
+    internal class Resources
     {
         public const string WmiError = "Error";
         public const string WmiNoData = "n/a";
