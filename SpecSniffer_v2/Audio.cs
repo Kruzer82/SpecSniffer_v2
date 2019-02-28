@@ -54,7 +54,7 @@ namespace SpecSniffer_v2
             _output.Stop();
         }
 
-        public void ProgressBarValue_Tick(ProgressBar progressBarName)
+        public void ProgressBarTick(ProgressBar progressBarName)
         {
             _device = GetDefaultAudioEndpoint();
 
