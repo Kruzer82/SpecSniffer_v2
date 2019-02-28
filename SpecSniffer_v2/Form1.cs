@@ -11,14 +11,14 @@ namespace SpecSniffer_v2
     public partial class Form1 : Form
     {
         //long initialization
-        // private readonly Camera capture = new Camera();
-        Audio audioTest = new Audio(Resources.FilePath("Data", "testsound.wav"));
+        private readonly Camera _capture = new Camera();
+        private readonly Audio _audio = new Audio();
         public Form1()
         {
             InitializeComponent();
 
-            Pc pc = new Pc();
-            DiskDrive hdd=new DiskDrive();
+            var pc = new Pc();
+            var hdd = new DiskDrive();
 
             #region set spec
 
@@ -29,12 +29,12 @@ namespace SpecSniffer_v2
             pc.Ram = GetSpec.Ram();
             pc.GpuList = GetSpec.Gpu();
             pc.OpticalDrive = GetSpec.OpticalDrive();
-            pc.Diagonal= GetSpec.Diagonal();
+            pc.Diagonal = GetSpec.Diagonal();
             pc.ResolutionName = GetSpec.ResName();
             pc.OsName = GetSpec.OsName();
             pc.OsBuild = GetSpec.OsBuild();
             pc.OsLanguage = GetSpec.OsLanguages();
-            pc.OsLicenceKey= GetSpec.OsLicence();
+            pc.OsLicenceKey = GetSpec.OsLicence();
             pc.BatteryCharge = GetSpec.BatteryCharge();
             pc.BatteryHealth = GetSpec.BatterHealth();
             pc.BatteryChargeRate = GetSpec.ChargeRate();
@@ -46,7 +46,7 @@ namespace SpecSniffer_v2
 
             #endregion
 
-            
+
             #region show spec
 
             ModelTextBox.Text = pc.Model;
@@ -80,14 +80,27 @@ namespace SpecSniffer_v2
 
 
 
-
-            audioTest.PlayStop();
         }
 
 
+
+
+
+        //audio visualization
         private void SoundTimer_Tick(object sender, EventArgs e)
         {
-            audioTest.ProgressBarValue_Tick(progressBar1);
+            _audio.ProgressBarValue_Tick(progressBar1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _capture.StartStopCapture(CamBox);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            _audio.StartStopPlay(Resources.FilePath("data", "testsound.wav"));
+
         }
     }
 }

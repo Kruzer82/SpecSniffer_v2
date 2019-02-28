@@ -9,23 +9,22 @@ namespace SpecSniffer_v2
 {
     public class Camera
     {
-
-        private readonly ImageBox _imageBox;
+        private ImageBox _imageBox;
         private Mat _noCamImage;
         private bool _isCapturing;
-        private VideoCapture CamCapture { get; }
+        private readonly VideoCapture _camCapture;
 
-        public Camera(ImageBox imgBox)
+        public Camera()
         {
             //long initialization
-            CamCapture = new VideoCapture();
-            _imageBox = imgBox;
+            _camCapture = new VideoCapture();
+            _isCapturing = false;
+            _imageBox = null;
         }
 
-
-
-        public void StartStop()
+        public void StartStopCapture(ImageBox imageBox)
         {
+            _imageBox = imageBox;
             if (_isCapturing == false)
             {
                 Start();
@@ -40,7 +39,7 @@ namespace SpecSniffer_v2
         {
             try
             {
-                if (CamCapture.QuerySmallFrame() != null)
+                if (_camCapture.QuerySmallFrame() != null)
                 {
                     Application.Idle += ProcessFrame;
                 }
@@ -60,21 +59,15 @@ namespace SpecSniffer_v2
         private void StopCapture()
         {
             _isCapturing = false;
-            CamCapture.Stop();
+            _camCapture.Stop();
             _imageBox.Image = SetCamImage("Press 2 to capture camera image.");
         }
 
         private Mat SetCamImage(string text)
         {
-
             _noCamImage = new Mat(450, 700, DepthType.Cv8U, 3);
             _noCamImage.SetTo(new Bgr(100, 90, 80).MCvScalar);
-            CvInvoke.PutText(
-                _noCamImage,
-                text,
-                new System.Drawing.Point(10, 50),
-                FontFace.HersheyDuplex,
-                0.9,
+            CvInvoke.PutText(_noCamImage, text, new System.Drawing.Point(10, 50), FontFace.HersheyDuplex, 0.9,
                 new Bgr(0, 10, 255).MCvScalar);
 
             return _noCamImage;
@@ -82,8 +75,7 @@ namespace SpecSniffer_v2
 
         private void ProcessFrame(object sender, EventArgs e)
         {
-            if (_isCapturing)
-                _imageBox.Image = CamCapture.QuerySmallFrame();
+            if (_isCapturing) _imageBox.Image = _camCapture.QuerySmallFrame();
         }
     }
 }

@@ -1,32 +1,30 @@
 ﻿using NAudio.CoreAudioApi;
 using System;
 using System.Windows.Forms;
+using NAudio.Wave;
 
 namespace SpecSniffer_v2
 {
     class Audio
     {
-        private NAudio.Wave.WaveFileReader _wave;
-        private NAudio.Wave.DirectSoundOut _output;
+        private WaveFileReader _wave;
+        private DirectSoundOut _output;
         private bool _isPlaying;
         private MMDevice _device;
-        private string _soundFilePath;
 
-
-
-
-        public Audio(string soundFilePath)
+        public Audio()
         {
-            _soundFilePath = soundFilePath;
-
+            _wave = null;
+            _output = null;
+            _isPlaying = false;
+            _device = null;
         }
 
-
-        public void PlayStop()
+        public void StartStopPlay(string soundFilePath)
         {
             if (_isPlaying == false)
             {
-                Play();
+                Start(soundFilePath);
             }
             else
             {
@@ -34,13 +32,13 @@ namespace SpecSniffer_v2
             }
         }
 
-        private void Play()
+        private void Start(string soundFilePath)
         {
             try
             {
-                _wave = new NAudio.Wave.WaveFileReader(_soundFilePath);
-                _output = new NAudio.Wave.DirectSoundOut();
-                _output.Init(new NAudio.Wave.WaveChannel32(_wave));
+                _wave = new WaveFileReader(soundFilePath);
+                _output = new DirectSoundOut();
+                _output.Init(new WaveChannel32(_wave));
                 _output.Play();
                 _isPlaying = true;
             }
@@ -52,6 +50,7 @@ namespace SpecSniffer_v2
 
         private void Stop()
         {
+            _isPlaying = false;
             _output.Stop();
         }
 
@@ -59,13 +58,12 @@ namespace SpecSniffer_v2
         {
             _device = GetDefaultAudioEndpoint();
 
-            progressBarName.Value = (int)(Math.Round(_device.AudioMeterInformation.MasterPeakValue * 100));
-
-
+            progressBarName.Value = (int) (Math.Round(_device.AudioMeterInformation.MasterPeakValue * 100));
         }
-        private MMDevice GetDefaultAudioEndpoint()
+
+        private static MMDevice GetDefaultAudioEndpoint()
         {
-            MMDeviceEnumerator enumerator = new MMDeviceEnumerator();
+            var enumerator = new MMDeviceEnumerator();
             return enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Console);
         }
     }
