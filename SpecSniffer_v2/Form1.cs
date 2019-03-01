@@ -92,21 +92,38 @@ namespace SpecSniffer_v2
 
         #region #### Button Events ####
 
-        private void button2_Click(object sender, EventArgs e)
+        private void LcdTest_Click(object sender, EventArgs e)
         {
-            _capture.StartStopCapture(CamBox);
+        
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Camera_Click(object sender, EventArgs e)
+        {
+               _capture.StartStopCapture(CamBox);
+            
+        }
+
+        private void Audio_Click(object sender, EventArgs e)
         {
             _audio.StartStopPlay(Resources.FilePath("data", "testsound.wav"));
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Microphone_Click(object sender, EventArgs e)
         {
             _mic.StartStopRecord(MicChart, MicTimer);
         }
 
+        private void Keyboard_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void HdTune_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void ShowKey_Click(object sender, EventArgs e)
+        {
+        }
         #endregion
     }
 }
