@@ -39,7 +39,7 @@ namespace SpecSniffer_v2
             pc.GetNetAdapters();
             pc.GetFprPresence();
             pc.GetDriverStatus();
-           
+            pc.GetCameraPresence();
             hdd.GetDisks();
 
             #endregion

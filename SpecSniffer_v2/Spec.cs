@@ -500,6 +500,23 @@ namespace SpecSniffer_v2
             }
         }
 
+        public void GetCameraPresence()
+        {
+            try
+            {
+                foreach (ManagementObject obj in new ManagementObjectSearcher("root\\CIMV2",
+                    "SELECT PNPClass FROM  Win32_PnPEntity  WHERE PNPClass='Camera'").Get())
+                {
+                    Camera = true;
+                    break;
+                }
+            }
+            catch
+            {
+                //ignored
+            }
+        }
+
         public void GetDriverStatus()
         {
             bool status = true;
