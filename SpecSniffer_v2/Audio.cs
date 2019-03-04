@@ -20,14 +20,16 @@ namespace SpecSniffer_v2
             _device = null;
         }
 
-        public void StartStopPlay(string soundFilePath)
+        public void StartStopPlay(string soundFilePath, Timer soundTimer)
         {
             if (_isPlaying == false)
             {
+                soundTimer.Enabled = true;
                 Start(soundFilePath);
             }
             else
             {
+                soundTimer.Enabled = false;
                 Stop();
             }
         }

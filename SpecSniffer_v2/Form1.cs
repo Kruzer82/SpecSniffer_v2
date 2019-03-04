@@ -10,7 +10,7 @@ namespace SpecSniffer_v2
         private Pc pc = new Pc();
 
         //long initialization
-      //  private readonly Camera _capture = new Camera();
+        private readonly Camera _capture = new Camera();
         private readonly Audio _audio = new Audio();
         private readonly Microphone _mic = new Microphone();
 
@@ -21,7 +21,6 @@ namespace SpecSniffer_v2
             var hdd = new DiskDrive();
 
             #region #### Set Spec ####
-
             pc.GetManufacturer();
             pc.GetModel();
             pc.GetSerial();
@@ -104,13 +103,13 @@ namespace SpecSniffer_v2
 
         private void Camera_Click(object sender, EventArgs e)
         {
-              // _capture.StartStopCapture(CamBox);
+               _capture.StartStopCapture(CamBox);
             
         }
 
         private void Audio_Click(object sender, EventArgs e)
         {
-            _audio.StartStopPlay(Resources.FilePath("data", "testsound.wav"));
+            _audio.StartStopPlay(Resources.FilePath("data", "testsound.wav"),SoundTimer);
         }
 
         private void Microphone_Click(object sender, EventArgs e)
