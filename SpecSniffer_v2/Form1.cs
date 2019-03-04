@@ -128,8 +128,7 @@ namespace SpecSniffer_v2
         private void ShowKey_Click(object sender, EventArgs e)
         {
         }
+
         #endregion
-
-
     }
 }
