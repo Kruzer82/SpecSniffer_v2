@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,12 +100,13 @@
             this.AudioButton = new System.Windows.Forms.Button();
             this.CameraButton = new System.Windows.Forms.Button();
             this.LcdButton = new System.Windows.Forms.Button();
+            this.ShowKeyButton = new System.Windows.Forms.Button();
             this.CamBox = new Emgu.CV.UI.ImageBox();
             this.drivers = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.SoundTimer = new System.Windows.Forms.Timer(this.components);
             this.MicTimer = new System.Windows.Forms.Timer(this.components);
-            this.ShowKeyButton = new System.Windows.Forms.Button();
+            this.ChargeTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -283,12 +284,12 @@
             // 
             this.ChargeRateTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ChargeRateTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ChargeRateTextBox.ForeColor = System.Drawing.Color.Black;
             this.ChargeRateTextBox.Location = new System.Drawing.Point(355, 6);
             this.ChargeRateTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.ChargeRateTextBox.Name = "ChargeRateTextBox";
             this.ChargeRateTextBox.Size = new System.Drawing.Size(116, 27);
             this.ChargeRateTextBox.TabIndex = 6;
-            this.ChargeRateTextBox.Text = "+220000";
             // 
             // label14
             // 
@@ -922,39 +923,39 @@
             this.MicChart.BackColor = System.Drawing.SystemColors.ControlLight;
             this.MicChart.BorderlineColor = System.Drawing.Color.Silver;
             this.MicChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea4.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
-            chartArea4.AxisX.LabelStyle.Enabled = false;
-            chartArea4.AxisX.MajorGrid.Enabled = false;
-            chartArea4.AxisX.MajorTickMark.Enabled = false;
-            chartArea4.AxisX.ScrollBar.Enabled = false;
-            chartArea4.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea4.AxisX2.IsLabelAutoFit = false;
-            chartArea4.AxisX2.MajorGrid.Enabled = false;
-            chartArea4.AxisX2.MajorTickMark.Enabled = false;
-            chartArea4.AxisX2.ScrollBar.Enabled = false;
-            chartArea4.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea4.AxisY.LabelStyle.Enabled = false;
-            chartArea4.AxisY.MajorGrid.Enabled = false;
-            chartArea4.AxisY.MajorTickMark.Enabled = false;
-            chartArea4.AxisY.ScrollBar.Enabled = false;
-            chartArea4.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea4.AxisY2.MajorGrid.Enabled = false;
-            chartArea4.AxisY2.MajorTickMark.Enabled = false;
-            chartArea4.AxisY2.ScrollBar.Enabled = false;
-            chartArea4.BackColor = System.Drawing.SystemColors.ControlLight;
-            chartArea4.Name = "ChartArea1";
-            this.MicChart.ChartAreas.Add(chartArea4);
+            chartArea1.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
+            chartArea1.AxisX.LabelStyle.Enabled = false;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.MajorTickMark.Enabled = false;
+            chartArea1.AxisX.ScrollBar.Enabled = false;
+            chartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisX2.IsLabelAutoFit = false;
+            chartArea1.AxisX2.MajorGrid.Enabled = false;
+            chartArea1.AxisX2.MajorTickMark.Enabled = false;
+            chartArea1.AxisX2.ScrollBar.Enabled = false;
+            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisY.LabelStyle.Enabled = false;
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorTickMark.Enabled = false;
+            chartArea1.AxisY.ScrollBar.Enabled = false;
+            chartArea1.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisY2.MajorGrid.Enabled = false;
+            chartArea1.AxisY2.MajorTickMark.Enabled = false;
+            chartArea1.AxisY2.ScrollBar.Enabled = false;
+            chartArea1.BackColor = System.Drawing.SystemColors.ControlLight;
+            chartArea1.Name = "ChartArea1";
+            this.MicChart.ChartAreas.Add(chartArea1);
             this.MicChart.IsSoftShadows = false;
-            legend4.Enabled = false;
-            legend4.Name = "Legend1";
-            this.MicChart.Legends.Add(legend4);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.MicChart.Legends.Add(legend1);
             this.MicChart.Location = new System.Drawing.Point(3, 109);
             this.MicChart.Name = "MicChart";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.MicChart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.MicChart.Series.Add(series1);
             this.MicChart.Size = new System.Drawing.Size(474, 69);
             this.MicChart.TabIndex = 1;
             this.MicChart.Text = "chart1";
@@ -1083,6 +1084,19 @@
             this.LcdButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LcdButton.UseVisualStyleBackColor = true;
             // 
+            // ShowKeyButton
+            // 
+            this.ShowKeyButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.ShowKeyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ShowKeyButton.Location = new System.Drawing.Point(2, 250);
+            this.ShowKeyButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.ShowKeyButton.Name = "ShowKeyButton";
+            this.ShowKeyButton.Size = new System.Drawing.Size(162, 40);
+            this.ShowKeyButton.TabIndex = 6;
+            this.ShowKeyButton.Text = "ShowKey     [ 7 ]";
+            this.ShowKeyButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ShowKeyButton.UseVisualStyleBackColor = true;
+            // 
             // CamBox
             // 
             this.CamBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -1116,25 +1130,16 @@
             // 
             // SoundTimer
             // 
-            this.SoundTimer.Enabled = true;
             this.SoundTimer.Tick += new System.EventHandler(this.SoundTimer_Tick);
             // 
             // MicTimer
             // 
             this.MicTimer.Tick += new System.EventHandler(this.MicrophoneTimer_Tick);
             // 
-            // ShowKeyButton
+            // ChargeTimer
             // 
-            this.ShowKeyButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.ShowKeyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ShowKeyButton.Location = new System.Drawing.Point(2, 250);
-            this.ShowKeyButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.ShowKeyButton.Name = "ShowKeyButton";
-            this.ShowKeyButton.Size = new System.Drawing.Size(162, 40);
-            this.ShowKeyButton.TabIndex = 6;
-            this.ShowKeyButton.Text = "ShowKey     [ 7 ]";
-            this.ShowKeyButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ShowKeyButton.UseVisualStyleBackColor = true;
+            this.ChargeTimer.Enabled = true;
+            this.ChargeTimer.Tick += new System.EventHandler(this.ChargeTimer_Tick);
             // 
             // Form1
             // 
@@ -1260,6 +1265,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart MicChart;
         private System.Windows.Forms.Timer MicTimer;
         private System.Windows.Forms.Button ShowKeyButton;
+        private System.Windows.Forms.Timer ChargeTimer;
     }
 }
 

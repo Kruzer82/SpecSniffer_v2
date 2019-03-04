@@ -70,8 +70,7 @@
     <Compile Include="DiskDrive.cs" />
     <Compile Include="Microphone.cs" />
     <Compile Include="Resources.cs" />
-    <Compile Include="PC.cs" />
-    <Compile Include="GetSpec.cs" />
+    <Compile Include="Spec.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -6,8 +7,10 @@ namespace SpecSniffer_v2
 {
     public partial class Form1 : Form
     {
+        private Pc pc = new Pc();
+
         //long initialization
-        private readonly Camera _capture = new Camera();
+      //  private readonly Camera _capture = new Camera();
         private readonly Audio _audio = new Audio();
         private readonly Microphone _mic = new Microphone();
 
@@ -15,31 +18,29 @@ namespace SpecSniffer_v2
         {
             InitializeComponent();
 
-            var pc = new Pc();
             var hdd = new DiskDrive();
 
             #region #### Set Spec ####
 
-            pc.Manufacturer = GetSpec.Manufacturer();
-            pc.Model = GetSpec.Model();
-            pc.Serial = GetSpec.Serial();
-            pc.Cpu = GetSpec.Cpu();
-            pc.Ram = GetSpec.Ram();
-            pc.GpuList = GetSpec.Gpu();
-            pc.OpticalDrive = GetSpec.OpticalDrive();
-            pc.Diagonal = GetSpec.Diagonal();
-            pc.ResolutionName = GetSpec.ResName();
-            pc.OsName = GetSpec.OsName();
-            pc.OsBuild = GetSpec.OsBuild();
-            pc.OsLanguage = GetSpec.OsLanguages();
-            pc.OsLicenceKey = GetSpec.OsLicence();
-            pc.BatteryCharge = GetSpec.BatteryCharge();
-            pc.BatteryHealth = GetSpec.BatterHealth();
-            pc.BatteryChargeRate = GetSpec.ChargeRate();
-            pc.Wwan = GetSpec.WwanPresence();
-            pc.BlueTooth = GetSpec.BluetoothPresence();
-            pc.FingerPrint = GetSpec.FprPresence();
-            pc.DriverStatus = GetSpec.DriverStatus();
+            pc.GetManufacturer();
+            pc.GetModel();
+            pc.GetSerial();
+            pc.GetCpu();
+            pc.GetRam();
+            pc.GetDiagonal();
+            pc.GetResName();
+            pc.GetGpu();
+            pc.GetOpticalDrive();
+            pc.GetOsBuild();
+            pc.GetOsLanguages();
+            pc.GetOsLicence();
+            pc.GetOsName();
+            pc.GetBatterHealth();
+            pc.GetBatteryCharge();
+            pc.GetNetAdapters();
+            pc.GetFprPresence();
+            pc.GetDriverStatus();
+           
             hdd.GetDisks();
 
             #endregion
@@ -58,7 +59,7 @@ namespace SpecSniffer_v2
             OsLangTextBox.Text = pc.OsLanguage;
             BatteryHealthTextBox.Text = pc.BatteryHealth + @"%";
             PowerLeftTextBox.Text = pc.BatteryCharge + @"%";
-            ChargeRateTextBox.Text = pc.BatteryChargeRate.ToString();
+           
             WlanCheckBox.Checked = pc.Wlan;
             WwanCheckBox.Checked = pc.Wwan;
             BluetoothCheckBox.Checked = pc.BlueTooth;
@@ -77,6 +78,10 @@ namespace SpecSniffer_v2
 
         #region #### Timer Events ####
 
+        private void ChargeTimer_Tick(object sender, EventArgs e)
+        {
+           // ChargeRateTextBox.Text = GetSpec.ChargeRate().ToString();
+        }
         //audio visualization
         private void SoundTimer_Tick(object sender, EventArgs e)
         {
@@ -99,7 +104,7 @@ namespace SpecSniffer_v2
 
         private void Camera_Click(object sender, EventArgs e)
         {
-               _capture.StartStopCapture(CamBox);
+              // _capture.StartStopCapture(CamBox);
             
         }
 
@@ -125,5 +130,7 @@ namespace SpecSniffer_v2
         {
         }
         #endregion
+
+
     }
 }
