@@ -40,7 +40,6 @@
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label16 = new System.Windows.Forms.Label();
             this.DriversStatusTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.ChargeRateTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -212,7 +211,6 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel10.Controls.Add(this.label16, 1, 0);
             this.tableLayoutPanel10.Controls.Add(this.DriversStatusTextBox, 2, 0);
-            this.tableLayoutPanel10.Controls.Add(this.button1, 3, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 465);
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -240,21 +238,11 @@
             this.DriversStatusTextBox.Location = new System.Drawing.Point(159, 6);
             this.DriversStatusTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.DriversStatusTextBox.Name = "DriversStatusTextBox";
+            this.DriversStatusTextBox.ReadOnly = true;
             this.DriversStatusTextBox.Size = new System.Drawing.Size(126, 27);
             this.DriversStatusTextBox.TabIndex = 1;
+            this.DriversStatusTextBox.TabStop = false;
             this.DriversStatusTextBox.Text = "Warning";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            this.button1.Location = new System.Drawing.Point(355, 3);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 34);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Edit Mode";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel12
             // 
@@ -288,8 +276,10 @@
             this.ChargeRateTextBox.Location = new System.Drawing.Point(355, 6);
             this.ChargeRateTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.ChargeRateTextBox.Name = "ChargeRateTextBox";
+            this.ChargeRateTextBox.ReadOnly = true;
             this.ChargeRateTextBox.Size = new System.Drawing.Size(116, 27);
             this.ChargeRateTextBox.TabIndex = 6;
+            this.ChargeRateTextBox.TabStop = false;
             // 
             // label14
             // 
@@ -322,8 +312,10 @@
             this.PowerLeftTextBox.Location = new System.Drawing.Point(225, 6);
             this.PowerLeftTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.PowerLeftTextBox.Name = "PowerLeftTextBox";
+            this.PowerLeftTextBox.ReadOnly = true;
             this.PowerLeftTextBox.Size = new System.Drawing.Size(60, 27);
             this.PowerLeftTextBox.TabIndex = 3;
+            this.PowerLeftTextBox.TabStop = false;
             // 
             // BatteryHealthTextBox
             // 
@@ -332,8 +324,10 @@
             this.BatteryHealthTextBox.Location = new System.Drawing.Point(111, 6);
             this.BatteryHealthTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.BatteryHealthTextBox.Name = "BatteryHealthTextBox";
+            this.BatteryHealthTextBox.ReadOnly = true;
             this.BatteryHealthTextBox.Size = new System.Drawing.Size(60, 27);
             this.BatteryHealthTextBox.TabIndex = 1;
+            this.BatteryHealthTextBox.TabStop = false;
             // 
             // label12
             // 
@@ -379,6 +373,7 @@
             this.FingerprintCheckBox.Name = "FingerprintCheckBox";
             this.FingerprintCheckBox.Size = new System.Drawing.Size(100, 21);
             this.FingerprintCheckBox.TabIndex = 4;
+            this.FingerprintCheckBox.TabStop = false;
             this.FingerprintCheckBox.Text = "Fingerprint";
             this.FingerprintCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -392,6 +387,7 @@
             this.BluetoothCheckBox.Name = "BluetoothCheckBox";
             this.BluetoothCheckBox.Size = new System.Drawing.Size(90, 21);
             this.BluetoothCheckBox.TabIndex = 3;
+            this.BluetoothCheckBox.TabStop = false;
             this.BluetoothCheckBox.Text = "Bluetooth";
             this.BluetoothCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -405,6 +401,7 @@
             this.WwanCheckBox.Name = "WwanCheckBox";
             this.WwanCheckBox.Size = new System.Drawing.Size(70, 21);
             this.WwanCheckBox.TabIndex = 2;
+            this.WwanCheckBox.TabStop = false;
             this.WwanCheckBox.Text = "WWAN";
             this.WwanCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -418,6 +415,7 @@
             this.WlanCheckBox.Name = "WlanCheckBox";
             this.WlanCheckBox.Size = new System.Drawing.Size(66, 21);
             this.WlanCheckBox.TabIndex = 1;
+            this.WlanCheckBox.TabStop = false;
             this.WlanCheckBox.Text = "WLAN";
             this.WlanCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -431,6 +429,7 @@
             this.CamCheckBox.Name = "CamCheckBox";
             this.CamCheckBox.Size = new System.Drawing.Size(56, 21);
             this.CamCheckBox.TabIndex = 0;
+            this.CamCheckBox.TabStop = false;
             this.CamCheckBox.Text = "CAM";
             this.CamCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -459,6 +458,7 @@
             this.OsLangTextBox.Name = "OsLangTextBox";
             this.OsLangTextBox.Size = new System.Drawing.Size(411, 27);
             this.OsLangTextBox.TabIndex = 1;
+            this.OsLangTextBox.TabStop = false;
             // 
             // label11
             // 
@@ -501,6 +501,7 @@
             this.OsBuildTextBox.Name = "OsBuildTextBox";
             this.OsBuildTextBox.Size = new System.Drawing.Size(179, 27);
             this.OsBuildTextBox.TabIndex = 3;
+            this.OsBuildTextBox.TabStop = false;
             // 
             // OsNameTextBox
             // 
@@ -511,6 +512,7 @@
             this.OsNameTextBox.Name = "OsNameTextBox";
             this.OsNameTextBox.Size = new System.Drawing.Size(179, 27);
             this.OsNameTextBox.TabIndex = 1;
+            this.OsNameTextBox.TabStop = false;
             // 
             // label9
             // 
@@ -568,6 +570,7 @@
             this.HddNameMultiTextBox.Name = "HddNameMultiTextBox";
             this.HddNameMultiTextBox.Size = new System.Drawing.Size(267, 67);
             this.HddNameMultiTextBox.TabIndex = 4;
+            this.HddNameMultiTextBox.TabStop = false;
             // 
             // HddSizeMultiTextBox
             // 
@@ -579,6 +582,7 @@
             this.HddSizeMultiTextBox.Name = "HddSizeMultiTextBox";
             this.HddSizeMultiTextBox.Size = new System.Drawing.Size(67, 67);
             this.HddSizeMultiTextBox.TabIndex = 3;
+            this.HddSizeMultiTextBox.TabStop = false;
             // 
             // label8
             // 
@@ -602,6 +606,7 @@
             this.HddStatusMultiTextBox.Name = "HddStatusMultiTextBox";
             this.HddStatusMultiTextBox.Size = new System.Drawing.Size(77, 67);
             this.HddStatusMultiTextBox.TabIndex = 2;
+            this.HddStatusMultiTextBox.TabStop = false;
             this.HddStatusMultiTextBox.Text = "Warning!";
             // 
             // tableLayoutPanel6
@@ -635,6 +640,7 @@
             this.DiagonalTextBox.Name = "DiagonalTextBox";
             this.DiagonalTextBox.Size = new System.Drawing.Size(66, 27);
             this.DiagonalTextBox.TabIndex = 4;
+            this.DiagonalTextBox.TabStop = false;
             // 
             // label7
             // 
@@ -670,6 +676,7 @@
             this.OpticalTextBox.Name = "OpticalTextBox";
             this.OpticalTextBox.Size = new System.Drawing.Size(183, 27);
             this.OpticalTextBox.TabIndex = 3;
+            this.OpticalTextBox.TabStop = false;
             // 
             // ResNameTextBox
             // 
@@ -680,6 +687,7 @@
             this.ResNameTextBox.Name = "ResNameTextBox";
             this.ResNameTextBox.Size = new System.Drawing.Size(92, 27);
             this.ResNameTextBox.TabIndex = 1;
+            this.ResNameTextBox.TabStop = false;
             // 
             // tableLayoutPanel3
             // 
@@ -710,6 +718,7 @@
             this.RamTextBox.Name = "RamTextBox";
             this.RamTextBox.Size = new System.Drawing.Size(185, 27);
             this.RamTextBox.TabIndex = 3;
+            this.RamTextBox.TabStop = false;
             // 
             // CpuTextBox
             // 
@@ -720,6 +729,7 @@
             this.CpuTextBox.Name = "CpuTextBox";
             this.CpuTextBox.Size = new System.Drawing.Size(179, 27);
             this.CpuTextBox.TabIndex = 1;
+            this.CpuTextBox.TabStop = false;
             // 
             // label4
             // 
@@ -775,6 +785,7 @@
             this.SerialTextBox.Name = "SerialTextBox";
             this.SerialTextBox.Size = new System.Drawing.Size(185, 27);
             this.SerialTextBox.TabIndex = 3;
+            this.SerialTextBox.TabStop = false;
             // 
             // label2
             // 
@@ -798,6 +809,7 @@
             this.ModelTextBox.Name = "ModelTextBox";
             this.ModelTextBox.Size = new System.Drawing.Size(179, 27);
             this.ModelTextBox.TabIndex = 1;
+            this.ModelTextBox.TabStop = false;
             // 
             // label1
             // 
@@ -837,6 +849,7 @@
             this.GpuMultiTextBox.Name = "GpuMultiTextBox";
             this.GpuMultiTextBox.Size = new System.Drawing.Size(412, 67);
             this.GpuMultiTextBox.TabIndex = 2;
+            this.GpuMultiTextBox.TabStop = false;
             // 
             // label5
             // 
@@ -1043,7 +1056,6 @@
             this.MicrophoneButton.Text = "Mic. On     [ 4 ]";
             this.MicrophoneButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.MicrophoneButton.UseVisualStyleBackColor = true;
-            this.MicrophoneButton.Click += new System.EventHandler(this.Microphone_Click);
             // 
             // AudioButton
             // 
@@ -1141,6 +1153,7 @@
             // 
             // ChargeTimer
             // 
+            this.ChargeTimer.Enabled = true;
             this.ChargeTimer.Tick += new System.EventHandler(this.ChargeTimer_Tick);
             // 
             // Form1
@@ -1245,7 +1258,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.TextBox DriversStatusTextBox;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Diagnostics;
         private System.Windows.Forms.TabPage drivers;

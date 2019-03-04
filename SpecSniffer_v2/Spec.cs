@@ -23,7 +23,7 @@ namespace SpecSniffer_v2
         private string _osLanguage;
         private string _osLicenceKey;
         private string _resolutionName;
-        private int _batteryCharge;
+        private uint _batteryCharge;
 
         public string Manufacturer
         {
@@ -228,7 +228,7 @@ namespace SpecSniffer_v2
 
         public int BatteryChargeRate { get; private set; }
 
-        public int BatteryCharge
+        public uint BatteryCharge
         {
             get => _batteryCharge;
             private set => _batteryCharge = value > 100 ? 100 : value;
@@ -404,10 +404,11 @@ namespace SpecSniffer_v2
         {
             try
             {
-                BatteryCharge = (int)GetFromWmi("root\\CIMV2", "Win32_Battery", "EstimatedChargeRemaining")[0];
+                BatteryCharge = (UInt16)GetFromWmi("root\\CIMV2", "Win32_Battery", "EstimatedChargeRemaining")[0];
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 BatteryCharge = 0;
             }
         }
