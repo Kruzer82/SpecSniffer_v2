@@ -13,7 +13,7 @@ namespace SpecSniffer_v2
      //   private readonly Camera _capture = new Camera();
         private readonly Audio _audio = new Audio();
         private readonly Microphone _mic = new Microphone();
-
+        private NetworkFolder driversFolder=new NetworkFolder("S",);
         public Form1()
         {
             InitializeComponent();

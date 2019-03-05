@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="DiskDrive.cs" />
     <Compile Include="Microphone.cs" />
+    <Compile Include="NetworkFolder.cs" />
     <Compile Include="Resources.cs" />
     <Compile Include="Spec.cs" />
     <Compile Include="Program.cs" />
