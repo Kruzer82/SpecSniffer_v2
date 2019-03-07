@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,12 +105,12 @@
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.RunFileButton = new System.Windows.Forms.Button();
+            this.ModelsListBox = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.InstallDriversButton = new System.Windows.Forms.Button();
+            this.FilesListBox = new System.Windows.Forms.ListBox();
             this.SaveSo = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
@@ -121,10 +121,10 @@
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
             this.listBox3 = new System.Windows.Forms.ListBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.SoundTimer = new System.Windows.Forms.Timer(this.components);
             this.MicTimer = new System.Windows.Forms.Timer(this.components);
             this.ChargeTimer = new System.Windows.Forms.Timer(this.components);
-            this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -972,40 +972,40 @@
             this.MicChart.BackColor = System.Drawing.SystemColors.ControlLight;
             this.MicChart.BorderlineColor = System.Drawing.Color.Silver;
             this.MicChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
-            chartArea1.AxisX.LabelStyle.Enabled = false;
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisX.MajorTickMark.Enabled = false;
-            chartArea1.AxisX.ScrollBar.Enabled = false;
-            chartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisX2.IsLabelAutoFit = false;
-            chartArea1.AxisX2.MajorGrid.Enabled = false;
-            chartArea1.AxisX2.MajorTickMark.Enabled = false;
-            chartArea1.AxisX2.ScrollBar.Enabled = false;
-            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisY.LabelStyle.Enabled = false;
-            chartArea1.AxisY.MajorGrid.Enabled = false;
-            chartArea1.AxisY.MajorTickMark.Enabled = false;
-            chartArea1.AxisY.ScrollBar.Enabled = false;
-            chartArea1.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisY2.MajorGrid.Enabled = false;
-            chartArea1.AxisY2.MajorTickMark.Enabled = false;
-            chartArea1.AxisY2.ScrollBar.Enabled = false;
-            chartArea1.BackColor = System.Drawing.SystemColors.ControlLight;
-            chartArea1.Name = "ChartArea1";
-            this.MicChart.ChartAreas.Add(chartArea1);
+            chartArea3.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
+            chartArea3.AxisX.LabelStyle.Enabled = false;
+            chartArea3.AxisX.MajorGrid.Enabled = false;
+            chartArea3.AxisX.MajorTickMark.Enabled = false;
+            chartArea3.AxisX.ScrollBar.Enabled = false;
+            chartArea3.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea3.AxisX2.IsLabelAutoFit = false;
+            chartArea3.AxisX2.MajorGrid.Enabled = false;
+            chartArea3.AxisX2.MajorTickMark.Enabled = false;
+            chartArea3.AxisX2.ScrollBar.Enabled = false;
+            chartArea3.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea3.AxisY.LabelStyle.Enabled = false;
+            chartArea3.AxisY.MajorGrid.Enabled = false;
+            chartArea3.AxisY.MajorTickMark.Enabled = false;
+            chartArea3.AxisY.ScrollBar.Enabled = false;
+            chartArea3.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea3.AxisY2.MajorGrid.Enabled = false;
+            chartArea3.AxisY2.MajorTickMark.Enabled = false;
+            chartArea3.AxisY2.ScrollBar.Enabled = false;
+            chartArea3.BackColor = System.Drawing.SystemColors.ControlLight;
+            chartArea3.Name = "ChartArea1";
+            this.MicChart.ChartAreas.Add(chartArea3);
             this.MicChart.IsSoftShadows = false;
-            legend1.Enabled = false;
-            legend1.Name = "Legend1";
-            this.MicChart.Legends.Add(legend1);
+            legend3.Enabled = false;
+            legend3.Name = "Legend1";
+            this.MicChart.Legends.Add(legend3);
             this.MicChart.Location = new System.Drawing.Point(0, 109);
             this.MicChart.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.MicChart.Name = "MicChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.MicChart.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.MicChart.Series.Add(series3);
             this.MicChart.Size = new System.Drawing.Size(477, 67);
             this.MicChart.TabIndex = 1;
             this.MicChart.Text = "chart1";
@@ -1176,9 +1176,9 @@
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 304F));
             this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel19, 0, 1);
-            this.tableLayoutPanel17.Controls.Add(this.listBox1, 1, 0);
+            this.tableLayoutPanel17.Controls.Add(this.ModelsListBox, 1, 0);
             this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel18, 0, 0);
-            this.tableLayoutPanel17.Controls.Add(this.listBox2, 1, 1);
+            this.tableLayoutPanel17.Controls.Add(this.FilesListBox, 1, 1);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
@@ -1195,7 +1195,7 @@
             this.tableLayoutPanel19.ColumnCount = 1;
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel19.Controls.Add(this.label17, 0, 0);
-            this.tableLayoutPanel19.Controls.Add(this.button2, 0, 1);
+            this.tableLayoutPanel19.Controls.Add(this.RunFileButton, 0, 1);
             this.tableLayoutPanel19.Location = new System.Drawing.Point(0, 254);
             this.tableLayoutPanel19.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
@@ -1218,42 +1218,32 @@
             this.label17.Text = "Additional files:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button2
+            // RunFileButton
             // 
-            this.button2.Location = new System.Drawing.Point(3, 33);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(170, 44);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Run file";
-            this.button2.UseVisualStyleBackColor = true;
+            this.RunFileButton.Location = new System.Drawing.Point(3, 33);
+            this.RunFileButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.RunFileButton.Name = "RunFileButton";
+            this.RunFileButton.Size = new System.Drawing.Size(170, 44);
+            this.RunFileButton.TabIndex = 1;
+            this.RunFileButton.Text = "Run file";
+            this.RunFileButton.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // ModelsListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 19;
-            this.listBox1.Items.AddRange(new object[] {
-            "zbook1",
-            "e7520",
-            "e65340",
-            "test",
-            "asdas",
-            "fdhgdfjhdf",
-            "dfgdfg",
-            "dfgdfg",
-            "dfg"});
-            this.listBox1.Location = new System.Drawing.Point(179, 6);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(298, 175);
-            this.listBox1.TabIndex = 1;
+            this.ModelsListBox.FormattingEnabled = true;
+            this.ModelsListBox.ItemHeight = 19;
+            this.ModelsListBox.Location = new System.Drawing.Point(179, 6);
+            this.ModelsListBox.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.ModelsListBox.Name = "ModelsListBox";
+            this.ModelsListBox.Size = new System.Drawing.Size(298, 175);
+            this.ModelsListBox.TabIndex = 1;
             // 
             // tableLayoutPanel18
             // 
             this.tableLayoutPanel18.ColumnCount = 1;
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel18.Controls.Add(this.label15, 0, 0);
-            this.tableLayoutPanel18.Controls.Add(this.button1, 0, 1);
+            this.tableLayoutPanel18.Controls.Add(this.InstallDriversButton, 0, 1);
             this.tableLayoutPanel18.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
@@ -1274,35 +1264,26 @@
             this.label15.Text = "Select model:";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button1
+            // InstallDriversButton
             // 
-            this.button1.Location = new System.Drawing.Point(3, 40);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Install driver\'s";
-            this.button1.UseVisualStyleBackColor = true;
+            this.InstallDriversButton.Location = new System.Drawing.Point(3, 40);
+            this.InstallDriversButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.InstallDriversButton.Name = "InstallDriversButton";
+            this.InstallDriversButton.Size = new System.Drawing.Size(170, 44);
+            this.InstallDriversButton.TabIndex = 1;
+            this.InstallDriversButton.Text = "Install driver\'s";
+            this.InstallDriversButton.UseVisualStyleBackColor = true;
+            this.InstallDriversButton.Click += new System.EventHandler(this.InstallDriversButton_Click);
             // 
-            // listBox2
+            // FilesListBox
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 19;
-            this.listBox2.Items.AddRange(new object[] {
-            "zbook1",
-            "e7520",
-            "e65340",
-            "test",
-            "asdas",
-            "fdhgdfjhdf",
-            "dfgdfg",
-            "dfgdfg",
-            "dfg"});
-            this.listBox2.Location = new System.Drawing.Point(179, 258);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(298, 175);
-            this.listBox2.TabIndex = 3;
+            this.FilesListBox.FormattingEnabled = true;
+            this.FilesListBox.ItemHeight = 19;
+            this.FilesListBox.Location = new System.Drawing.Point(179, 258);
+            this.FilesListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
+            this.FilesListBox.Name = "FilesListBox";
+            this.FilesListBox.Size = new System.Drawing.Size(298, 175);
+            this.FilesListBox.TabIndex = 3;
             // 
             // SaveSo
             // 
@@ -1445,6 +1426,17 @@
             this.listBox3.Size = new System.Drawing.Size(406, 61);
             this.listBox3.TabIndex = 3;
             // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(313, 138);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(170, 44);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Save Spec.";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // SoundTimer
             // 
             this.SoundTimer.Tick += new System.EventHandler(this.SoundTimer_Tick);
@@ -1457,17 +1449,6 @@
             // 
             this.ChargeTimer.Enabled = true;
             this.ChargeTimer.Tick += new System.EventHandler(this.ChargeTimer_Tick);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(313, 138);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(170, 44);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Save Spec.";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1607,13 +1588,13 @@
         private System.Windows.Forms.TextBox PowerLeftTextBox;
         private System.Windows.Forms.TextBox BatteryHealthTextBox;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox ModelsListBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button InstallDriversButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Button RunFileButton;
+        private System.Windows.Forms.ListBox FilesListBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label18;

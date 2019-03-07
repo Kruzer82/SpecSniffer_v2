@@ -5,6 +5,7 @@ using System.Linq;
 using System.Management;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SpecSniffer_v2
@@ -278,6 +279,7 @@ namespace SpecSniffer_v2
 
         public void GetManufacturer()
         {
+            Thread.Sleep(10000);
             Manufacturer = ReturnWmiString(GetFromWmi("root\\CIMV2", "Win32_ComputerSystem", "Manufacturer"));
         }
 

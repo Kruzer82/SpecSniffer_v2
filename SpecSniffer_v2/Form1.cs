@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -13,7 +14,8 @@ namespace SpecSniffer_v2
      //   private readonly Camera _capture = new Camera();
         private readonly Audio _audio = new Audio();
         private readonly Microphone _mic = new Microphone();
-        private NetworkFolder driversFolder=new NetworkFolder("S",);
+        private NetworkFolder _driverPack=new NetworkFolder("S");
+        Stopwatch stopwatch = new Stopwatch();
         public Form1()
         {
             InitializeComponent();
@@ -73,6 +75,12 @@ namespace SpecSniffer_v2
             OsLangTextBox.Text = pc.OsLanguage;
 
             #endregion
+
+
+            foreach (var model in _driverPack.ListOfFolders(@"C:\Users\fbars\Desktop\drivers"))
+            {
+               ModelsListBox.Items.Add(model);
+            }
         }
 
         #region #### Timer Events ####
@@ -130,5 +138,10 @@ namespace SpecSniffer_v2
         }
 
         #endregion
+
+        private void InstallDriversButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(ModelsListBox.SelectedItem.ToString());
+        }
     }
 }

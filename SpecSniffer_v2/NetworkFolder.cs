@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,30 +10,24 @@ namespace SpecSniffer_v2
 {
     class NetworkFolder
     {
+        private readonly string _driveLetter;
 
-        private string _driveLetter;
-        private string _sharePath;
-        private string _userName;
-        private string _userPassword;
 
-        public NetworkFolder(string driveLetter, string sharePath, string userName, string userPassword)
+        public NetworkFolder(string driveLetter)
         {
             _driveLetter = driveLetter+":";
-            _sharePath = sharePath;
-            _userName = userName;
-            _userPassword = userPassword;
         }
 
 
-        public void ConnectToNetworkDrive()
+        public void ConnectToNetworkDrive(string sharePath, string userName, string userPassword)
         {
-            System.Diagnostics.Process.Start("net.exe",
-                $@"use {_driveLetter} \\{_sharePath} /u:{_userName} {_userPassword}");
+            Process.Start("net.exe",
+                $@"use {_driveLetter} \\{sharePath} /u:{userName} {userPassword}");
         }
 
         public void RemoveNetworkDrive()
         {
-            System.Diagnostics.Process.Start("net.exe", $@"use {_driveLetter} /delete");
+            Process.Start("net.exe", $@"use {_driveLetter} /delete");
         }
 
         public bool IsConnected()
@@ -40,19 +35,30 @@ namespace SpecSniffer_v2
             return Directory.Exists(_driveLetter) ? true : false;
         }
 
-        public void FoldersList()
+        public IEnumerable<string> ListOfFolders(string folderDirectory)
         {
-
+            return Directory.GetDirectories(folderDirectory)
+                .Select(d => new DirectoryInfo(d).Name);
         }
 
-        public void FilesList()
+        public IEnumerable<string> ListOfFiles(string folderDirectory)
         {
-
+            return Directory.GetFiles(folderDirectory);
+            //var filenames4 = Directory
+            //    .EnumerateFiles(folderDirectory, "*", SearchOption.AllDirectories)
+            //    .Select(Path.GetFileName); // <-- note you can shorten the lambda
+            //return filenames4;
         }
 
-        public void RunFile()
+        public void RunFile(string filePath)
         {
+            Process.Start(filePath);
+        }
 
+
+        private IEnumerable<string> RemoveDriveLetter(IEnumerable<string> arr)
+        {
+            return arr.Select(s => s.Remove(0, 2));
         }
     }
 }
