@@ -14,7 +14,7 @@ namespace SpecSniffer_v2
 
         public void ConnectToNetworkDrive(string userName, string userPassword)
         {
-            Process.Start("net.exe", $@"use {NetDrive} \\{SharePath} /u:{userName} {userPassword}");
+            Process.Start("net.exe", $@"use {NetDrive} \\{SharePath} /u:{userName} {userPassword} /p:no");
         }
 
         public void RemoveNetworkDrive()

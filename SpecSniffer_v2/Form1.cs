@@ -16,8 +16,9 @@ namespace SpecSniffer_v2
         //  private readonly Microphone _mic = new Microphone();
         //  Stopwatch stopwatch = new Stopwatch();
 
+       // DriversTab driversTab = new DriversTab(@"C:\Users\fbars\Desktop\drivers", "test");
+       private readonly DriversTab _driversTab = new DriversTab(@"X:", "192.168.8.101\\new");
 
-        DriversTab driversTab=new DriversTab(@"C:\Users\fbars\Desktop\drivers","test");
         public Form1()
         {
             InitializeComponent();
@@ -79,10 +80,10 @@ namespace SpecSniffer_v2
             #endregion
 
 
-            // driversTab.ConnectToNetworkDrive("s","192.168.8.101","wb","test");
+             _driversTab.ConnectToNetworkDrive("wb","test");
 
 
-            driversTab.FillListBoxWithFolders(ModelsListBox);
+            _driversTab.FillListBoxWithFolders(ModelsListBox);
         }
 
         #region #### Timer Events ####
@@ -143,18 +144,17 @@ namespace SpecSniffer_v2
 
         private void InstallDriversButton_Click(object sender, EventArgs e)
         {
-            driversTab.RunFile("Run.bat", ModelsListBox.SelectedItem);
+            _driversTab.RunFile("Run.bat", ModelsListBox.SelectedItem);
         }
 
         private void ModelsListBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            driversTab.FillListBoxWithFilesFromFolder(FilesListBox, ModelsListBox.SelectedItem);
+            _driversTab.FillListBoxWithFilesFromFolder(FilesListBox, ModelsListBox.SelectedItem);
         }
 
         private void RunFileButton_Click(object sender, EventArgs e)
         {
-            driversTab.RunFile( FilesListBox.SelectedItem, ModelsListBox.SelectedItem);
-            //_driverPack.RunFile(@"C:\Users\fbars\Desktop\drivers\" + ModelsListBox.SelectedItem+"\\"+FilesListBox.SelectedItem);
+            _driversTab.RunFile( FilesListBox.SelectedItem, ModelsListBox.SelectedItem);
         }
     }
 }
