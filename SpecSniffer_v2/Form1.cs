@@ -11,11 +11,13 @@ namespace SpecSniffer_v2
         private Pc pc = new Pc();
 
         //long initialization
-     //   private readonly Camera _capture = new Camera();
-        private readonly Audio _audio = new Audio();
-        private readonly Microphone _mic = new Microphone();
-        private NetworkFolder _driverPack=new NetworkFolder("S");
-        Stopwatch stopwatch = new Stopwatch();
+        //   private readonly Camera _capture = new Camera();
+        //  private readonly Audio _audio = new Audio();
+        //  private readonly Microphone _mic = new Microphone();
+        //  Stopwatch stopwatch = new Stopwatch();
+
+
+        DriversTab driversTab=new DriversTab(@"C:\Users\fbars\Desktop\drivers","test");
         public Form1()
         {
             InitializeComponent();
@@ -23,64 +25,64 @@ namespace SpecSniffer_v2
             var hdd = new DiskDrive();
 
             #region #### Set Spec ####
-            pc.GetManufacturer();
-            pc.GetModel();
-            pc.GetSerial();
-            pc.GetCpu();
-            pc.GetRam();
-            pc.GetDiagonal();
-            pc.GetResName();
-            pc.GetGpu();
-            pc.GetOpticalDrive();
-            pc.GetOsBuild();
-            pc.GetOsLanguages();
-            pc.GetOsLicence();
-            pc.GetOsName();
-            pc.GetBatterHealth();
-            pc.GetBatteryCharge();
-            pc.GetNetAdapters();
-            pc.GetFprPresence();
-            pc.GetDriverStatus();
-            pc.GetCameraPresence();
-            hdd.GetDisks();
+            //pc.GetManufacturer();
+            //pc.GetModel();
+            //pc.GetSerial();
+            //pc.GetCpu();
+            //pc.GetRam();
+            //pc.GetDiagonal();
+            //pc.GetResName();
+            //pc.GetGpu();
+            //pc.GetOpticalDrive();
+            //pc.GetOsBuild();
+            //pc.GetOsLanguages();
+            //pc.GetOsLicence();
+            //pc.GetOsName();
+            //pc.GetBatterHealth();
+            //pc.GetBatteryCharge();
+            //pc.GetNetAdapters();
+            //pc.GetFprPresence();
+            //pc.GetDriverStatus();
+            //pc.GetCameraPresence();
+            //hdd.GetDisks();
 
             #endregion
 
             #region #### Display Spec ####
 
-            ModelTextBox.Text = pc.Model;
-            SerialTextBox.Text = pc.Serial;
-            CpuTextBox.Text = pc.Cpu;
-            RamTextBox.Text = pc.Ram;
-            GpuMultiTextBox.Lines = pc.GpuList.ToArray();
-            OpticalTextBox.Text = pc.OpticalDrive;
-            DiagonalTextBox.Text = pc.Diagonal;
-            ResNameTextBox.Text = pc.ResolutionName;
-            OsBuildTextBox.Text = pc.OsBuild;
-            OsLangTextBox.Text = pc.OsLanguage;
-            BatteryHealthTextBox.Text = pc.BatteryHealth + @"%";
-            PowerLeftTextBox.Text = pc.BatteryCharge + @"%";
-           
-            WlanCheckBox.Checked = pc.Wlan;
-            WwanCheckBox.Checked = pc.Wwan;
-            BluetoothCheckBox.Checked = pc.BlueTooth;
-            CamCheckBox.Checked = pc.Camera;
-            FingerprintCheckBox.Checked = pc.FingerPrint;
-            DriversStatusTextBox.Text = pc.DriverStatus;
-            HddNameMultiTextBox.Lines = hdd.HDDs.Select(d => d.Value.Model).ToArray();
-            HddSizeMultiTextBox.Lines = hdd.HDDs.Select(d => d.Value.Size).ToArray();
-            HddStatusMultiTextBox.Lines = hdd.HDDs.Select(d => d.Value.Status).ToArray();
-            OsBuildTextBox.Text = pc.OsBuild;
-            OsNameTextBox.Text = pc.OsName;
-            OsLangTextBox.Text = pc.OsLanguage;
+            //ModelTextBox.Text = pc.Model;
+            //SerialTextBox.Text = pc.Serial;
+            //CpuTextBox.Text = pc.Cpu;
+            //RamTextBox.Text = pc.Ram;
+            //GpuMultiTextBox.Lines = pc.GpuList.ToArray();
+            //OpticalTextBox.Text = pc.OpticalDrive;
+            //DiagonalTextBox.Text = pc.Diagonal;
+            //ResNameTextBox.Text = pc.ResolutionName;
+            //OsBuildTextBox.Text = pc.OsBuild;
+            //OsLangTextBox.Text = pc.OsLanguage;
+            //BatteryHealthTextBox.Text = pc.BatteryHealth + @"%";
+            //PowerLeftTextBox.Text = pc.BatteryCharge + @"%";
+
+            //WlanCheckBox.Checked = pc.Wlan;
+            //WwanCheckBox.Checked = pc.Wwan;
+            //BluetoothCheckBox.Checked = pc.BlueTooth;
+            //CamCheckBox.Checked = pc.Camera;
+            //FingerprintCheckBox.Checked = pc.FingerPrint;
+            //DriversStatusTextBox.Text = pc.DriverStatus;
+            //HddNameMultiTextBox.Lines = hdd.HDDs.Select(d => d.Value.Model).ToArray();
+            //HddSizeMultiTextBox.Lines = hdd.HDDs.Select(d => d.Value.Size).ToArray();
+            //HddStatusMultiTextBox.Lines = hdd.HDDs.Select(d => d.Value.Status).ToArray();
+            //OsBuildTextBox.Text = pc.OsBuild;
+            //OsNameTextBox.Text = pc.OsName;
+            //OsLangTextBox.Text = pc.OsLanguage;
 
             #endregion
 
 
-            foreach (var model in _driverPack.ListOfFolders(@"C:\Users\fbars\Desktop\drivers"))
-            {
-               ModelsListBox.Items.Add(model);
-            }
+            // driversTab.ConnectToNetworkDrive("s","192.168.8.101","wb","test");
+
+
+            driversTab.FillListBoxWithFolders(ModelsListBox);
         }
 
         #region #### Timer Events ####
@@ -92,12 +94,12 @@ namespace SpecSniffer_v2
         //audio visualization
         private void SoundTimer_Tick(object sender, EventArgs e)
         {
-            _audio.ProgressBarTick(progressBar1);
+            //_audio.ProgressBarTick(progressBar1);
         }
 
         private void MicrophoneTimer_Tick(object sender, EventArgs e)
         {
-            _mic.ChartTick();
+        //    _mic.ChartTick();
         }
 
         #endregion
@@ -117,12 +119,12 @@ namespace SpecSniffer_v2
 
         private void Audio_Click(object sender, EventArgs e)
         {
-            _audio.StartStopPlay(Resources.FilePath("data", "testsound.wav"),SoundTimer);
+            //_audio.StartStopPlay(Resources.FilePath("data", "testsound.wav"),SoundTimer);
         }
 
         private void Microphone_Click(object sender, EventArgs e)
         {
-            _mic.StartStopRecord(MicChart, MicTimer);
+            //_mic.StartStopRecord(MicChart, MicTimer);
         }
 
         private void Keyboard_Click(object sender, EventArgs e)
@@ -141,7 +143,17 @@ namespace SpecSniffer_v2
 
         private void InstallDriversButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ModelsListBox.SelectedItem.ToString());
+           // MessageBox.Show(ModelsListBox.SelectedItem.ToString());
+        }
+
+        private void ModelsListBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            driversTab.FillListBoxWithFilesFromFolder(FilesListBox, ModelsListBox.SelectedItem);
+        }
+
+        private void RunFileButton_Click(object sender, EventArgs e)
+        {
+            //_driverPack.RunFile(@"C:\Users\fbars\Desktop\drivers\" + ModelsListBox.SelectedItem+"\\"+FilesListBox.SelectedItem);
         }
     }
 }
