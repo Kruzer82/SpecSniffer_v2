@@ -143,7 +143,7 @@ namespace SpecSniffer_v2
 
         private void InstallDriversButton_Click(object sender, EventArgs e)
         {
-           // MessageBox.Show(ModelsListBox.SelectedItem.ToString());
+            driversTab.RunFile("Run.bat", ModelsListBox.SelectedItem);
         }
 
         private void ModelsListBox_SelectedValueChanged(object sender, EventArgs e)
@@ -153,6 +153,7 @@ namespace SpecSniffer_v2
 
         private void RunFileButton_Click(object sender, EventArgs e)
         {
+            driversTab.RunFile( FilesListBox.SelectedItem, ModelsListBox.SelectedItem);
             //_driverPack.RunFile(@"C:\Users\fbars\Desktop\drivers\" + ModelsListBox.SelectedItem+"\\"+FilesListBox.SelectedItem);
         }
     }

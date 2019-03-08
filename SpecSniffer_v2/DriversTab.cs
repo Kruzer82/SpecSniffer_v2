@@ -26,8 +26,13 @@ namespace SpecSniffer_v2
         {
             listBox.Items.Clear();
 
-            foreach (var file in ListOfFiles(NetDrive+"\\" + folderName))
-                listBox.Items.Add(file);
+            foreach (var file in ListOfFiles(NetDrive + "\\" + folderName))
+            {
+                if (file!="Run.bat")
+                {
+                    listBox.Items.Add(file);
+                }
+            }
         }
     }
 

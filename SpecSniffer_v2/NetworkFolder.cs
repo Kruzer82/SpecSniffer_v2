@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace SpecSniffer_v2
 {
@@ -36,9 +37,21 @@ namespace SpecSniffer_v2
             return Directory.GetFiles(folderDirectory).Select(file => new DirectoryInfo(file).Name);
         }
 
-        public void RunFile(string filePath)
+        public void RunFile(string fileName)
         {
-            Process.Start(filePath);
+            Process.Start(NetDrive+"\\"+fileName);
+        }
+
+        public void RunFile(object fileName,object folderName)
+        {
+            try
+            {
+                Process.Start(NetDrive + "\\" + folderName + "\\" + fileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
