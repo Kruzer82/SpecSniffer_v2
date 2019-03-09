@@ -25,15 +25,12 @@ namespace SpecSniffer_v2
         public void FillListBoxWithFilesFromFolder(ListBox listBox, object folderName)
         {
             listBox.Items.Clear();
-
-            foreach (var file in ListOfFiles(NetDrive + "\\" + folderName))
-            {
+                foreach (var file in ListOfFiles(NetDrive + "\\" + folderName))
                 if (file!="Run.bat")
-                {
                     listBox.Items.Add(file);
-                }
-            }
         }
+
+       
     }
 
 

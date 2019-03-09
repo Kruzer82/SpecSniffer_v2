@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SpecSniffer_v2
@@ -16,8 +17,9 @@ namespace SpecSniffer_v2
         //  private readonly Microphone _mic = new Microphone();
         //  Stopwatch stopwatch = new Stopwatch();
 
-       // DriversTab driversTab = new DriversTab(@"C:\Users\fbars\Desktop\drivers", "test");
-       private readonly DriversTab _driversTab = new DriversTab(@"X:", "192.168.8.101\\new");
+
+       private readonly DriversTab _driversTab = new DriversTab("X:", @"192.168.8.104\new");
+       private readonly DriversTab _test = new DriversTab("z:", @"192.168.8.104\two");
 
         public Form1()
         {
@@ -80,10 +82,26 @@ namespace SpecSniffer_v2
             #endregion
 
 
-             _driversTab.ConnectToNetworkDrive("wb","test");
 
+            _driversTab.ConnectToNetworkDrive("wb","test");
 
-            _driversTab.FillListBoxWithFolders(ModelsListBox);
+            _test.ConnectToNetworkDrive("wb","test");
+
+            Thread.Sleep(100);
+            foreach (var folder in _driversTab.ListOfFolders())
+            {
+                ModelsListBox.Items.Add(folder);
+            }
+
+            foreach (var folder in _test.ListOfFolders())
+            {
+                FilesListBox.Items.Add(folder);
+            }
+
+            if (_test.IsConnectedToDrive())
+            {
+                MessageBox.Show("Test");
+            }
         }
 
         #region #### Timer Events ####
@@ -115,7 +133,6 @@ namespace SpecSniffer_v2
         private void Camera_Click(object sender, EventArgs e)
         {
           //     _capture.StartStopCapture(CamBox);
-            
         }
 
         private void Audio_Click(object sender, EventArgs e)
@@ -130,31 +147,62 @@ namespace SpecSniffer_v2
 
         private void Keyboard_Click(object sender, EventArgs e)
         {
+
         }
 
         private void HdTune_Click(object sender, EventArgs e)
         {
+
         }
 
         private void ShowKey_Click(object sender, EventArgs e)
         {
-        }
 
-        #endregion
+        }
 
         private void InstallDriversButton_Click(object sender, EventArgs e)
         {
             _driversTab.RunFile("Run.bat", ModelsListBox.SelectedItem);
         }
 
+        private void RunFileButton_Click(object sender, EventArgs e)
+        {
+            _driversTab.RunFile(FilesListBox.SelectedItem, ModelsListBox.SelectedItem);
+        }
+        #endregion
+
+
+
         private void ModelsListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             _driversTab.FillListBoxWithFilesFromFolder(FilesListBox, ModelsListBox.SelectedItem);
         }
 
-        private void RunFileButton_Click(object sender, EventArgs e)
+        private void StatusTimer_Tick(object sender, EventArgs e)
         {
-            _driversTab.RunFile( FilesListBox.SelectedItem, ModelsListBox.SelectedItem);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _driversTab.RemoveNetworkDrive();
+            _test.RemoveNetworkDrive();
         }
     }
 }

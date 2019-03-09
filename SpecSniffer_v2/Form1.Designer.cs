@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -125,6 +125,16 @@
             this.SoundTimer = new System.Windows.Forms.Timer(this.components);
             this.MicTimer = new System.Windows.Forms.Timer(this.components);
             this.ChargeTimer = new System.Windows.Forms.Timer(this.components);
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.NetworkStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.UsbStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DriversFolderStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DatabaseStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusTimer = new System.Windows.Forms.Timer(this.components);
+            this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -158,9 +168,18 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 539);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.NetworkStatusLabel,
+            this.toolStripStatusLabel3,
+            this.UsbStatusLabel,
+            this.toolStripStatusLabel5,
+            this.DriversFolderStatusLabel,
+            this.toolStripStatusLabel7,
+            this.DatabaseStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 537);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(984, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(984, 24);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -193,7 +212,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 515);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 513);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -229,7 +248,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(481, 509);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(481, 507);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel9
@@ -907,7 +926,7 @@
             this.tabControl1.Location = new System.Drawing.Point(487, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(494, 509);
+            this.tabControl1.Size = new System.Drawing.Size(494, 507);
             this.tabControl1.TabIndex = 1;
             // 
             // Diagnostics
@@ -917,7 +936,7 @@
             this.Diagnostics.Margin = new System.Windows.Forms.Padding(0);
             this.Diagnostics.Name = "Diagnostics";
             this.Diagnostics.Padding = new System.Windows.Forms.Padding(3);
-            this.Diagnostics.Size = new System.Drawing.Size(486, 471);
+            this.Diagnostics.Size = new System.Drawing.Size(486, 469);
             this.Diagnostics.TabIndex = 0;
             this.Diagnostics.Text = "Diagnostic\'s";
             this.Diagnostics.UseVisualStyleBackColor = true;
@@ -935,7 +954,7 @@
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.57113F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.42887F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(480, 465);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(480, 463);
             this.tableLayoutPanel13.TabIndex = 0;
             // 
             // tableLayoutPanel14
@@ -944,7 +963,7 @@
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel14.Controls.Add(this.progressBar1, 0, 1);
             this.tableLayoutPanel14.Controls.Add(this.MicChart, 0, 2);
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 286);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 285);
             this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 3;
@@ -953,7 +972,7 @@
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(480, 179);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(480, 178);
             this.tableLayoutPanel14.TabIndex = 0;
             // 
             // progressBar1
@@ -972,41 +991,41 @@
             this.MicChart.BackColor = System.Drawing.SystemColors.ControlLight;
             this.MicChart.BorderlineColor = System.Drawing.Color.Silver;
             this.MicChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea2.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
-            chartArea2.AxisX.LabelStyle.Enabled = false;
-            chartArea2.AxisX.MajorGrid.Enabled = false;
-            chartArea2.AxisX.MajorTickMark.Enabled = false;
-            chartArea2.AxisX.ScrollBar.Enabled = false;
-            chartArea2.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea2.AxisX2.IsLabelAutoFit = false;
-            chartArea2.AxisX2.MajorGrid.Enabled = false;
-            chartArea2.AxisX2.MajorTickMark.Enabled = false;
-            chartArea2.AxisX2.ScrollBar.Enabled = false;
-            chartArea2.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea2.AxisY.LabelStyle.Enabled = false;
-            chartArea2.AxisY.MajorGrid.Enabled = false;
-            chartArea2.AxisY.MajorTickMark.Enabled = false;
-            chartArea2.AxisY.ScrollBar.Enabled = false;
-            chartArea2.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea2.AxisY2.MajorGrid.Enabled = false;
-            chartArea2.AxisY2.MajorTickMark.Enabled = false;
-            chartArea2.AxisY2.ScrollBar.Enabled = false;
-            chartArea2.BackColor = System.Drawing.SystemColors.ControlLight;
-            chartArea2.Name = "ChartArea1";
-            this.MicChart.ChartAreas.Add(chartArea2);
+            chartArea6.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
+            chartArea6.AxisX.LabelStyle.Enabled = false;
+            chartArea6.AxisX.MajorGrid.Enabled = false;
+            chartArea6.AxisX.MajorTickMark.Enabled = false;
+            chartArea6.AxisX.ScrollBar.Enabled = false;
+            chartArea6.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea6.AxisX2.IsLabelAutoFit = false;
+            chartArea6.AxisX2.MajorGrid.Enabled = false;
+            chartArea6.AxisX2.MajorTickMark.Enabled = false;
+            chartArea6.AxisX2.ScrollBar.Enabled = false;
+            chartArea6.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea6.AxisY.LabelStyle.Enabled = false;
+            chartArea6.AxisY.MajorGrid.Enabled = false;
+            chartArea6.AxisY.MajorTickMark.Enabled = false;
+            chartArea6.AxisY.ScrollBar.Enabled = false;
+            chartArea6.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea6.AxisY2.MajorGrid.Enabled = false;
+            chartArea6.AxisY2.MajorTickMark.Enabled = false;
+            chartArea6.AxisY2.ScrollBar.Enabled = false;
+            chartArea6.BackColor = System.Drawing.SystemColors.ControlLight;
+            chartArea6.Name = "ChartArea1";
+            this.MicChart.ChartAreas.Add(chartArea6);
             this.MicChart.IsSoftShadows = false;
-            legend2.Enabled = false;
-            legend2.Name = "Legend1";
-            this.MicChart.Legends.Add(legend2);
+            legend6.Enabled = false;
+            legend6.Name = "Legend1";
+            this.MicChart.Legends.Add(legend6);
             this.MicChart.Location = new System.Drawing.Point(0, 109);
             this.MicChart.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.MicChart.Name = "MicChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.MicChart.Series.Add(series2);
-            this.MicChart.Size = new System.Drawing.Size(477, 67);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.MicChart.Series.Add(series6);
+            this.MicChart.Size = new System.Drawing.Size(477, 66);
             this.MicChart.TabIndex = 1;
             this.MicChart.Text = "chart1";
             this.MicChart.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.Normal;
@@ -1024,7 +1043,7 @@
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.84297F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(480, 286);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(480, 285);
             this.tableLayoutPanel15.TabIndex = 1;
             // 
             // tableLayoutPanel16
@@ -1049,7 +1068,7 @@
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(164, 286);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(164, 285);
             this.tableLayoutPanel16.TabIndex = 4;
             // 
             // HdTuneButton
@@ -1105,7 +1124,6 @@
             this.AudioButton.Text = "Audio On     [ 3 ]";
             this.AudioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AudioButton.UseVisualStyleBackColor = true;
-            this.AudioButton.MouseCaptureChanged += new System.EventHandler(this.Audio_Click);
             // 
             // CameraButton
             // 
@@ -1119,7 +1137,6 @@
             this.CameraButton.Text = "Camera On     [ 2 ]";
             this.CameraButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CameraButton.UseVisualStyleBackColor = true;
-            this.CameraButton.Click += new System.EventHandler(this.Camera_Click);
             // 
             // LcdButton
             // 
@@ -1154,7 +1171,7 @@
             this.CamBox.Location = new System.Drawing.Point(0, 0);
             this.CamBox.Margin = new System.Windows.Forms.Padding(0);
             this.CamBox.Name = "CamBox";
-            this.CamBox.Size = new System.Drawing.Size(316, 286);
+            this.CamBox.Size = new System.Drawing.Size(316, 285);
             this.CamBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.CamBox.TabIndex = 3;
             this.CamBox.TabStop = false;
@@ -1165,7 +1182,7 @@
             this.drivers.Location = new System.Drawing.Point(4, 34);
             this.drivers.Name = "drivers";
             this.drivers.Padding = new System.Windows.Forms.Padding(3);
-            this.drivers.Size = new System.Drawing.Size(486, 471);
+            this.drivers.Size = new System.Drawing.Size(486, 469);
             this.drivers.TabIndex = 1;
             this.drivers.Text = "Driver\'s";
             this.drivers.UseVisualStyleBackColor = true;
@@ -1187,7 +1204,7 @@
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 184F));
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(480, 465);
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(480, 463);
             this.tableLayoutPanel17.TabIndex = 0;
             // 
             // tableLayoutPanel19
@@ -1292,7 +1309,7 @@
             this.SaveSo.Controls.Add(this.tableLayoutPanel20);
             this.SaveSo.Location = new System.Drawing.Point(4, 34);
             this.SaveSo.Name = "SaveSo";
-            this.SaveSo.Size = new System.Drawing.Size(486, 471);
+            this.SaveSo.Size = new System.Drawing.Size(486, 469);
             this.SaveSo.TabIndex = 2;
             this.SaveSo.Text = "Save";
             this.SaveSo.UseVisualStyleBackColor = true;
@@ -1313,11 +1330,11 @@
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(486, 471);
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14F));
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(486, 469);
             this.tableLayoutPanel20.TabIndex = 0;
             // 
             // tableLayoutPanel21
@@ -1452,6 +1469,67 @@
             this.ChargeTimer.Enabled = true;
             this.ChargeTimer.Tick += new System.EventHandler(this.ChargeTimer_Tick);
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(74, 19);
+            this.toolStripStatusLabel1.Text = "Network:";
+            // 
+            // NetworkStatusLabel
+            // 
+            this.NetworkStatusLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.NetworkStatusLabel.Name = "NetworkStatusLabel";
+            this.NetworkStatusLabel.Size = new System.Drawing.Size(85, 19);
+            this.NetworkStatusLabel.Text = "checking...";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(39, 19);
+            this.toolStripStatusLabel3.Text = "USB";
+            // 
+            // UsbStatusLabel
+            // 
+            this.UsbStatusLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.UsbStatusLabel.Name = "UsbStatusLabel";
+            this.UsbStatusLabel.Size = new System.Drawing.Size(85, 19);
+            this.UsbStatusLabel.Text = "checking...";
+            // 
+            // toolStripStatusLabel5
+            // 
+            this.toolStripStatusLabel5.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(120, 19);
+            this.toolStripStatusLabel5.Text = "Driver\'s Folder:";
+            // 
+            // DriversFolderStatusLabel
+            // 
+            this.DriversFolderStatusLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.DriversFolderStatusLabel.Name = "DriversFolderStatusLabel";
+            this.DriversFolderStatusLabel.Size = new System.Drawing.Size(85, 19);
+            this.DriversFolderStatusLabel.Text = "checking...";
+            // 
+            // toolStripStatusLabel7
+            // 
+            this.toolStripStatusLabel7.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(82, 19);
+            this.toolStripStatusLabel7.Text = "Database:";
+            // 
+            // DatabaseStatusLabel
+            // 
+            this.DatabaseStatusLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.DatabaseStatusLabel.Name = "DatabaseStatusLabel";
+            this.DatabaseStatusLabel.Size = new System.Drawing.Size(85, 19);
+            this.DatabaseStatusLabel.Text = "checking...";
+            // 
+            // StatusTimer
+            // 
+            this.StatusTimer.Interval = 1000;
+            this.StatusTimer.Tick += new System.EventHandler(this.StatusTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1464,6 +1542,9 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1608,6 +1689,15 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel NetworkStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel UsbStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
+        private System.Windows.Forms.ToolStripStatusLabel DriversFolderStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
+        private System.Windows.Forms.ToolStripStatusLabel DatabaseStatusLabel;
+        private System.Windows.Forms.Timer StatusTimer;
     }
 }
 

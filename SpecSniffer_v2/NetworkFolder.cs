@@ -9,12 +9,18 @@ namespace SpecSniffer_v2
 {
     internal class NetworkFolder
     {
+        private string _sharePath;
         public string NetDrive { get; protected set; }
-        public string SharePath { get; protected set; }
+
+        public string SharePath
+        {
+            get => _sharePath.Replace(@"\\",@"\");
+            protected set => _sharePath = value;
+        }
 
         public void ConnectToNetworkDrive(string userName, string userPassword)
         {
-            Process.Start("net.exe", $@"use {NetDrive} \\{SharePath} /u:{userName} {userPassword} /p:no");
+            Process.Start("net.exe", $"use {NetDrive} \\\\{SharePath} /u:{userName} {userPassword} ");
         }
 
         public void RemoveNetworkDrive()
@@ -29,17 +35,48 @@ namespace SpecSniffer_v2
 
         public IEnumerable<string> ListOfFolders()
         {
-            return Directory.GetDirectories(NetDrive).Select(folder => new DirectoryInfo(folder).Name);
+            try
+            {
+                return Directory.GetDirectories(NetDrive).Select(folder => new DirectoryInfo(folder).Name);
+            }
+            catch (DirectoryNotFoundException)
+            {
+                return NoDataToReturn();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return NoDataToReturn();
+            }
         }
 
         public IEnumerable<string> ListOfFiles(string folderDirectory)
         {
-            return Directory.GetFiles(folderDirectory).Select(file => new DirectoryInfo(file).Name);
+            try
+            {
+                return Directory.GetFiles(folderDirectory).Select(file => new DirectoryInfo(file).Name);
+            }
+            catch (DirectoryNotFoundException)
+            {
+                return NoDataToReturn();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return NoDataToReturn();
+            }
         }
 
         public void RunFile(string fileName)
         {
-            Process.Start(NetDrive+"\\"+fileName);
+            try
+            {
+                Process.Start(NetDrive + "\\" + fileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void RunFile(object fileName,object folderName)
@@ -52,6 +89,13 @@ namespace SpecSniffer_v2
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+
+        private static IEnumerable<string> NoDataToReturn()
+        {
+            List<string> noDir = new List<string> { "Directory Not Found" };
+            return noDir;
         }
     }
 }
