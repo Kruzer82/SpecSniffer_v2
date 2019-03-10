@@ -9,18 +9,23 @@ namespace SpecSniffer_v2
 {
     internal class NetworkFolder
     {
-        private string _sharePath;
-        public string NetDrive { get; protected set; }
 
+
+        private string _sharePath;
+
+        public string User { get; protected set; }
+        public string Password { get; protected set; }
+        public string NetDrive { get; protected set; }
         public string SharePath
         {
             get => _sharePath.Replace(@"\\",@"\");
             protected set => _sharePath = value;
         }
 
-        public void ConnectToNetworkDrive(string userName, string userPassword)
+
+        public void ConnectToNetworkDrive()
         {
-            Process.Start("net.exe", $"use {NetDrive} \\\\{SharePath} /u:{userName} {userPassword} ");
+            Process.Start("net.exe", $"use {NetDrive} \\\\{SharePath} /u:{User} {Password} ");
         }
 
         public void RemoveNetworkDrive()
@@ -28,12 +33,12 @@ namespace SpecSniffer_v2
             Process.Start("net.exe", $@"use {NetDrive} /delete");
         }
 
-        public bool IsConnectedToDrive()
+        public bool IsConnected()
         {
-            return Directory.Exists(NetDrive) ? true : false;
+            return Directory.Exists(NetDrive);
         }
 
-        public IEnumerable<string> ListOfFolders()
+        public IEnumerable<string> GetListOfFolders()
         {
             try
             {
@@ -50,11 +55,11 @@ namespace SpecSniffer_v2
             }
         }
 
-        public IEnumerable<string> ListOfFiles(string folderDirectory)
+        public IEnumerable<string> ListOfFiles(string folderPath)
         {
             try
             {
-                return Directory.GetFiles(folderDirectory).Select(file => new DirectoryInfo(file).Name);
+                return Directory.GetFiles(folderPath).Select(file => new DirectoryInfo(file).Name);
             }
             catch (DirectoryNotFoundException)
             {
@@ -79,7 +84,7 @@ namespace SpecSniffer_v2
             }
         }
 
-        public void RunFile(object fileName,object folderName)
+        public void RunFile( object folderName, object fileName)
         {
             try
             {
@@ -91,6 +96,9 @@ namespace SpecSniffer_v2
             }
         }
 
+       
+
+       
 
         private static IEnumerable<string> NoDataToReturn()
         {

@@ -18,8 +18,7 @@ namespace SpecSniffer_v2
         //  Stopwatch stopwatch = new Stopwatch();
 
 
-       private readonly DriversTab _driversTab = new DriversTab("X:", @"192.168.8.104\new");
-       private readonly DriversTab _test = new DriversTab("z:", @"192.168.8.104\two");
+       private readonly DriversTab _driversTab = new DriversTab("X:", @"192.168.8.101\new","wb","test");
 
         public Form1()
         {
@@ -81,30 +80,12 @@ namespace SpecSniffer_v2
 
             #endregion
 
-
-
-            _driversTab.ConnectToNetworkDrive("wb","test");
-
-            _test.ConnectToNetworkDrive("wb","test");
-
+            _driversTab.ConnectToNetworkDrive();
             Thread.Sleep(100);
-            foreach (var folder in _driversTab.ListOfFolders())
-            {
-                ModelsListBox.Items.Add(folder);
-            }
-
-            foreach (var folder in _test.ListOfFolders())
-            {
-                FilesListBox.Items.Add(folder);
-            }
-
-            if (_test.IsConnectedToDrive())
-            {
-                MessageBox.Show("Test");
-            }
+           _driversTab.FillListBoxWithFolders(ModelsListBox);
         }
 
-        #region #### Timer Events ####
+        #region #### Timers ####
 
         private void ChargeTimer_Tick(object sender, EventArgs e)
         {
@@ -121,18 +102,38 @@ namespace SpecSniffer_v2
         //    _mic.ChartTick();
         }
 
+        private void StatusTimer_Tick(object sender, EventArgs e)
+        {
+            if (_driversTab.IsConnected())
+            {
+                if (DriversFolderStatusLabel.Text != "Connected")
+                {
+                    DriversFolderStatusLabel.Text = "Connected";
+                    DriversFolderStatusLabel.ForeColor = Color.LimeGreen;
+                    _driversTab.FillListBoxWithFolders(ModelsListBox);
+                }
+            }
+            else
+            {
+                if (DriversFolderStatusLabel.Text != "Disconnected")
+                {
+                    DriversFolderStatusLabel.Text = "Disconnected";
+                    DriversFolderStatusLabel.ForeColor = Color.Maroon;
+                    ModelsListBox.Items.Clear();
+                }
+            }
+        }
         #endregion
 
-        #region #### Button Events ####
+        #region Diagnostics Tab Events
 
         private void LcdTest_Click(object sender, EventArgs e)
         {
-        
         }
 
         private void Camera_Click(object sender, EventArgs e)
         {
-          //     _capture.StartStopCapture(CamBox);
+            //_capture.StartStopCapture(CamBox);
         }
 
         private void Audio_Click(object sender, EventArgs e)
@@ -147,30 +148,30 @@ namespace SpecSniffer_v2
 
         private void Keyboard_Click(object sender, EventArgs e)
         {
-
         }
 
         private void HdTune_Click(object sender, EventArgs e)
         {
-
         }
 
         private void ShowKey_Click(object sender, EventArgs e)
         {
-
         }
+
+        #endregion
+
+        #region Drivers Tab Events
 
         private void InstallDriversButton_Click(object sender, EventArgs e)
         {
-            _driversTab.RunFile("Run.bat", ModelsListBox.SelectedItem);
+            //  _driversTab.RunFile("Run.bat", ModelsListBox.SelectedItem);
+            _driversTab.RunInstallBat(ModelsListBox.SelectedItem.ToString());
         }
 
         private void RunFileButton_Click(object sender, EventArgs e)
         {
-            _driversTab.RunFile(FilesListBox.SelectedItem, ModelsListBox.SelectedItem);
+            _driversTab.RunFile(ModelsListBox.SelectedItem, FilesListBox.SelectedItem);
         }
-        #endregion
-
 
 
         private void ModelsListBox_SelectedValueChanged(object sender, EventArgs e)
@@ -178,31 +179,28 @@ namespace SpecSniffer_v2
             _driversTab.FillListBoxWithFilesFromFolder(FilesListBox, ModelsListBox.SelectedItem);
         }
 
-        private void StatusTimer_Tick(object sender, EventArgs e)
-        {
-        }
+        #endregion
 
+        #region Save Tab Events
 
+        #endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #region Global Tab Events
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             _driversTab.RemoveNetworkDrive();
-            _test.RemoveNetworkDrive();
         }
+
+        #endregion
+
+        
+
+
+
+
+
+
+
     }
 }

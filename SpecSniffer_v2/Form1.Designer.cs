@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -991,40 +991,40 @@
             this.MicChart.BackColor = System.Drawing.SystemColors.ControlLight;
             this.MicChart.BorderlineColor = System.Drawing.Color.Silver;
             this.MicChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea6.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
-            chartArea6.AxisX.LabelStyle.Enabled = false;
-            chartArea6.AxisX.MajorGrid.Enabled = false;
-            chartArea6.AxisX.MajorTickMark.Enabled = false;
-            chartArea6.AxisX.ScrollBar.Enabled = false;
-            chartArea6.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea6.AxisX2.IsLabelAutoFit = false;
-            chartArea6.AxisX2.MajorGrid.Enabled = false;
-            chartArea6.AxisX2.MajorTickMark.Enabled = false;
-            chartArea6.AxisX2.ScrollBar.Enabled = false;
-            chartArea6.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea6.AxisY.LabelStyle.Enabled = false;
-            chartArea6.AxisY.MajorGrid.Enabled = false;
-            chartArea6.AxisY.MajorTickMark.Enabled = false;
-            chartArea6.AxisY.ScrollBar.Enabled = false;
-            chartArea6.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea6.AxisY2.MajorGrid.Enabled = false;
-            chartArea6.AxisY2.MajorTickMark.Enabled = false;
-            chartArea6.AxisY2.ScrollBar.Enabled = false;
-            chartArea6.BackColor = System.Drawing.SystemColors.ControlLight;
-            chartArea6.Name = "ChartArea1";
-            this.MicChart.ChartAreas.Add(chartArea6);
+            chartArea8.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
+            chartArea8.AxisX.LabelStyle.Enabled = false;
+            chartArea8.AxisX.MajorGrid.Enabled = false;
+            chartArea8.AxisX.MajorTickMark.Enabled = false;
+            chartArea8.AxisX.ScrollBar.Enabled = false;
+            chartArea8.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea8.AxisX2.IsLabelAutoFit = false;
+            chartArea8.AxisX2.MajorGrid.Enabled = false;
+            chartArea8.AxisX2.MajorTickMark.Enabled = false;
+            chartArea8.AxisX2.ScrollBar.Enabled = false;
+            chartArea8.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea8.AxisY.LabelStyle.Enabled = false;
+            chartArea8.AxisY.MajorGrid.Enabled = false;
+            chartArea8.AxisY.MajorTickMark.Enabled = false;
+            chartArea8.AxisY.ScrollBar.Enabled = false;
+            chartArea8.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea8.AxisY2.MajorGrid.Enabled = false;
+            chartArea8.AxisY2.MajorTickMark.Enabled = false;
+            chartArea8.AxisY2.ScrollBar.Enabled = false;
+            chartArea8.BackColor = System.Drawing.SystemColors.ControlLight;
+            chartArea8.Name = "ChartArea1";
+            this.MicChart.ChartAreas.Add(chartArea8);
             this.MicChart.IsSoftShadows = false;
-            legend6.Enabled = false;
-            legend6.Name = "Legend1";
-            this.MicChart.Legends.Add(legend6);
+            legend8.Enabled = false;
+            legend8.Name = "Legend1";
+            this.MicChart.Legends.Add(legend8);
             this.MicChart.Location = new System.Drawing.Point(0, 109);
             this.MicChart.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.MicChart.Name = "MicChart";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.MicChart.Series.Add(series6);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.MicChart.Series.Add(series8);
             this.MicChart.Size = new System.Drawing.Size(477, 66);
             this.MicChart.TabIndex = 1;
             this.MicChart.Text = "chart1";
@@ -1527,7 +1527,8 @@
             // 
             // StatusTimer
             // 
-            this.StatusTimer.Interval = 1000;
+            this.StatusTimer.Enabled = true;
+            this.StatusTimer.Interval = 10;
             this.StatusTimer.Tick += new System.EventHandler(this.StatusTimer_Tick);
             // 
             // Form1
