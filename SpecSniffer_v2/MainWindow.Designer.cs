@@ -1,6 +1,6 @@
 ﻿namespace SpecSniffer_v2
 {
-    partial class Form1
+    partial class MainWindow
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -136,6 +136,7 @@
             this.StatusTimer = new System.Windows.Forms.Timer(this.components);
             this.DriversBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.SpecBackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.CameraBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -1191,6 +1192,7 @@
             this.MicrophoneButton.Text = "Mic. On     [ 4 ]";
             this.MicrophoneButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.MicrophoneButton.UseVisualStyleBackColor = true;
+            this.MicrophoneButton.Click += new System.EventHandler(this.Microphone_Click);
             // 
             // AudioButton
             // 
@@ -1205,17 +1207,20 @@
             this.AudioButton.Text = "Audio On     [ 3 ]";
             this.AudioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AudioButton.UseVisualStyleBackColor = true;
+            this.AudioButton.Click += new System.EventHandler(this.Audio_Click);
             // 
             // CameraButton
             // 
             this.CameraButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CameraButton.Enabled = false;
             this.CameraButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
             this.CameraButton.Location = new System.Drawing.Point(2, 40);
             this.CameraButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.CameraButton.Name = "CameraButton";
             this.CameraButton.Size = new System.Drawing.Size(162, 40);
             this.CameraButton.TabIndex = 1;
-            this.CameraButton.Text = "Camera On     [ 2 ]";
+            this.CameraButton.Tag = "Camera On     [ 2 ]";
+            this.CameraButton.Text = "Loading Cam...";
             this.CameraButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CameraButton.UseVisualStyleBackColor = true;
             this.CameraButton.Click += new System.EventHandler(this.Camera_Click);
@@ -1553,6 +1558,7 @@
             // ChargeTimer
             // 
             this.ChargeTimer.Enabled = true;
+            this.ChargeTimer.Interval = 1000;
             this.ChargeTimer.Tick += new System.EventHandler(this.ChargeTimer_Tick);
             // 
             // StatusTimer
@@ -1573,7 +1579,12 @@
             this.SpecBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.SpecBackgroundWorker_ProgressChanged);
             this.SpecBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.SpecBackgroundWorker_RunWorkerCompleted);
             // 
-            // Form1
+            // CameraBackgroundWorker
+            // 
+            this.CameraBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.CameraBackgroundWorker_DoWork);
+            this.CameraBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.CameraBackgroundWorker_RunWorkerCompleted);
+            // 
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1583,7 +1594,7 @@
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -1744,6 +1755,7 @@
         private System.Windows.Forms.Timer StatusTimer;
         private System.ComponentModel.BackgroundWorker DriversBackgroundWorker;
         private System.ComponentModel.BackgroundWorker SpecBackgroundWorker;
+        private System.ComponentModel.BackgroundWorker CameraBackgroundWorker;
     }
 }
 

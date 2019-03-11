@@ -10,85 +10,26 @@ using System.Management;
 
 namespace SpecSniffer_v2
 {
-    public partial class Form1 : Form
+    public partial class MainWindow : Form
     {
         private readonly Spec _spec = new Spec();
         private DriversTab _driversTab;
         private readonly DiskDrive _hdd=new DiskDrive();
 
-        //long initialization
+        //long initialization loaded in background worker
         private  Camera _capture;
-        //  private readonly Audio _audio = new Audio();
-        //  private readonly Microphone _mic = new Microphone();
-        //  Stopwatch stopwatch = new Stopwatch();
 
-        private void CallCamera()
-        {
-            _capture =  new Camera();
-        }
+        private readonly Audio _audio = new Audio();
+        private readonly Microphone _mic = new Microphone();
+      //  Stopwatch stopwatch = new Stopwatch();
 
-        public Form1()
+        public MainWindow()
         {
             InitializeComponent();
-           // CallCamera();
 
-            //ThreadStart childref = new ThreadStart(CallCamera);
-            //Thread childThread = new Thread(childref);
-            //childThread.Start();
-            #region #### Set Spec ####
-            //_spec.GetManufacturer();
-            //_spec.GetModel();
-            //_spec.GetSerial();
-            //_spec.GetCpu();
-            //_spec.GetRam();
-            //_spec.GetDiagonal();
-            //_spec.GetResName();
-            //_spec.GetGpu();
-            //_spec.GetOpticalDrive();
-            //_spec.GetOsBuild();
-            //_spec.GetOsLanguages();
-            //_spec.GetOsLicence();
-            //_spec.GetOsName();
-            //_spec.GetBatterHealth();
-            //_spec.GetBatteryCharge();
-            //_spec.GetNetAdapters();
-            //_spec.GetFprPresence();
-            //_spec.GetDriverStatus();
-            //_spec.GetCameraPresence();
-            //hdd.GetDisks();
-
-            #endregion
-
-            #region #### Display Spec ####
-
-            //ModelTextBox.Text = _spec.Model;
-            //SerialTextBox.Text = _spec.Serial;
-            //CpuTextBox.Text = _spec.Cpu;
-            //RamTextBox.Text = _spec.Ram;
-            //GpuMultiTextBox.Lines = _spec.GpuList.ToArray();
-            //OpticalTextBox.Text = _spec.OpticalDrive;
-            //DiagonalTextBox.Text = _spec.Diagonal;
-            //ResNameTextBox.Text = _spec.ResolutionName;
-            //OsBuildTextBox.Text = _spec.OsBuild;
-            //OsLangTextBox.Text = _spec.OsLanguage;
-            //BatteryHealthTextBox.Text = _spec.BatteryHealth + @"%";
-            //PowerLeftTextBox.Text = _spec.BatteryCharge + @"%";
-
-            //WlanCheckBox.Checked = _spec.Wlan;
-            //WwanCheckBox.Checked = _spec.Wwan;
-            //BluetoothCheckBox.Checked = _spec.BlueTooth;
-            //CamCheckBox.Checked = _spec.Camera;
-            //FingerprintCheckBox.Checked = _spec.FingerPrint;
-            //DriversStatusTextBox.Text = _spec.DriverStatus;
-            //HddNameMultiTextBox.Lines = hdd.HDDs.Select(d => d.Value.Model).ToArray();
-            //HddSizeMultiTextBox.Lines = hdd.HDDs.Select(d => d.Value.Size).ToArray();
-            //HddStatusMultiTextBox.Lines = hdd.HDDs.Select(d => d.Value.Status).ToArray();
-            //OsBuildTextBox.Text = _spec.OsBuild;
-            //OsNameTextBox.Text = _spec.OsName;
-            //OsLangTextBox.Text = _spec.OsLanguage;
-
-            #endregion
             SpecBackgroundWorker.RunWorkerAsync();
+            CameraBackgroundWorker.RunWorkerAsync();
+            DriversBackgroundWorker.RunWorkerAsync();
         }
 
         #region #### Timers ####
@@ -100,15 +41,15 @@ namespace SpecSniffer_v2
             BatteryChargeTextBox.Text = _spec.BatteryCharge + @"%";
             ChargeRateTextBox.Text = _spec.BatteryChargeRate.ToString();
         }
-        //audio visualization
+        
         private void SoundTimer_Tick(object sender, EventArgs e)
         {
-            //_audio.ProgressBarTick(progressBar1);
+            _audio.ProgressBarTick(progressBar1);
         }
 
         private void MicrophoneTimer_Tick(object sender, EventArgs e)
         {
-        //    _mic.ChartTick();
+            _mic.ChartTick();
         }
 
         private void StatusTimer_Tick(object sender, EventArgs e)
@@ -146,12 +87,12 @@ namespace SpecSniffer_v2
 
         private void Audio_Click(object sender, EventArgs e)
         {
-            //_audio.StartStopPlay(Resources.FilePath("data", "testsound.wav"),SoundTimer);
+            _audio.StartStopPlay(Resources.FilePath("data", "testsound.wav"),SoundTimer);
         }
 
         private void Microphone_Click(object sender, EventArgs e)
         {
-            //_mic.StartStopRecord(MicChart, MicTimer);
+            _mic.StartStopRecord(MicChart, MicTimer);
         }
 
         private void Keyboard_Click(object sender, EventArgs e)
@@ -341,31 +282,42 @@ namespace SpecSniffer_v2
             HddStatusMultiTextBox.Enabled = true;
         }
 
+
+
         private void DriversBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             _driversTab = new DriversTab("X:", @"192.168.8.101\new", "wb", "test");
             _driversTab.ConnectToNetworkDrive();
             //giving NetUse time to create connection
-            Thread.Sleep(100);
+            Thread.Sleep(1000);
         }
 
         private void DriversBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (!NetworkFolder.IsNetworkDriveOn("X:")) return;
+            if (NetworkFolder.IsNetworkDriveOn("X:"))
+            {
+                DriversInstallButton.Enabled = true;
+                DriversRunFileButton.Enabled = true;
+                DriversModelsListBox.Enabled = true;
+                DriversFilesListBox.Enabled = true;
 
-            DriversInstallButton.Enabled = true;
-            DriversRunFileButton.Enabled = true;
-            DriversModelsListBox.Enabled = true;
-            DriversFilesListBox.Enabled = true;
-
-            _driversTab.FillListBoxWithFolders(DriversModelsListBox);
+                _driversTab.FillListBoxWithFolders(DriversModelsListBox);
+            }
         }
 
 
 
+        private void CameraBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            _capture = new Camera();
+        }
 
+        private void CameraBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            CameraButton.Enabled = true;
+            CameraButton.Text = CameraButton.Tag.ToString();
+            _capture?.StartStopCapture(CamBox);
+        }
         #endregion
-
-       
     }
 }
