@@ -30,11 +30,13 @@ namespace SpecSniffer_v2
             private set => _manufacturer = string.IsNullOrWhiteSpace(value) ? Resources.WmiNoData : value.ToUpper();
         }
 
+        public string ModelRaw { get; private set; }
         public string Model
         {
             get => _model;
             private set
             {
+                ModelRaw = value;
                 if (!string.IsNullOrWhiteSpace(value))
                 {
                     var model = new StringBuilder(value);
@@ -143,7 +145,7 @@ namespace SpecSniffer_v2
             {
                 if (!string.IsNullOrWhiteSpace(value))
                     _serial = Manufacturer.Contains("LENOVO")
-                        ? "1S" + Model.ToLower() + value.ToUpper()
+                        ? "1S" + ModelRaw.ToLower() + value.ToUpper()
                         : value;
                 else
                     _serial = "n/a";

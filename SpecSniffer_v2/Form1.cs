@@ -99,7 +99,6 @@ namespace SpecSniffer_v2
             _spec.GetChargeRate();
             BatteryChargeTextBox.Text = _spec.BatteryCharge + @"%";
             ChargeRateTextBox.Text = _spec.BatteryChargeRate.ToString();
-
         }
         //audio visualization
         private void SoundTimer_Tick(object sender, EventArgs e)
