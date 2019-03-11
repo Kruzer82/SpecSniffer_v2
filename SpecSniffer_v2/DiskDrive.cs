@@ -9,7 +9,7 @@ namespace SpecSniffer_v2
 {
 
     /// <summary>
-    /// Will Cleanup later...
+    /// Needs cleaning...
     /// </summary>
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 
 namespace SpecSniffer_v2
@@ -28,14 +29,25 @@ namespace SpecSniffer_v2
             Process.Start("net.exe", $"use {NetDrive} \\\\{SharePath} /u:{User} {Password} ");
         }
 
-        public void RemoveNetworkDrive()
+        public static void RemoveNetworkDrive(string driveLetter)
         {
-            Process.Start("net.exe", $@"use {NetDrive} /delete");
+            Process.Start("net.exe", $@"use {driveLetter} /delete");
         }
 
-        public bool IsConnected()
+        public static bool IsNetworkDriveOn(string driveLetter)
         {
-            return Directory.Exists(NetDrive);
+            return Directory.Exists(driveLetter);
+        }
+
+        public static bool IsNetworkOn()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (client.OpenRead("http://clients3.google.com/generate_204"))
+                    return true;
+            }
+            catch { return false; }
         }
 
         public IEnumerable<string> GetListOfFolders()
@@ -96,9 +108,9 @@ namespace SpecSniffer_v2
             }
         }
 
-       
+        
 
-       
+
 
         private static IEnumerable<string> NoDataToReturn()
         {

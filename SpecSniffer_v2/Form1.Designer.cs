@@ -29,10 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.NetworkStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.UsbStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DriversFolderStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DatabaseStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -47,7 +55,7 @@
             this.DriversStatusTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
-            this.PowerLeftTextBox = new System.Windows.Forms.TextBox();
+            this.BatteryChargeTextBox = new System.Windows.Forms.TextBox();
             this.BatteryHealthTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -105,12 +113,12 @@
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
-            this.RunFileButton = new System.Windows.Forms.Button();
-            this.ModelsListBox = new System.Windows.Forms.ListBox();
+            this.DriversRunFileButton = new System.Windows.Forms.Button();
+            this.DriversModelsListBox = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
-            this.InstallDriversButton = new System.Windows.Forms.Button();
-            this.FilesListBox = new System.Windows.Forms.ListBox();
+            this.DriversInstallButton = new System.Windows.Forms.Button();
+            this.DriversFilesListBox = new System.Windows.Forms.ListBox();
             this.SaveSo = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
@@ -125,15 +133,9 @@
             this.SoundTimer = new System.Windows.Forms.Timer(this.components);
             this.MicTimer = new System.Windows.Forms.Timer(this.components);
             this.ChargeTimer = new System.Windows.Forms.Timer(this.components);
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.NetworkStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.UsbStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DriversFolderStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DatabaseStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusTimer = new System.Windows.Forms.Timer(this.components);
+            this.DriversBackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.SpecBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -182,6 +184,62 @@
             this.statusStrip1.Size = new System.Drawing.Size(984, 24);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(74, 19);
+            this.toolStripStatusLabel1.Text = "Network:";
+            // 
+            // NetworkStatusLabel
+            // 
+            this.NetworkStatusLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.NetworkStatusLabel.Name = "NetworkStatusLabel";
+            this.NetworkStatusLabel.Size = new System.Drawing.Size(85, 19);
+            this.NetworkStatusLabel.Text = "checking...";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(39, 19);
+            this.toolStripStatusLabel3.Text = "USB";
+            // 
+            // UsbStatusLabel
+            // 
+            this.UsbStatusLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.UsbStatusLabel.Name = "UsbStatusLabel";
+            this.UsbStatusLabel.Size = new System.Drawing.Size(85, 19);
+            this.UsbStatusLabel.Text = "checking...";
+            // 
+            // toolStripStatusLabel5
+            // 
+            this.toolStripStatusLabel5.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(120, 19);
+            this.toolStripStatusLabel5.Text = "Driver\'s Folder:";
+            // 
+            // DriversFolderStatusLabel
+            // 
+            this.DriversFolderStatusLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.DriversFolderStatusLabel.Name = "DriversFolderStatusLabel";
+            this.DriversFolderStatusLabel.Size = new System.Drawing.Size(85, 19);
+            this.DriversFolderStatusLabel.Text = "checking...";
+            // 
+            // toolStripStatusLabel7
+            // 
+            this.toolStripStatusLabel7.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(82, 19);
+            this.toolStripStatusLabel7.Text = "Database:";
+            // 
+            // DatabaseStatusLabel
+            // 
+            this.DatabaseStatusLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.DatabaseStatusLabel.Name = "DatabaseStatusLabel";
+            this.DatabaseStatusLabel.Size = new System.Drawing.Size(85, 19);
+            this.DatabaseStatusLabel.Text = "checking...";
             // 
             // menuStrip1
             // 
@@ -270,6 +328,7 @@
             // OsLangTextBox
             // 
             this.OsLangTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.OsLangTextBox.Enabled = false;
             this.OsLangTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.OsLangTextBox.Location = new System.Drawing.Point(60, 4);
             this.OsLangTextBox.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -314,6 +373,7 @@
             // ChargeRateTextBox
             // 
             this.ChargeRateTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ChargeRateTextBox.Enabled = false;
             this.ChargeRateTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ChargeRateTextBox.ForeColor = System.Drawing.Color.Black;
             this.ChargeRateTextBox.Location = new System.Drawing.Point(367, 6);
@@ -351,6 +411,7 @@
             // DriversStatusTextBox
             // 
             this.DriversStatusTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.DriversStatusTextBox.Enabled = false;
             this.DriversStatusTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DriversStatusTextBox.Location = new System.Drawing.Point(164, 6);
             this.DriversStatusTextBox.Margin = new System.Windows.Forms.Padding(0);
@@ -372,7 +433,7 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel12.Controls.Add(this.label13, 3, 0);
-            this.tableLayoutPanel12.Controls.Add(this.PowerLeftTextBox, 4, 0);
+            this.tableLayoutPanel12.Controls.Add(this.BatteryChargeTextBox, 4, 0);
             this.tableLayoutPanel12.Controls.Add(this.BatteryHealthTextBox, 2, 0);
             this.tableLayoutPanel12.Controls.Add(this.label12, 1, 0);
             this.tableLayoutPanel12.Location = new System.Drawing.Point(0, 427);
@@ -388,28 +449,30 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            this.label13.Location = new System.Drawing.Point(287, 10);
+            this.label13.Location = new System.Drawing.Point(309, 2);
             this.label13.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 17);
+            this.label13.Size = new System.Drawing.Size(57, 34);
             this.label13.TabIndex = 4;
-            this.label13.Text = "Power Left:";
+            this.label13.Text = "Battery Charge:";
             // 
-            // PowerLeftTextBox
+            // BatteryChargeTextBox
             // 
-            this.PowerLeftTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.PowerLeftTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PowerLeftTextBox.Location = new System.Drawing.Point(366, 5);
-            this.PowerLeftTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this.PowerLeftTextBox.Name = "PowerLeftTextBox";
-            this.PowerLeftTextBox.ReadOnly = true;
-            this.PowerLeftTextBox.Size = new System.Drawing.Size(113, 27);
-            this.PowerLeftTextBox.TabIndex = 3;
-            this.PowerLeftTextBox.TabStop = false;
+            this.BatteryChargeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BatteryChargeTextBox.Enabled = false;
+            this.BatteryChargeTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BatteryChargeTextBox.Location = new System.Drawing.Point(366, 5);
+            this.BatteryChargeTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this.BatteryChargeTextBox.Name = "BatteryChargeTextBox";
+            this.BatteryChargeTextBox.ReadOnly = true;
+            this.BatteryChargeTextBox.Size = new System.Drawing.Size(113, 27);
+            this.BatteryChargeTextBox.TabIndex = 3;
+            this.BatteryChargeTextBox.TabStop = false;
             // 
             // BatteryHealthTextBox
             // 
             this.BatteryHealthTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BatteryHealthTextBox.Enabled = false;
             this.BatteryHealthTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.BatteryHealthTextBox.Location = new System.Drawing.Point(165, 5);
             this.BatteryHealthTextBox.Margin = new System.Windows.Forms.Padding(0);
@@ -455,6 +518,7 @@
             // OsBuildTextBox
             // 
             this.OsBuildTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.OsBuildTextBox.Enabled = false;
             this.OsBuildTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.OsBuildTextBox.Location = new System.Drawing.Point(293, 4);
             this.OsBuildTextBox.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -466,6 +530,7 @@
             // OsNameTextBox
             // 
             this.OsNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.OsNameTextBox.Enabled = false;
             this.OsNameTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.OsNameTextBox.Location = new System.Drawing.Point(60, 4);
             this.OsNameTextBox.Margin = new System.Windows.Forms.Padding(0);
@@ -524,6 +589,7 @@
             // DiagonalTextBox
             // 
             this.DiagonalTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.DiagonalTextBox.Enabled = false;
             this.DiagonalTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DiagonalTextBox.Location = new System.Drawing.Point(60, 4);
             this.DiagonalTextBox.Margin = new System.Windows.Forms.Padding(0);
@@ -560,6 +626,7 @@
             // OpticalTextBox
             // 
             this.OpticalTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.OpticalTextBox.Enabled = false;
             this.OpticalTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.OpticalTextBox.Location = new System.Drawing.Point(287, 4);
             this.OpticalTextBox.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -571,6 +638,7 @@
             // ResNameTextBox
             // 
             this.ResNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ResNameTextBox.Enabled = false;
             this.ResNameTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ResNameTextBox.Location = new System.Drawing.Point(126, 4);
             this.ResNameTextBox.Margin = new System.Windows.Forms.Padding(0);
@@ -602,6 +670,7 @@
             // RamTextBox
             // 
             this.RamTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.RamTextBox.Enabled = false;
             this.RamTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RamTextBox.Location = new System.Drawing.Point(287, 4);
             this.RamTextBox.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -613,6 +682,7 @@
             // CpuTextBox
             // 
             this.CpuTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.CpuTextBox.Enabled = false;
             this.CpuTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CpuTextBox.Location = new System.Drawing.Point(60, 4);
             this.CpuTextBox.Margin = new System.Windows.Forms.Padding(0);
@@ -670,6 +740,7 @@
             // SerialTextBox
             // 
             this.SerialTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.SerialTextBox.Enabled = false;
             this.SerialTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.SerialTextBox.Location = new System.Drawing.Point(287, 4);
             this.SerialTextBox.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -694,6 +765,7 @@
             // ModelTextBox
             // 
             this.ModelTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ModelTextBox.Enabled = false;
             this.ModelTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ModelTextBox.Location = new System.Drawing.Point(60, 4);
             this.ModelTextBox.Margin = new System.Windows.Forms.Padding(0);
@@ -733,6 +805,7 @@
             // GpuMultiTextBox
             // 
             this.GpuMultiTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.GpuMultiTextBox.Enabled = false;
             this.GpuMultiTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.GpuMultiTextBox.Location = new System.Drawing.Point(60, 5);
             this.GpuMultiTextBox.Margin = new System.Windows.Forms.Padding(0, 5, 2, 5);
@@ -777,6 +850,7 @@
             // HddNameMultiTextBox
             // 
             this.HddNameMultiTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.HddNameMultiTextBox.Enabled = false;
             this.HddNameMultiTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HddNameMultiTextBox.Location = new System.Drawing.Point(127, 5);
             this.HddNameMultiTextBox.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
@@ -789,6 +863,7 @@
             // HddSizeMultiTextBox
             // 
             this.HddSizeMultiTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.HddSizeMultiTextBox.Enabled = false;
             this.HddSizeMultiTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HddSizeMultiTextBox.Location = new System.Drawing.Point(60, 5);
             this.HddSizeMultiTextBox.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
@@ -813,6 +888,7 @@
             // HddStatusMultiTextBox
             // 
             this.HddStatusMultiTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.HddStatusMultiTextBox.Enabled = false;
             this.HddStatusMultiTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HddStatusMultiTextBox.Location = new System.Drawing.Point(394, 5);
             this.HddStatusMultiTextBox.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
@@ -850,6 +926,7 @@
             this.FingerprintCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.FingerprintCheckBox.AutoSize = true;
             this.FingerprintCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FingerprintCheckBox.Enabled = false;
             this.FingerprintCheckBox.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.FingerprintCheckBox.Location = new System.Drawing.Point(379, 3);
             this.FingerprintCheckBox.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
@@ -865,6 +942,7 @@
             this.BluetoothCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BluetoothCheckBox.AutoSize = true;
             this.BluetoothCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BluetoothCheckBox.Enabled = false;
             this.BluetoothCheckBox.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.BluetoothCheckBox.Location = new System.Drawing.Point(278, 3);
             this.BluetoothCheckBox.Name = "BluetoothCheckBox";
@@ -879,6 +957,7 @@
             this.WwanCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.WwanCheckBox.AutoSize = true;
             this.WwanCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.WwanCheckBox.Enabled = false;
             this.WwanCheckBox.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.WwanCheckBox.Location = new System.Drawing.Point(192, 3);
             this.WwanCheckBox.Name = "WwanCheckBox";
@@ -893,6 +972,7 @@
             this.WlanCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.WlanCheckBox.AutoSize = true;
             this.WlanCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.WlanCheckBox.Enabled = false;
             this.WlanCheckBox.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.WlanCheckBox.Location = new System.Drawing.Point(119, 3);
             this.WlanCheckBox.Name = "WlanCheckBox";
@@ -907,6 +987,7 @@
             this.CamCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CamCheckBox.AutoSize = true;
             this.CamCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CamCheckBox.Enabled = false;
             this.CamCheckBox.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.CamCheckBox.Location = new System.Drawing.Point(56, 3);
             this.CamCheckBox.Name = "CamCheckBox";
@@ -991,40 +1072,40 @@
             this.MicChart.BackColor = System.Drawing.SystemColors.ControlLight;
             this.MicChart.BorderlineColor = System.Drawing.Color.Silver;
             this.MicChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea8.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
-            chartArea8.AxisX.LabelStyle.Enabled = false;
-            chartArea8.AxisX.MajorGrid.Enabled = false;
-            chartArea8.AxisX.MajorTickMark.Enabled = false;
-            chartArea8.AxisX.ScrollBar.Enabled = false;
-            chartArea8.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea8.AxisX2.IsLabelAutoFit = false;
-            chartArea8.AxisX2.MajorGrid.Enabled = false;
-            chartArea8.AxisX2.MajorTickMark.Enabled = false;
-            chartArea8.AxisX2.ScrollBar.Enabled = false;
-            chartArea8.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea8.AxisY.LabelStyle.Enabled = false;
-            chartArea8.AxisY.MajorGrid.Enabled = false;
-            chartArea8.AxisY.MajorTickMark.Enabled = false;
-            chartArea8.AxisY.ScrollBar.Enabled = false;
-            chartArea8.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea8.AxisY2.MajorGrid.Enabled = false;
-            chartArea8.AxisY2.MajorTickMark.Enabled = false;
-            chartArea8.AxisY2.ScrollBar.Enabled = false;
-            chartArea8.BackColor = System.Drawing.SystemColors.ControlLight;
-            chartArea8.Name = "ChartArea1";
-            this.MicChart.ChartAreas.Add(chartArea8);
+            chartArea1.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
+            chartArea1.AxisX.LabelStyle.Enabled = false;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.MajorTickMark.Enabled = false;
+            chartArea1.AxisX.ScrollBar.Enabled = false;
+            chartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisX2.IsLabelAutoFit = false;
+            chartArea1.AxisX2.MajorGrid.Enabled = false;
+            chartArea1.AxisX2.MajorTickMark.Enabled = false;
+            chartArea1.AxisX2.ScrollBar.Enabled = false;
+            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisY.LabelStyle.Enabled = false;
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorTickMark.Enabled = false;
+            chartArea1.AxisY.ScrollBar.Enabled = false;
+            chartArea1.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisY2.MajorGrid.Enabled = false;
+            chartArea1.AxisY2.MajorTickMark.Enabled = false;
+            chartArea1.AxisY2.ScrollBar.Enabled = false;
+            chartArea1.BackColor = System.Drawing.SystemColors.ControlLight;
+            chartArea1.Name = "ChartArea1";
+            this.MicChart.ChartAreas.Add(chartArea1);
             this.MicChart.IsSoftShadows = false;
-            legend8.Enabled = false;
-            legend8.Name = "Legend1";
-            this.MicChart.Legends.Add(legend8);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.MicChart.Legends.Add(legend1);
             this.MicChart.Location = new System.Drawing.Point(0, 109);
             this.MicChart.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.MicChart.Name = "MicChart";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.MicChart.Series.Add(series8);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.MicChart.Series.Add(series1);
             this.MicChart.Size = new System.Drawing.Size(477, 66);
             this.MicChart.TabIndex = 1;
             this.MicChart.Text = "chart1";
@@ -1137,6 +1218,7 @@
             this.CameraButton.Text = "Camera On     [ 2 ]";
             this.CameraButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CameraButton.UseVisualStyleBackColor = true;
+            this.CameraButton.Click += new System.EventHandler(this.Camera_Click);
             // 
             // LcdButton
             // 
@@ -1193,9 +1275,9 @@
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 304F));
             this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel19, 0, 1);
-            this.tableLayoutPanel17.Controls.Add(this.ModelsListBox, 1, 0);
+            this.tableLayoutPanel17.Controls.Add(this.DriversModelsListBox, 1, 0);
             this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel18, 0, 0);
-            this.tableLayoutPanel17.Controls.Add(this.FilesListBox, 1, 1);
+            this.tableLayoutPanel17.Controls.Add(this.DriversFilesListBox, 1, 1);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
@@ -1212,7 +1294,7 @@
             this.tableLayoutPanel19.ColumnCount = 1;
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel19.Controls.Add(this.label17, 0, 0);
-            this.tableLayoutPanel19.Controls.Add(this.RunFileButton, 0, 1);
+            this.tableLayoutPanel19.Controls.Add(this.DriversRunFileButton, 0, 1);
             this.tableLayoutPanel19.Location = new System.Drawing.Point(0, 254);
             this.tableLayoutPanel19.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
@@ -1235,34 +1317,36 @@
             this.label17.Text = "Additional files:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // RunFileButton
+            // DriversRunFileButton
             // 
-            this.RunFileButton.Location = new System.Drawing.Point(3, 33);
-            this.RunFileButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.RunFileButton.Name = "RunFileButton";
-            this.RunFileButton.Size = new System.Drawing.Size(170, 44);
-            this.RunFileButton.TabIndex = 1;
-            this.RunFileButton.Text = "Run file";
-            this.RunFileButton.UseVisualStyleBackColor = true;
-            this.RunFileButton.Click += new System.EventHandler(this.RunFileButton_Click);
+            this.DriversRunFileButton.Enabled = false;
+            this.DriversRunFileButton.Location = new System.Drawing.Point(3, 33);
+            this.DriversRunFileButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.DriversRunFileButton.Name = "DriversRunFileButton";
+            this.DriversRunFileButton.Size = new System.Drawing.Size(170, 44);
+            this.DriversRunFileButton.TabIndex = 1;
+            this.DriversRunFileButton.Text = "Run file";
+            this.DriversRunFileButton.UseVisualStyleBackColor = true;
+            this.DriversRunFileButton.Click += new System.EventHandler(this.RunFileButton_Click);
             // 
-            // ModelsListBox
+            // DriversModelsListBox
             // 
-            this.ModelsListBox.FormattingEnabled = true;
-            this.ModelsListBox.ItemHeight = 19;
-            this.ModelsListBox.Location = new System.Drawing.Point(179, 6);
-            this.ModelsListBox.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.ModelsListBox.Name = "ModelsListBox";
-            this.ModelsListBox.Size = new System.Drawing.Size(298, 175);
-            this.ModelsListBox.TabIndex = 1;
-            this.ModelsListBox.SelectedValueChanged += new System.EventHandler(this.ModelsListBox_SelectedValueChanged);
+            this.DriversModelsListBox.Enabled = false;
+            this.DriversModelsListBox.FormattingEnabled = true;
+            this.DriversModelsListBox.ItemHeight = 19;
+            this.DriversModelsListBox.Location = new System.Drawing.Point(179, 6);
+            this.DriversModelsListBox.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.DriversModelsListBox.Name = "DriversModelsListBox";
+            this.DriversModelsListBox.Size = new System.Drawing.Size(298, 175);
+            this.DriversModelsListBox.TabIndex = 1;
+            this.DriversModelsListBox.SelectedValueChanged += new System.EventHandler(this.ModelsListBox_SelectedValueChanged);
             // 
             // tableLayoutPanel18
             // 
             this.tableLayoutPanel18.ColumnCount = 1;
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel18.Controls.Add(this.label15, 0, 0);
-            this.tableLayoutPanel18.Controls.Add(this.InstallDriversButton, 0, 1);
+            this.tableLayoutPanel18.Controls.Add(this.DriversInstallButton, 0, 1);
             this.tableLayoutPanel18.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
@@ -1283,26 +1367,28 @@
             this.label15.Text = "Select model:";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // InstallDriversButton
+            // DriversInstallButton
             // 
-            this.InstallDriversButton.Location = new System.Drawing.Point(3, 40);
-            this.InstallDriversButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.InstallDriversButton.Name = "InstallDriversButton";
-            this.InstallDriversButton.Size = new System.Drawing.Size(170, 44);
-            this.InstallDriversButton.TabIndex = 1;
-            this.InstallDriversButton.Text = "Install driver\'s";
-            this.InstallDriversButton.UseVisualStyleBackColor = true;
-            this.InstallDriversButton.Click += new System.EventHandler(this.InstallDriversButton_Click);
+            this.DriversInstallButton.Enabled = false;
+            this.DriversInstallButton.Location = new System.Drawing.Point(3, 40);
+            this.DriversInstallButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.DriversInstallButton.Name = "DriversInstallButton";
+            this.DriversInstallButton.Size = new System.Drawing.Size(170, 44);
+            this.DriversInstallButton.TabIndex = 1;
+            this.DriversInstallButton.Text = "Install Driver\'s";
+            this.DriversInstallButton.UseVisualStyleBackColor = true;
+            this.DriversInstallButton.Click += new System.EventHandler(this.InstallDriversButton_Click);
             // 
-            // FilesListBox
+            // DriversFilesListBox
             // 
-            this.FilesListBox.FormattingEnabled = true;
-            this.FilesListBox.ItemHeight = 19;
-            this.FilesListBox.Location = new System.Drawing.Point(179, 258);
-            this.FilesListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.FilesListBox.Name = "FilesListBox";
-            this.FilesListBox.Size = new System.Drawing.Size(298, 175);
-            this.FilesListBox.TabIndex = 3;
+            this.DriversFilesListBox.Enabled = false;
+            this.DriversFilesListBox.FormattingEnabled = true;
+            this.DriversFilesListBox.ItemHeight = 19;
+            this.DriversFilesListBox.Location = new System.Drawing.Point(179, 258);
+            this.DriversFilesListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
+            this.DriversFilesListBox.Name = "DriversFilesListBox";
+            this.DriversFilesListBox.Size = new System.Drawing.Size(298, 175);
+            this.DriversFilesListBox.TabIndex = 3;
             // 
             // SaveSo
             // 
@@ -1469,67 +1555,23 @@
             this.ChargeTimer.Enabled = true;
             this.ChargeTimer.Tick += new System.EventHandler(this.ChargeTimer_Tick);
             // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(74, 19);
-            this.toolStripStatusLabel1.Text = "Network:";
-            // 
-            // NetworkStatusLabel
-            // 
-            this.NetworkStatusLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.NetworkStatusLabel.Name = "NetworkStatusLabel";
-            this.NetworkStatusLabel.Size = new System.Drawing.Size(85, 19);
-            this.NetworkStatusLabel.Text = "checking...";
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(39, 19);
-            this.toolStripStatusLabel3.Text = "USB";
-            // 
-            // UsbStatusLabel
-            // 
-            this.UsbStatusLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.UsbStatusLabel.Name = "UsbStatusLabel";
-            this.UsbStatusLabel.Size = new System.Drawing.Size(85, 19);
-            this.UsbStatusLabel.Text = "checking...";
-            // 
-            // toolStripStatusLabel5
-            // 
-            this.toolStripStatusLabel5.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(120, 19);
-            this.toolStripStatusLabel5.Text = "Driver\'s Folder:";
-            // 
-            // DriversFolderStatusLabel
-            // 
-            this.DriversFolderStatusLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.DriversFolderStatusLabel.Name = "DriversFolderStatusLabel";
-            this.DriversFolderStatusLabel.Size = new System.Drawing.Size(85, 19);
-            this.DriversFolderStatusLabel.Text = "checking...";
-            // 
-            // toolStripStatusLabel7
-            // 
-            this.toolStripStatusLabel7.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(82, 19);
-            this.toolStripStatusLabel7.Text = "Database:";
-            // 
-            // DatabaseStatusLabel
-            // 
-            this.DatabaseStatusLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.DatabaseStatusLabel.Name = "DatabaseStatusLabel";
-            this.DatabaseStatusLabel.Size = new System.Drawing.Size(85, 19);
-            this.DatabaseStatusLabel.Text = "checking...";
-            // 
             // StatusTimer
             // 
             this.StatusTimer.Enabled = true;
-            this.StatusTimer.Interval = 10;
+            this.StatusTimer.Interval = 1000;
             this.StatusTimer.Tick += new System.EventHandler(this.StatusTimer_Tick);
+            // 
+            // DriversBackgroundWorker
+            // 
+            this.DriversBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.DriversBackgroundWorker_DoWork);
+            this.DriversBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.DriversBackgroundWorker_RunWorkerCompleted);
+            // 
+            // SpecBackgroundWorker
+            // 
+            this.SpecBackgroundWorker.WorkerReportsProgress = true;
+            this.SpecBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.SpecBackgroundWorker_DoWork);
+            this.SpecBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.SpecBackgroundWorker_ProgressChanged);
+            this.SpecBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.SpecBackgroundWorker_RunWorkerCompleted);
             // 
             // Form1
             // 
@@ -1539,6 +1581,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1670,16 +1713,16 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox PowerLeftTextBox;
+        private System.Windows.Forms.TextBox BatteryChargeTextBox;
         private System.Windows.Forms.TextBox BatteryHealthTextBox;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ListBox ModelsListBox;
+        private System.Windows.Forms.ListBox DriversModelsListBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
-        private System.Windows.Forms.Button InstallDriversButton;
+        private System.Windows.Forms.Button DriversInstallButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button RunFileButton;
-        private System.Windows.Forms.ListBox FilesListBox;
+        private System.Windows.Forms.Button DriversRunFileButton;
+        private System.Windows.Forms.ListBox DriversFilesListBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label18;
@@ -1699,6 +1742,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
         private System.Windows.Forms.ToolStripStatusLabel DatabaseStatusLabel;
         private System.Windows.Forms.Timer StatusTimer;
+        private System.ComponentModel.BackgroundWorker DriversBackgroundWorker;
+        private System.ComponentModel.BackgroundWorker SpecBackgroundWorker;
     }
 }
 

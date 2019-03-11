@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Management;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace SpecSniffer_v2
 {
-    internal class Pc
+    internal class Spec
     {
         private string _serial;
         private string _model;
@@ -43,44 +41,44 @@ namespace SpecSniffer_v2
                     switch (Manufacturer)
                     {
                         case "DELL":
-                            {
-                                model.Replace("Latitude", "");
-                                model.Replace("OptiPlex", "");
-                                model.Replace("Precision", "");
-                                model.Replace("Workstation", "");
-                                model.Replace("Vostro", "");
-                                model.Replace("non-vPro", "");
-                                model.Replace("Tower", "");
-                                model.Replace("AIO", "");
-                                model.Replace("Inspiron", "");
-                                break;
-                            }
+                        {
+                            model.Replace("Latitude", "");
+                            model.Replace("OptiPlex", "");
+                            model.Replace("Precision", "");
+                            model.Replace("Workstation", "");
+                            model.Replace("Vostro", "");
+                            model.Replace("non-vPro", "");
+                            model.Replace("Tower", "");
+                            model.Replace("AIO", "");
+                            model.Replace("Inspiron", "");
+                            break;
+                        }
 
                         case "HEWLETT-PACKARD":
-                            {
-                                model.Replace("All-in-One", " AiO ");
-                                model.Replace("Workstation", "");
-                                model.Replace("EliteBook", "");
-                                model.Replace("Precision", "");
-                                model.Replace("EliteDesk", "");
-                                model.Replace("Notebook", "");
-                                model.Replace("ProBook", "");
-                                model.Replace("Compaq", "");
-                                model.Replace("Elite", "");
-                                model.Replace("Desk", "");
-                                model.Replace("Pro", "");
-                                model.Replace("HP", "");
-                                model.Replace("PC", "");
+                        {
+                            model.Replace("All-in-One", " AiO ");
+                            model.Replace("Workstation", "");
+                            model.Replace("EliteBook", "");
+                            model.Replace("Precision", "");
+                            model.Replace("EliteDesk", "");
+                            model.Replace("Notebook", "");
+                            model.Replace("ProBook", "");
+                            model.Replace("Compaq", "");
+                            model.Replace("Elite", "");
+                            model.Replace("Desk", "");
+                            model.Replace("Pro", "");
+                            model.Replace("HP", "");
+                            model.Replace("PC", "");
 
-                                //  model.Replace("TWR", "");
-                                //  model.Replace("SFF", "");
+                            //  model.Replace("TWR", "");
+                            //  model.Replace("SFF", "");
 
-                                break;
-                            }
+                            break;
+                        }
 
                         case "LENOVO":
-                            {
-                                var lenovoDictionary = new Dictionary<string, string>
+                        {
+                            var lenovoDictionary = new Dictionary<string, string>
                             {
                                 {"4236K63", "T420"},
                                 {"2349P25", "T430"},
@@ -108,21 +106,21 @@ namespace SpecSniffer_v2
                                 {"20FRS4U802", "X1 Yoga 1"}
                             };
 
-                                foreach (var len in lenovoDictionary)
-                                {
-                                    if (len.Key != model.ToString()) continue;
-                                    model = new StringBuilder(len.Value);
-                                    break;
-                                }
-
+                            foreach (var len in lenovoDictionary)
+                            {
+                                if (len.Key != model.ToString()) continue;
+                                model = new StringBuilder(len.Value);
                                 break;
                             }
+
+                            break;
+                        }
 
                         case "FUJITSU":
-                            {
-                                model.Replace("LIFEBOOK", "");
-                                break;
-                            }
+                        {
+                            model.Replace("LIFEBOOK", "");
+                            break;
+                        }
 
                         default:
                             _model = model.ToString();
@@ -247,7 +245,7 @@ namespace SpecSniffer_v2
 
         public string DriverStatus { get; private set; }
 
-        public Pc()
+        public Spec()
         {
             Manufacturer = Resources.PcNotLoaded;
             Model = Resources.PcNotLoaded;
@@ -273,13 +271,11 @@ namespace SpecSniffer_v2
             Camera = false;
             FingerPrint = false;
             DriverStatus = Resources.PcNotLoaded;
-
         }
 
 
         public void GetManufacturer()
         {
-            Thread.Sleep(10000);
             Manufacturer = ReturnWmiString(GetFromWmi("root\\CIMV2", "Win32_ComputerSystem", "Manufacturer"));
         }
 
@@ -346,7 +342,7 @@ namespace SpecSniffer_v2
 
             var diagonal = Math.Sqrt(verticalSize * verticalSize + horizontalSize * horizontalSize);
 
-            var roundedDiagonal = Resources.DiagonalList.Select(n => new { n, distance = Math.Abs(n - diagonal) })
+            var roundedDiagonal = Resources.DiagonalList.Select(n => new {n, distance = Math.Abs(n - diagonal)})
                 .OrderBy(p => p.distance)
                 .First()
                 .n;
@@ -399,14 +395,15 @@ namespace SpecSniffer_v2
 
         public void GetOsLicence()
         {
-            OsLicenceKey = ReturnWmiString(GetFromWmi("root\\CIMV2", "SoftwareLicensingService", "OA3xOriginalProductKey"));
+            OsLicenceKey =
+                ReturnWmiString(GetFromWmi("root\\CIMV2", "SoftwareLicensingService", "OA3xOriginalProductKey"));
         }
 
         public void GetBatteryCharge()
         {
             try
             {
-                BatteryCharge = (UInt16)GetFromWmi("root\\CIMV2", "Win32_Battery", "EstimatedChargeRemaining")[0];
+                BatteryCharge = (ushort) GetFromWmi("root\\CIMV2", "Win32_Battery", "EstimatedChargeRemaining")[0];
             }
             catch (Exception ex)
             {
@@ -419,10 +416,11 @@ namespace SpecSniffer_v2
         {
             try
             {
-                var maxBatteryCapacity = (UInt32)GetFromWmi("root\\WMI", "BatteryStaticData", "DesignedCapacity")[0];
-                var currentBatteryCapacity = (UInt32)GetFromWmi("root\\WMI", "BatteryFullChargedCapacity", "FullChargedCapacity")[0];
+                var maxBatteryCapacity = (uint) GetFromWmi("root\\WMI", "BatteryStaticData", "DesignedCapacity")[0];
+                var currentBatteryCapacity =
+                    (uint) GetFromWmi("root\\WMI", "BatteryFullChargedCapacity", "FullChargedCapacity")[0];
 
-                BatteryHealth = (currentBatteryCapacity * 100) / maxBatteryCapacity;
+                BatteryHealth = currentBatteryCapacity * 100 / maxBatteryCapacity;
             }
             catch (Exception)
             {
@@ -434,14 +432,10 @@ namespace SpecSniffer_v2
         {
             try
             {
-                if ((bool)GetFromWmi("root\\WMI", "BatteryStatus", "Charging")[0] == true)
-                {
-                    BatteryChargeRate = (int)GetFromWmi("root\\WMI", "BatteryStatus", "ChargeRate")[0];
-                }
-                else if ((bool)GetFromWmi("root\\WMI", "BatteryStatus", "Discharging")[0] == true)
-                {
-                    BatteryChargeRate = -(int)GetFromWmi("root\\WMI", "BatteryStatus", "DischargeRate")[0];
-                }
+                if ((bool) GetFromWmi("root\\WMI", "BatteryStatus", "Charging")[0])
+                    BatteryChargeRate = (int) GetFromWmi("root\\WMI", "BatteryStatus", "ChargeRate")[0];
+                else if ((bool) GetFromWmi("root\\WMI", "BatteryStatus", "Discharging")[0])
+                    BatteryChargeRate = -(int) GetFromWmi("root\\WMI", "BatteryStatus", "DischargeRate")[0];
             }
             catch (Exception)
             {
@@ -453,8 +447,7 @@ namespace SpecSniffer_v2
         {
             var devices = GetFromWmi("root\\StandardCimv2", "MSFT_NetAdapter", "NdisPhysicalMedium");
             foreach (var device in devices)
-            {
-                switch ((uint)device)
+                switch ((uint) device)
                 {
                     case 1:
                         Wlan = true;
@@ -465,14 +458,11 @@ namespace SpecSniffer_v2
                         break;
                     case 9:
                         goto case 1;
-                        
+
                     case 10:
                         BlueTooth = true;
                         break;
-                    default:
-                        break;
                 }
-            }
         }
 
         public void GetFprPresence()
@@ -485,17 +475,15 @@ namespace SpecSniffer_v2
                     FingerPrint = true;
                     break;
                 }
+
                 if (FingerPrint == false)
-                {
-                    foreach (ManagementObject obj in new ManagementObjectSearcher("root\\CIMV2", "SELECT PNPClass,Description FROM  Win32_PnPEntity WHERE PNPClass='CVAULT'").Get())
-                    {
-                        if (((string)obj["Description"]).Contains("w/ Fingerprint"))
+                    foreach (ManagementObject obj in new ManagementObjectSearcher("root\\CIMV2",
+                        "SELECT PNPClass,Description FROM  Win32_PnPEntity WHERE PNPClass='CVAULT'").Get())
+                        if (((string) obj["Description"]).Contains("w/ Fingerprint"))
                         {
                             FingerPrint = true;
                             break;
                         }
-                    }
-                }
             }
             catch
             {
@@ -522,24 +510,19 @@ namespace SpecSniffer_v2
 
         public void GetDriverStatus()
         {
-            bool status = true;
+            var status = true;
             var devices =
                 GetFromWmi("root\\CIMV2", "Win32_PnPEntity", "ConfigManagerErrorCode");
 
             foreach (var device in devices)
-            {
-                if ((UInt32)device != 0)
+                if ((uint) device != 0)
                 {
                     status = false;
                     break;
                 }
-            }
 
             DriverStatus = status ? "OK" : "Warning";
         }
-
-
-
 
 
         private static string ReturnWmiString(IEnumerable<object> wmiObject)
@@ -554,7 +537,7 @@ namespace SpecSniffer_v2
             var queryReturn = new List<object>();
             try
             {
-                foreach (var queryObj in new ManagementObjectSearcher(@scopeNamespace,
+                foreach (var queryObj in new ManagementObjectSearcher(scopeNamespace,
                     $"SELECT {scopeProperty} FROM {scopeClass}").Get())
                     queryReturn.Add(queryObj[scopeProperty]);
             }
@@ -572,9 +555,9 @@ namespace SpecSniffer_v2
             string[] queryReturn = null;
             try
             {
-                foreach (var queryObj in new ManagementObjectSearcher(@scopeNamespace,
+                foreach (var queryObj in new ManagementObjectSearcher(scopeNamespace,
                     $"SELECT {scopeProperty} FROM {scopeClass}").Get())
-                    queryReturn = (string[])(queryObj[scopeProperty]);
+                    queryReturn = (string[]) queryObj[scopeProperty];
             }
             catch (Exception)
             {
