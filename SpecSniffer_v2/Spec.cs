@@ -22,7 +22,6 @@ namespace SpecSniffer_v2
         private string _osLanguage;
         private string _osLicenceKey;
         private string _resolutionName;
-        private uint _batteryCharge;
 
         public string Manufacturer
         {
@@ -227,14 +226,6 @@ namespace SpecSniffer_v2
 
         public uint BatteryHealth { get; private set; }
 
-        public int BatteryChargeRate { get; private set; }
-
-        public uint BatteryCharge
-        {
-            get => _batteryCharge;
-            private set => _batteryCharge = value > 100 ? 100 : value;
-        }
-
         public bool Wlan { get; private set; }
 
         public bool Wwan { get; private set; }
@@ -264,8 +255,6 @@ namespace SpecSniffer_v2
 
             GpuList.Add(Resources.PcNotLoaded);
             BatteryHealth = 0;
-            BatteryCharge = 0;
-            BatteryChargeRate = 0;
 
             Wlan = false;
             Wwan = false;
@@ -401,16 +390,19 @@ namespace SpecSniffer_v2
                 ReturnWmiString(GetFromWmi("root\\CIMV2", "SoftwareLicensingService", "OA3xOriginalProductKey"));
         }
 
-        public void GetBatteryCharge()
+        public string BatteryCharge()
         {
             try
             {
-                BatteryCharge = (ushort) GetFromWmi("root\\CIMV2", "Win32_Battery", "EstimatedChargeRemaining")[0];
+                ushort charge = (ushort) GetFromWmi("root\\CIMV2", "Win32_Battery", "EstimatedChargeRemaining")[0];
+                if (charge > 100)
+                    return "100%";
+                else
+                    return charge+"%";
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
-                BatteryCharge = 0;
+                return  "n/a";
             }
         }
 
@@ -430,18 +422,20 @@ namespace SpecSniffer_v2
             }
         }
 
-        public void GetChargeRate()
+        public int BatteryChargeRate()
         {
             try
             {
                 if ((bool) GetFromWmi("root\\WMI", "BatteryStatus", "Charging")[0])
-                    BatteryChargeRate = (int) GetFromWmi("root\\WMI", "BatteryStatus", "ChargeRate")[0];
+                    return (int) GetFromWmi("root\\WMI", "BatteryStatus", "ChargeRate")[0];
                 else if ((bool) GetFromWmi("root\\WMI", "BatteryStatus", "Discharging")[0])
-                    BatteryChargeRate = -(int) GetFromWmi("root\\WMI", "BatteryStatus", "DischargeRate")[0];
+                    return -(int) GetFromWmi("root\\WMI", "BatteryStatus", "DischargeRate")[0];
+                else
+                    return 0;
             }
             catch (Exception)
             {
-                //ignored
+                return -1;
             }
         }
 

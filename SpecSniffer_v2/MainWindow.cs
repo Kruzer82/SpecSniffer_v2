@@ -18,9 +18,9 @@ namespace SpecSniffer_v2
 
         //long initialization loaded in background worker
         private  Camera _capture;
+        private  Audio _audio;
+        private  Microphone _mic;
 
-        private readonly Audio _audio = new Audio();
-        private readonly Microphone _mic = new Microphone();
       //  Stopwatch stopwatch = new Stopwatch();
 
         public MainWindow()
@@ -28,18 +28,19 @@ namespace SpecSniffer_v2
             InitializeComponent();
 
             SpecBackgroundWorker.RunWorkerAsync();
-            CameraBackgroundWorker.RunWorkerAsync();
+            TestsBackgroundWorker.RunWorkerAsync();
             DriversBackgroundWorker.RunWorkerAsync();
+
+            if (_spec.BatteryCharge() != "n/a")
+                ChargeTimer.Enabled = true;
         }
 
         #region #### Timers ####
 
         private void ChargeTimer_Tick(object sender, EventArgs e)
         {
-            _spec.GetBatteryCharge();
-            _spec.GetChargeRate();
-            BatteryChargeTextBox.Text = _spec.BatteryCharge + @"%";
-            ChargeRateTextBox.Text = _spec.BatteryChargeRate.ToString();
+            BatteryChargeTextBox.Text = _spec.BatteryCharge();
+            ChargeRateTextBox.Text = _spec.BatteryChargeRate().ToString();
         }
         
         private void SoundTimer_Tick(object sender, EventArgs e)
@@ -307,17 +308,41 @@ namespace SpecSniffer_v2
 
 
 
-        private void CameraBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void TestsBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            _audio =new Audio();
+            TestsBackgroundWorker.ReportProgress(1);
+            _mic=new Microphone();
+            TestsBackgroundWorker.ReportProgress(2);
             _capture = new Camera();
+            TestsBackgroundWorker.ReportProgress(3);
         }
 
-        private void CameraBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void TestsBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            CameraButton.Enabled = true;
-            CameraButton.Text = CameraButton.Tag.ToString();
-            _capture?.StartStopCapture(CamBox);
+            switch (e.ProgressPercentage)
+            {
+                case 1:
+                    AudioButton.Enabled = true;
+                    _audio.StartStopPlay(Resources.FilePath("data", "testsound.wav"), SoundTimer);
+                    break;
+                case 2:
+                    MicrophoneButton.Enabled = true;
+                    _mic.StartStopRecord(MicChart, MicTimer);
+                    break;
+                case 3:
+                    CameraButton.Enabled = true;
+                    _capture.StartStopCapture(CamBox);
+                    break;
+                default:
+                    break;
+            }
         }
+
+
+
         #endregion
+
+
     }
 }

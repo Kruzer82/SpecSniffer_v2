@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.NetworkStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -136,7 +136,7 @@
             this.StatusTimer = new System.Windows.Forms.Timer(this.components);
             this.DriversBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.SpecBackgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.CameraBackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.TestsBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -1073,40 +1073,40 @@
             this.MicChart.BackColor = System.Drawing.SystemColors.ControlLight;
             this.MicChart.BorderlineColor = System.Drawing.Color.Silver;
             this.MicChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
-            chartArea1.AxisX.LabelStyle.Enabled = false;
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisX.MajorTickMark.Enabled = false;
-            chartArea1.AxisX.ScrollBar.Enabled = false;
-            chartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisX2.IsLabelAutoFit = false;
-            chartArea1.AxisX2.MajorGrid.Enabled = false;
-            chartArea1.AxisX2.MajorTickMark.Enabled = false;
-            chartArea1.AxisX2.ScrollBar.Enabled = false;
-            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisY.LabelStyle.Enabled = false;
-            chartArea1.AxisY.MajorGrid.Enabled = false;
-            chartArea1.AxisY.MajorTickMark.Enabled = false;
-            chartArea1.AxisY.ScrollBar.Enabled = false;
-            chartArea1.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisY2.MajorGrid.Enabled = false;
-            chartArea1.AxisY2.MajorTickMark.Enabled = false;
-            chartArea1.AxisY2.ScrollBar.Enabled = false;
-            chartArea1.BackColor = System.Drawing.SystemColors.ControlLight;
-            chartArea1.Name = "ChartArea1";
-            this.MicChart.ChartAreas.Add(chartArea1);
+            chartArea2.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
+            chartArea2.AxisX.LabelStyle.Enabled = false;
+            chartArea2.AxisX.MajorGrid.Enabled = false;
+            chartArea2.AxisX.MajorTickMark.Enabled = false;
+            chartArea2.AxisX.ScrollBar.Enabled = false;
+            chartArea2.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea2.AxisX2.IsLabelAutoFit = false;
+            chartArea2.AxisX2.MajorGrid.Enabled = false;
+            chartArea2.AxisX2.MajorTickMark.Enabled = false;
+            chartArea2.AxisX2.ScrollBar.Enabled = false;
+            chartArea2.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea2.AxisY.LabelStyle.Enabled = false;
+            chartArea2.AxisY.MajorGrid.Enabled = false;
+            chartArea2.AxisY.MajorTickMark.Enabled = false;
+            chartArea2.AxisY.ScrollBar.Enabled = false;
+            chartArea2.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea2.AxisY2.MajorGrid.Enabled = false;
+            chartArea2.AxisY2.MajorTickMark.Enabled = false;
+            chartArea2.AxisY2.ScrollBar.Enabled = false;
+            chartArea2.BackColor = System.Drawing.SystemColors.ControlLight;
+            chartArea2.Name = "ChartArea1";
+            this.MicChart.ChartAreas.Add(chartArea2);
             this.MicChart.IsSoftShadows = false;
-            legend1.Enabled = false;
-            legend1.Name = "Legend1";
-            this.MicChart.Legends.Add(legend1);
+            legend2.Enabled = false;
+            legend2.Name = "Legend1";
+            this.MicChart.Legends.Add(legend2);
             this.MicChart.Location = new System.Drawing.Point(0, 109);
             this.MicChart.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.MicChart.Name = "MicChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.MicChart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.MicChart.Series.Add(series2);
             this.MicChart.Size = new System.Drawing.Size(477, 66);
             this.MicChart.TabIndex = 1;
             this.MicChart.Text = "chart1";
@@ -1182,6 +1182,7 @@
             // MicrophoneButton
             // 
             this.MicrophoneButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MicrophoneButton.Enabled = false;
             this.MicrophoneButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
             this.MicrophoneButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.MicrophoneButton.Location = new System.Drawing.Point(2, 120);
@@ -1189,7 +1190,7 @@
             this.MicrophoneButton.Name = "MicrophoneButton";
             this.MicrophoneButton.Size = new System.Drawing.Size(162, 40);
             this.MicrophoneButton.TabIndex = 3;
-            this.MicrophoneButton.Text = "Mic. On     [ 4 ]";
+            this.MicrophoneButton.Text = "Mic. Test     [ 4 ]";
             this.MicrophoneButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.MicrophoneButton.UseVisualStyleBackColor = true;
             this.MicrophoneButton.Click += new System.EventHandler(this.Microphone_Click);
@@ -1197,6 +1198,7 @@
             // AudioButton
             // 
             this.AudioButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AudioButton.Enabled = false;
             this.AudioButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
             this.AudioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AudioButton.Location = new System.Drawing.Point(2, 80);
@@ -1204,7 +1206,7 @@
             this.AudioButton.Name = "AudioButton";
             this.AudioButton.Size = new System.Drawing.Size(162, 40);
             this.AudioButton.TabIndex = 2;
-            this.AudioButton.Text = "Audio On     [ 3 ]";
+            this.AudioButton.Text = "Audio Test     [ 3 ]";
             this.AudioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AudioButton.UseVisualStyleBackColor = true;
             this.AudioButton.Click += new System.EventHandler(this.Audio_Click);
@@ -1219,8 +1221,8 @@
             this.CameraButton.Name = "CameraButton";
             this.CameraButton.Size = new System.Drawing.Size(162, 40);
             this.CameraButton.TabIndex = 1;
-            this.CameraButton.Tag = "Camera On     [ 2 ]";
-            this.CameraButton.Text = "Loading Cam...";
+            this.CameraButton.Tag = "Camera Test     [ 2 ]";
+            this.CameraButton.Text = "Camera Test     [ 2 ]";
             this.CameraButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CameraButton.UseVisualStyleBackColor = true;
             this.CameraButton.Click += new System.EventHandler(this.Camera_Click);
@@ -1228,6 +1230,7 @@
             // LcdButton
             // 
             this.LcdButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LcdButton.Enabled = false;
             this.LcdButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LcdButton.Location = new System.Drawing.Point(2, 0);
             this.LcdButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
@@ -1557,7 +1560,6 @@
             // 
             // ChargeTimer
             // 
-            this.ChargeTimer.Enabled = true;
             this.ChargeTimer.Interval = 1000;
             this.ChargeTimer.Tick += new System.EventHandler(this.ChargeTimer_Tick);
             // 
@@ -1579,10 +1581,11 @@
             this.SpecBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.SpecBackgroundWorker_ProgressChanged);
             this.SpecBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.SpecBackgroundWorker_RunWorkerCompleted);
             // 
-            // CameraBackgroundWorker
+            // TestsBackgroundWorker
             // 
-            this.CameraBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.CameraBackgroundWorker_DoWork);
-            this.CameraBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.CameraBackgroundWorker_RunWorkerCompleted);
+            this.TestsBackgroundWorker.WorkerReportsProgress = true;
+            this.TestsBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.TestsBackgroundWorker_DoWork);
+            this.TestsBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.TestsBackgroundWorker_ProgressChanged);
             // 
             // MainWindow
             // 
@@ -1755,7 +1758,7 @@
         private System.Windows.Forms.Timer StatusTimer;
         private System.ComponentModel.BackgroundWorker DriversBackgroundWorker;
         private System.ComponentModel.BackgroundWorker SpecBackgroundWorker;
-        private System.ComponentModel.BackgroundWorker CameraBackgroundWorker;
+        private System.ComponentModel.BackgroundWorker TestsBackgroundWorker;
     }
 }
 
