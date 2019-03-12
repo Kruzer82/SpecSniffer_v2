@@ -339,8 +339,6 @@ namespace SpecSniffer_v2
             }
         }
 
-
-
         #endregion
 
 

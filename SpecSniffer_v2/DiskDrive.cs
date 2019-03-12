@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Management;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SpecSniffer_v2
@@ -219,17 +220,24 @@ namespace SpecSniffer_v2
             }
             catch (Exception ex)
             {
+                string message = "";
                 switch (ex.HResult)
                 {
                     case -2146233087:
-                        MessageBox.Show("Admin privileges required to display HDD health.");
+                        message = "Admin privileges required to display HDD health.";
                         break;
                     
                     default:
-                        MessageBox.Show("S.M.A.R.T read error."+Environment.NewLine+ex.Message);
+                        message = ex.Message;
                         break;
 
                 }
+                var thread = new Thread(
+                    () =>
+                    {
+                        MessageBox.Show(new Form() { TopMost = true }, message);
+                    });
+                thread.Start();
 
                 foreach (var hdd in HDDs)
                 {

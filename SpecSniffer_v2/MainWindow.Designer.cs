@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.NetworkStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -94,21 +94,6 @@
             this.WlanCheckBox = new System.Windows.Forms.CheckBox();
             this.CamCheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Diagnostics = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.MicChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.HdTuneButton = new System.Windows.Forms.Button();
-            this.KeyboardButton = new System.Windows.Forms.Button();
-            this.MicrophoneButton = new System.Windows.Forms.Button();
-            this.AudioButton = new System.Windows.Forms.Button();
-            this.CameraButton = new System.Windows.Forms.Button();
-            this.LcdButton = new System.Windows.Forms.Button();
-            this.ShowKeyButton = new System.Windows.Forms.Button();
-            this.CamBox = new Emgu.CV.UI.ImageBox();
             this.drivers = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
@@ -137,6 +122,26 @@
             this.DriversBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.SpecBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.TestsBackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
+            this.LcdButton = new System.Windows.Forms.Button();
+            this.CameraButton = new System.Windows.Forms.Button();
+            this.AudioButton = new System.Windows.Forms.Button();
+            this.MicrophoneButton = new System.Windows.Forms.Button();
+            this.HdTuneButton = new System.Windows.Forms.Button();
+            this.ShowKeyButton = new System.Windows.Forms.Button();
+            this.KeyboardTestButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
+            this.CamBox = new Emgu.CV.UI.ImageBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.MicChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -152,13 +157,6 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.Diagnostics.SuspendLayout();
-            this.tableLayoutPanel13.SuspendLayout();
-            this.tableLayoutPanel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MicChart)).BeginInit();
-            this.tableLayoutPanel15.SuspendLayout();
-            this.tableLayoutPanel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CamBox)).BeginInit();
             this.drivers.SuspendLayout();
             this.tableLayoutPanel17.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
@@ -167,6 +165,12 @@
             this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             this.tableLayoutPanel22.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tableLayoutPanel23.SuspendLayout();
+            this.tableLayoutPanel24.SuspendLayout();
+            this.tableLayoutPanel25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CamBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MicChart)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -1000,7 +1004,7 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.Diagnostics);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.drivers);
             this.tabControl1.Controls.Add(this.SaveSo);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1010,261 +1014,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(494, 507);
             this.tabControl1.TabIndex = 1;
-            // 
-            // Diagnostics
-            // 
-            this.Diagnostics.Controls.Add(this.tableLayoutPanel13);
-            this.Diagnostics.Location = new System.Drawing.Point(4, 34);
-            this.Diagnostics.Margin = new System.Windows.Forms.Padding(0);
-            this.Diagnostics.Name = "Diagnostics";
-            this.Diagnostics.Padding = new System.Windows.Forms.Padding(3);
-            this.Diagnostics.Size = new System.Drawing.Size(486, 469);
-            this.Diagnostics.TabIndex = 0;
-            this.Diagnostics.Text = "Diagnostic\'s";
-            this.Diagnostics.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel13
-            // 
-            this.tableLayoutPanel13.ColumnCount = 1;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 0, 1);
-            this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel15, 0, 0);
-            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
-            this.tableLayoutPanel13.RowCount = 2;
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.57113F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.42887F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(480, 463);
-            this.tableLayoutPanel13.TabIndex = 0;
-            // 
-            // tableLayoutPanel14
-            // 
-            this.tableLayoutPanel14.ColumnCount = 1;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.Controls.Add(this.progressBar1, 0, 1);
-            this.tableLayoutPanel14.Controls.Add(this.MicChart, 0, 2);
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 285);
-            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 3;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(480, 178);
-            this.tableLayoutPanel14.TabIndex = 0;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.progressBar1.Location = new System.Drawing.Point(0, 33);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(477, 70);
-            this.progressBar1.Step = 1;
-            this.progressBar1.TabIndex = 0;
-            this.progressBar1.Value = 1;
-            // 
-            // MicChart
-            // 
-            this.MicChart.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.MicChart.BorderlineColor = System.Drawing.Color.Silver;
-            this.MicChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea2.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
-            chartArea2.AxisX.LabelStyle.Enabled = false;
-            chartArea2.AxisX.MajorGrid.Enabled = false;
-            chartArea2.AxisX.MajorTickMark.Enabled = false;
-            chartArea2.AxisX.ScrollBar.Enabled = false;
-            chartArea2.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea2.AxisX2.IsLabelAutoFit = false;
-            chartArea2.AxisX2.MajorGrid.Enabled = false;
-            chartArea2.AxisX2.MajorTickMark.Enabled = false;
-            chartArea2.AxisX2.ScrollBar.Enabled = false;
-            chartArea2.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea2.AxisY.LabelStyle.Enabled = false;
-            chartArea2.AxisY.MajorGrid.Enabled = false;
-            chartArea2.AxisY.MajorTickMark.Enabled = false;
-            chartArea2.AxisY.ScrollBar.Enabled = false;
-            chartArea2.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea2.AxisY2.MajorGrid.Enabled = false;
-            chartArea2.AxisY2.MajorTickMark.Enabled = false;
-            chartArea2.AxisY2.ScrollBar.Enabled = false;
-            chartArea2.BackColor = System.Drawing.SystemColors.ControlLight;
-            chartArea2.Name = "ChartArea1";
-            this.MicChart.ChartAreas.Add(chartArea2);
-            this.MicChart.IsSoftShadows = false;
-            legend2.Enabled = false;
-            legend2.Name = "Legend1";
-            this.MicChart.Legends.Add(legend2);
-            this.MicChart.Location = new System.Drawing.Point(0, 109);
-            this.MicChart.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.MicChart.Name = "MicChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.MicChart.Series.Add(series2);
-            this.MicChart.Size = new System.Drawing.Size(477, 66);
-            this.MicChart.TabIndex = 1;
-            this.MicChart.Text = "chart1";
-            this.MicChart.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.Normal;
-            // 
-            // tableLayoutPanel15
-            // 
-            this.tableLayoutPanel15.ColumnCount = 2;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.83334F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.16667F));
-            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel16, 1, 0);
-            this.tableLayoutPanel15.Controls.Add(this.CamBox, 0, 0);
-            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 1;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.84297F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(480, 285);
-            this.tableLayoutPanel15.TabIndex = 1;
-            // 
-            // tableLayoutPanel16
-            // 
-            this.tableLayoutPanel16.ColumnCount = 1;
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel16.Controls.Add(this.HdTuneButton, 0, 5);
-            this.tableLayoutPanel16.Controls.Add(this.KeyboardButton, 0, 4);
-            this.tableLayoutPanel16.Controls.Add(this.MicrophoneButton, 0, 3);
-            this.tableLayoutPanel16.Controls.Add(this.AudioButton, 0, 2);
-            this.tableLayoutPanel16.Controls.Add(this.CameraButton, 0, 1);
-            this.tableLayoutPanel16.Controls.Add(this.LcdButton, 0, 0);
-            this.tableLayoutPanel16.Controls.Add(this.ShowKeyButton, 0, 6);
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(316, 0);
-            this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
-            this.tableLayoutPanel16.RowCount = 7;
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(164, 285);
-            this.tableLayoutPanel16.TabIndex = 4;
-            // 
-            // HdTuneButton
-            // 
-            this.HdTuneButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.HdTuneButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.HdTuneButton.Location = new System.Drawing.Point(2, 204);
-            this.HdTuneButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.HdTuneButton.Name = "HdTuneButton";
-            this.HdTuneButton.Size = new System.Drawing.Size(162, 40);
-            this.HdTuneButton.TabIndex = 5;
-            this.HdTuneButton.Text = "HD Tune     [ 6 ]";
-            this.HdTuneButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.HdTuneButton.UseVisualStyleBackColor = true;
-            // 
-            // KeyboardButton
-            // 
-            this.KeyboardButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.KeyboardButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.KeyboardButton.Location = new System.Drawing.Point(2, 164);
-            this.KeyboardButton.Margin = new System.Windows.Forms.Padding(2, 4, 0, 0);
-            this.KeyboardButton.Name = "KeyboardButton";
-            this.KeyboardButton.Size = new System.Drawing.Size(162, 40);
-            this.KeyboardButton.TabIndex = 4;
-            this.KeyboardButton.Text = "Keyboard Test     [ 5 ]";
-            this.KeyboardButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.KeyboardButton.UseVisualStyleBackColor = true;
-            // 
-            // MicrophoneButton
-            // 
-            this.MicrophoneButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MicrophoneButton.Enabled = false;
-            this.MicrophoneButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.MicrophoneButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.MicrophoneButton.Location = new System.Drawing.Point(2, 120);
-            this.MicrophoneButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.MicrophoneButton.Name = "MicrophoneButton";
-            this.MicrophoneButton.Size = new System.Drawing.Size(162, 40);
-            this.MicrophoneButton.TabIndex = 3;
-            this.MicrophoneButton.Text = "Mic. Test     [ 4 ]";
-            this.MicrophoneButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.MicrophoneButton.UseVisualStyleBackColor = true;
-            this.MicrophoneButton.Click += new System.EventHandler(this.Microphone_Click);
-            // 
-            // AudioButton
-            // 
-            this.AudioButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AudioButton.Enabled = false;
-            this.AudioButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.AudioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AudioButton.Location = new System.Drawing.Point(2, 80);
-            this.AudioButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.AudioButton.Name = "AudioButton";
-            this.AudioButton.Size = new System.Drawing.Size(162, 40);
-            this.AudioButton.TabIndex = 2;
-            this.AudioButton.Text = "Audio Test     [ 3 ]";
-            this.AudioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AudioButton.UseVisualStyleBackColor = true;
-            this.AudioButton.Click += new System.EventHandler(this.Audio_Click);
-            // 
-            // CameraButton
-            // 
-            this.CameraButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CameraButton.Enabled = false;
-            this.CameraButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.CameraButton.Location = new System.Drawing.Point(2, 40);
-            this.CameraButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.CameraButton.Name = "CameraButton";
-            this.CameraButton.Size = new System.Drawing.Size(162, 40);
-            this.CameraButton.TabIndex = 1;
-            this.CameraButton.Tag = "Camera Test     [ 2 ]";
-            this.CameraButton.Text = "Camera Test     [ 2 ]";
-            this.CameraButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CameraButton.UseVisualStyleBackColor = true;
-            this.CameraButton.Click += new System.EventHandler(this.Camera_Click);
-            // 
-            // LcdButton
-            // 
-            this.LcdButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LcdButton.Enabled = false;
-            this.LcdButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LcdButton.Location = new System.Drawing.Point(2, 0);
-            this.LcdButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.LcdButton.Name = "LcdButton";
-            this.LcdButton.Size = new System.Drawing.Size(162, 40);
-            this.LcdButton.TabIndex = 0;
-            this.LcdButton.Text = "Screen Test     [ 1 ]";
-            this.LcdButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LcdButton.UseVisualStyleBackColor = true;
-            // 
-            // ShowKeyButton
-            // 
-            this.ShowKeyButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.ShowKeyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ShowKeyButton.Location = new System.Drawing.Point(2, 244);
-            this.ShowKeyButton.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.ShowKeyButton.Name = "ShowKeyButton";
-            this.ShowKeyButton.Size = new System.Drawing.Size(162, 40);
-            this.ShowKeyButton.TabIndex = 6;
-            this.ShowKeyButton.Text = "ShowKey     [ 7 ]";
-            this.ShowKeyButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ShowKeyButton.UseVisualStyleBackColor = true;
-            // 
-            // CamBox
-            // 
-            this.CamBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.CamBox.BackColor = System.Drawing.Color.DimGray;
-            this.CamBox.Location = new System.Drawing.Point(0, 0);
-            this.CamBox.Margin = new System.Windows.Forms.Padding(0);
-            this.CamBox.Name = "CamBox";
-            this.CamBox.Size = new System.Drawing.Size(316, 285);
-            this.CamBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.CamBox.TabIndex = 3;
-            this.CamBox.TabStop = false;
             // 
             // drivers
             // 
@@ -1587,6 +1336,332 @@
             this.TestsBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.TestsBackgroundWorker_DoWork);
             this.TestsBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.TestsBackgroundWorker_ProgressChanged);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.tableLayoutPanel23);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(486, 469);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Diagnostics";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel23
+            // 
+            this.tableLayoutPanel23.ColumnCount = 2;
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 324F));
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel24, 1, 0);
+            this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel25, 0, 0);
+            this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
+            this.tableLayoutPanel23.RowCount = 1;
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(480, 463);
+            this.tableLayoutPanel23.TabIndex = 0;
+            // 
+            // tableLayoutPanel24
+            // 
+            this.tableLayoutPanel24.ColumnCount = 1;
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel24.Controls.Add(this.button4, 0, 11);
+            this.tableLayoutPanel24.Controls.Add(this.button2, 0, 10);
+            this.tableLayoutPanel24.Controls.Add(this.button1, 0, 9);
+            this.tableLayoutPanel24.Controls.Add(this.LcdButton, 0, 0);
+            this.tableLayoutPanel24.Controls.Add(this.CameraButton, 0, 1);
+            this.tableLayoutPanel24.Controls.Add(this.AudioButton, 0, 2);
+            this.tableLayoutPanel24.Controls.Add(this.MicrophoneButton, 0, 3);
+            this.tableLayoutPanel24.Controls.Add(this.ShowKeyButton, 0, 7);
+            this.tableLayoutPanel24.Controls.Add(this.HdTuneButton, 0, 6);
+            this.tableLayoutPanel24.Controls.Add(this.KeyboardTestButton, 0, 4);
+            this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel24.Location = new System.Drawing.Point(324, 0);
+            this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
+            this.tableLayoutPanel24.RowCount = 12;
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(156, 463);
+            this.tableLayoutPanel24.TabIndex = 0;
+            // 
+            // LcdButton
+            // 
+            this.LcdButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LcdButton.Enabled = false;
+            this.LcdButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LcdButton.Location = new System.Drawing.Point(0, 0);
+            this.LcdButton.Margin = new System.Windows.Forms.Padding(0);
+            this.LcdButton.Name = "LcdButton";
+            this.LcdButton.Size = new System.Drawing.Size(156, 40);
+            this.LcdButton.TabIndex = 1;
+            this.LcdButton.Text = "Screen Test";
+            this.LcdButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LcdButton.UseVisualStyleBackColor = true;
+            // 
+            // CameraButton
+            // 
+            this.CameraButton.Enabled = false;
+            this.CameraButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.CameraButton.Location = new System.Drawing.Point(0, 40);
+            this.CameraButton.Margin = new System.Windows.Forms.Padding(0);
+            this.CameraButton.Name = "CameraButton";
+            this.CameraButton.Size = new System.Drawing.Size(156, 40);
+            this.CameraButton.TabIndex = 2;
+            this.CameraButton.Tag = "Camera Test     [ 2 ]";
+            this.CameraButton.Text = "Camera Test";
+            this.CameraButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CameraButton.UseVisualStyleBackColor = true;
+            // 
+            // AudioButton
+            // 
+            this.AudioButton.Enabled = false;
+            this.AudioButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.AudioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AudioButton.Location = new System.Drawing.Point(0, 80);
+            this.AudioButton.Margin = new System.Windows.Forms.Padding(0);
+            this.AudioButton.Name = "AudioButton";
+            this.AudioButton.Size = new System.Drawing.Size(156, 40);
+            this.AudioButton.TabIndex = 3;
+            this.AudioButton.Text = "Audio Test";
+            this.AudioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AudioButton.UseVisualStyleBackColor = true;
+            // 
+            // MicrophoneButton
+            // 
+            this.MicrophoneButton.Enabled = false;
+            this.MicrophoneButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.MicrophoneButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MicrophoneButton.Location = new System.Drawing.Point(0, 120);
+            this.MicrophoneButton.Margin = new System.Windows.Forms.Padding(0);
+            this.MicrophoneButton.Name = "MicrophoneButton";
+            this.MicrophoneButton.Size = new System.Drawing.Size(156, 40);
+            this.MicrophoneButton.TabIndex = 4;
+            this.MicrophoneButton.Text = "Mic. Test";
+            this.MicrophoneButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MicrophoneButton.UseVisualStyleBackColor = true;
+            // 
+            // HdTuneButton
+            // 
+            this.HdTuneButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.HdTuneButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.HdTuneButton.Location = new System.Drawing.Point(0, 208);
+            this.HdTuneButton.Margin = new System.Windows.Forms.Padding(0);
+            this.HdTuneButton.Name = "HdTuneButton";
+            this.HdTuneButton.Size = new System.Drawing.Size(156, 40);
+            this.HdTuneButton.TabIndex = 6;
+            this.HdTuneButton.Text = "HD Tune";
+            this.HdTuneButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.HdTuneButton.UseVisualStyleBackColor = true;
+            // 
+            // ShowKeyButton
+            // 
+            this.ShowKeyButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.ShowKeyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ShowKeyButton.Location = new System.Drawing.Point(0, 248);
+            this.ShowKeyButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ShowKeyButton.Name = "ShowKeyButton";
+            this.ShowKeyButton.Size = new System.Drawing.Size(156, 40);
+            this.ShowKeyButton.TabIndex = 7;
+            this.ShowKeyButton.Text = "ShowKey";
+            this.ShowKeyButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ShowKeyButton.UseVisualStyleBackColor = true;
+            // 
+            // KeyboardTestButton
+            // 
+            this.KeyboardTestButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.KeyboardTestButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.KeyboardTestButton.Location = new System.Drawing.Point(0, 160);
+            this.KeyboardTestButton.Margin = new System.Windows.Forms.Padding(0);
+            this.KeyboardTestButton.Name = "KeyboardTestButton";
+            this.KeyboardTestButton.Size = new System.Drawing.Size(156, 40);
+            this.KeyboardTestButton.TabIndex = 8;
+            this.KeyboardTestButton.Text = "Keyboard Test";
+            this.KeyboardTestButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.KeyboardTestButton.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(0, 343);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 40);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Device Manager";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.Enabled = false;
+            this.button2.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.Location = new System.Drawing.Point(0, 383);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(156, 40);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Disk Manager";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.Enabled = false;
+            this.button4.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.Location = new System.Drawing.Point(0, 423);
+            this.button4.Margin = new System.Windows.Forms.Padding(0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(156, 40);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Control Panel";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel25
+            // 
+            this.tableLayoutPanel25.ColumnCount = 1;
+            this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel25.Controls.Add(this.label23, 0, 2);
+            this.tableLayoutPanel25.Controls.Add(this.label22, 0, 4);
+            this.tableLayoutPanel25.Controls.Add(this.label21, 0, 0);
+            this.tableLayoutPanel25.Controls.Add(this.CamBox, 0, 1);
+            this.tableLayoutPanel25.Controls.Add(this.progressBar1, 0, 3);
+            this.tableLayoutPanel25.Controls.Add(this.MicChart, 0, 5);
+            this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel25.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel25.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel25.Name = "tableLayoutPanel25";
+            this.tableLayoutPanel25.RowCount = 6;
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 303F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel25.Size = new System.Drawing.Size(324, 463);
+            this.tableLayoutPanel25.TabIndex = 1;
+            // 
+            // CamBox
+            // 
+            this.CamBox.BackColor = System.Drawing.Color.DimGray;
+            this.CamBox.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
+            this.CamBox.Location = new System.Drawing.Point(0, 19);
+            this.CamBox.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.CamBox.Name = "CamBox";
+            this.CamBox.Size = new System.Drawing.Size(321, 268);
+            this.CamBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.CamBox.TabIndex = 4;
+            this.CamBox.TabStop = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.progressBar1.Location = new System.Drawing.Point(0, 344);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(0);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(321, 38);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 5;
+            this.progressBar1.Value = 1;
+            // 
+            // MicChart
+            // 
+            this.MicChart.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.MicChart.BorderlineColor = System.Drawing.Color.Silver;
+            this.MicChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea1.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
+            chartArea1.AxisX.LabelStyle.Enabled = false;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.MajorTickMark.Enabled = false;
+            chartArea1.AxisX.ScrollBar.Enabled = false;
+            chartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisX2.IsLabelAutoFit = false;
+            chartArea1.AxisX2.MajorGrid.Enabled = false;
+            chartArea1.AxisX2.MajorTickMark.Enabled = false;
+            chartArea1.AxisX2.ScrollBar.Enabled = false;
+            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisY.LabelStyle.Enabled = false;
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorTickMark.Enabled = false;
+            chartArea1.AxisY.ScrollBar.Enabled = false;
+            chartArea1.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisY2.MajorGrid.Enabled = false;
+            chartArea1.AxisY2.MajorTickMark.Enabled = false;
+            chartArea1.AxisY2.ScrollBar.Enabled = false;
+            chartArea1.BackColor = System.Drawing.SystemColors.ControlLight;
+            chartArea1.Name = "ChartArea1";
+            this.MicChart.ChartAreas.Add(chartArea1);
+            this.MicChart.IsSoftShadows = false;
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.MicChart.Legends.Add(legend1);
+            this.MicChart.Location = new System.Drawing.Point(0, 404);
+            this.MicChart.Margin = new System.Windows.Forms.Padding(0);
+            this.MicChart.Name = "MicChart";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.MicChart.Series.Add(series1);
+            this.MicChart.Size = new System.Drawing.Size(324, 58);
+            this.MicChart.TabIndex = 6;
+            this.MicChart.Text = "chart1";
+            this.MicChart.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.Normal;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            this.label21.Location = new System.Drawing.Point(3, 1);
+            this.label21.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(57, 17);
+            this.label21.TabIndex = 7;
+            this.label21.Text = "Camera";
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            this.label22.Location = new System.Drawing.Point(3, 384);
+            this.label22.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(84, 17);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Microphone";
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            this.label23.Location = new System.Drawing.Point(3, 324);
+            this.label23.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(70, 17);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "Speaker\'s";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1628,13 +1703,6 @@
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.Diagnostics.ResumeLayout(false);
-            this.tableLayoutPanel13.ResumeLayout(false);
-            this.tableLayoutPanel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MicChart)).EndInit();
-            this.tableLayoutPanel15.ResumeLayout(false);
-            this.tableLayoutPanel16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CamBox)).EndInit();
             this.drivers.ResumeLayout(false);
             this.tableLayoutPanel17.ResumeLayout(false);
             this.tableLayoutPanel19.ResumeLayout(false);
@@ -1647,6 +1715,13 @@
             this.tableLayoutPanel21.PerformLayout();
             this.tableLayoutPanel22.ResumeLayout(false);
             this.tableLayoutPanel22.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tableLayoutPanel23.ResumeLayout(false);
+            this.tableLayoutPanel24.ResumeLayout(false);
+            this.tableLayoutPanel25.ResumeLayout(false);
+            this.tableLayoutPanel25.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CamBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MicChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1700,25 +1775,10 @@
         private System.Windows.Forms.TextBox DriversStatusTextBox;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage Diagnostics;
         private System.Windows.Forms.TabPage SaveSo;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.TextBox DiagonalTextBox;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
-        private Emgu.CV.UI.ImageBox CamBox;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
-        private System.Windows.Forms.Button MicrophoneButton;
-        private System.Windows.Forms.Button AudioButton;
-        private System.Windows.Forms.Button CameraButton;
-        private System.Windows.Forms.Button LcdButton;
-        private System.Windows.Forms.Button HdTuneButton;
-        private System.Windows.Forms.Button KeyboardButton;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer SoundTimer;
-        private System.Windows.Forms.DataVisualization.Charting.Chart MicChart;
         private System.Windows.Forms.Timer MicTimer;
-        private System.Windows.Forms.Button ShowKeyButton;
         private System.Windows.Forms.Timer ChargeTimer;
         private System.Windows.Forms.TabPage drivers;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
@@ -1759,6 +1819,26 @@
         private System.ComponentModel.BackgroundWorker DriversBackgroundWorker;
         private System.ComponentModel.BackgroundWorker SpecBackgroundWorker;
         private System.ComponentModel.BackgroundWorker TestsBackgroundWorker;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button KeyboardTestButton;
+        private System.Windows.Forms.Button LcdButton;
+        private System.Windows.Forms.Button CameraButton;
+        private System.Windows.Forms.Button AudioButton;
+        private System.Windows.Forms.Button MicrophoneButton;
+        private System.Windows.Forms.Button HdTuneButton;
+        private System.Windows.Forms.Button ShowKeyButton;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
+        private Emgu.CV.UI.ImageBox CamBox;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart MicChart;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label23;
     }
 }
 
