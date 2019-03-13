@@ -29,7 +29,7 @@ namespace SpecSniffer_v2
 
             SpecBackgroundWorker.RunWorkerAsync();
             TestsBackgroundWorker.RunWorkerAsync();
-            DriversBackgroundWorker.RunWorkerAsync();
+          //  DriversBackgroundWorker.RunWorkerAsync();
 
             if (_spec.BatteryCharge() != "n/a")
                 ChargeTimer.Enabled = true;
@@ -77,6 +77,10 @@ namespace SpecSniffer_v2
 
         #region Diagnostics Tab Events
 
+        private void FocusDiagnostics_Click(object sender, EventArgs e)
+        {
+            TabControl.SelectedTab = diagnostics;
+        }
         private void LcdTest_Click(object sender, EventArgs e)
         {
         }
@@ -98,14 +102,56 @@ namespace SpecSniffer_v2
 
         private void Keyboard_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Process.Start(Resources.RunPath + "\\Data\\keyboardtestutility.exe", "-CS:1");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void HdTune_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Process.Start(Resources.RunPath + "\\Data\\HDTunePro.exe");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ShowKey_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Process.Start(Resources.RunPath + "\\Data\\ShowKeyPlus.exe");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DeviceMgrButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("devmgmt.msc");
+        }
+
+        private void DiskMgrButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("diskmgmt.msc");
+        }
+
+        private void ControlPanelButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("control.exe");
         }
 
         #endregion
@@ -225,7 +271,7 @@ namespace SpecSniffer_v2
                     OsLangTextBox.Text = _spec.OsLanguage;
                     break;
                 case 11:
-                    //os licence
+                    OemKeyCheckBox.Checked = _spec.OsLicenceKey != "n/a";
                     break;
                 case 12:
                     OsNameTextBox.Text = _spec.OsName;
@@ -260,27 +306,7 @@ namespace SpecSniffer_v2
 
         private void SpecBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            ModelTextBox.Enabled = true;
-            SerialTextBox.Enabled = true;
-            CpuTextBox.Enabled = true;
-            RamTextBox.Enabled = true;
-            DiagonalTextBox.Enabled = true;
-            ResNameTextBox.Enabled = true;
-            GpuMultiTextBox.Enabled = true;
-            OpticalTextBox.Enabled = true;
-            OsBuildTextBox.Enabled = true;
-            OsLangTextBox.Enabled = true;
-            OsNameTextBox.Enabled = true;
-            BatteryHealthTextBox.Enabled = true;
-            CamCheckBox.Enabled = true;
-            WlanCheckBox.Enabled = true;
-            WwanCheckBox.Enabled = true;
-            BluetoothCheckBox.Enabled = true;
-            FingerprintCheckBox.Enabled = true;
-            DriversStatusTextBox.Enabled = true;
-            HddNameMultiTextBox.Enabled = true;
-            HddSizeMultiTextBox.Enabled = true;
-            HddStatusMultiTextBox.Enabled = true;
+
         }
 
 
@@ -339,8 +365,8 @@ namespace SpecSniffer_v2
             }
         }
 
+
+
         #endregion
-
-
     }
 }

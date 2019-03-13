@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.NetworkStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -41,8 +41,6 @@
             this.DriversFolderStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
             this.DatabaseStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -63,6 +61,7 @@
             this.OsNameTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.OemKeyCheckBox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.DiagonalTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -93,7 +92,27 @@
             this.WwanCheckBox = new System.Windows.Forms.CheckBox();
             this.WlanCheckBox = new System.Windows.Forms.CheckBox();
             this.CamCheckBox = new System.Windows.Forms.CheckBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.TabControl = new System.Windows.Forms.TabControl();
+            this.diagnostics = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
+            this.ControlPanelButton = new System.Windows.Forms.Button();
+            this.DiskMgrButton = new System.Windows.Forms.Button();
+            this.DeviceMgrButton = new System.Windows.Forms.Button();
+            this.LcdButton = new System.Windows.Forms.Button();
+            this.CameraButton = new System.Windows.Forms.Button();
+            this.AudioButton = new System.Windows.Forms.Button();
+            this.MicrophoneButton = new System.Windows.Forms.Button();
+            this.ShowKeyButton = new System.Windows.Forms.Button();
+            this.HdTuneButton = new System.Windows.Forms.Button();
+            this.KeyboardTestButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.CamBox = new Emgu.CV.UI.ImageBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.MicChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.drivers = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
@@ -104,17 +123,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.DriversInstallButton = new System.Windows.Forms.Button();
             this.DriversFilesListBox = new System.Windows.Forms.ListBox();
-            this.SaveSo = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.SoundTimer = new System.Windows.Forms.Timer(this.components);
             this.MicTimer = new System.Windows.Forms.Timer(this.components);
             this.ChargeTimer = new System.Windows.Forms.Timer(this.components);
@@ -122,28 +130,21 @@
             this.DriversBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.SpecBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.TestsBackgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
-            this.LcdButton = new System.Windows.Forms.Button();
-            this.CameraButton = new System.Windows.Forms.Button();
-            this.AudioButton = new System.Windows.Forms.Button();
-            this.MicrophoneButton = new System.Windows.Forms.Button();
-            this.HdTuneButton = new System.Windows.Forms.Button();
-            this.ShowKeyButton = new System.Windows.Forms.Button();
-            this.KeyboardTestButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
-            this.CamBox = new Emgu.CV.UI.ImageBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.MicChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.SaveSo = new System.Windows.Forms.TabPage();
+            this.EditSpecButton = new System.Windows.Forms.Button();
+            this.SaveToDbButton = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -156,21 +157,21 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.drivers.SuspendLayout();
-            this.tableLayoutPanel17.SuspendLayout();
-            this.tableLayoutPanel19.SuspendLayout();
-            this.tableLayoutPanel18.SuspendLayout();
-            this.SaveSo.SuspendLayout();
-            this.tableLayoutPanel20.SuspendLayout();
-            this.tableLayoutPanel21.SuspendLayout();
-            this.tableLayoutPanel22.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.TabControl.SuspendLayout();
+            this.diagnostics.SuspendLayout();
             this.tableLayoutPanel23.SuspendLayout();
             this.tableLayoutPanel24.SuspendLayout();
             this.tableLayoutPanel25.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CamBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MicChart)).BeginInit();
+            this.drivers.SuspendLayout();
+            this.tableLayoutPanel17.SuspendLayout();
+            this.tableLayoutPanel19.SuspendLayout();
+            this.tableLayoutPanel18.SuspendLayout();
+            this.tableLayoutPanel21.SuspendLayout();
+            this.tableLayoutPanel28.SuspendLayout();
+            this.tableLayoutPanel26.SuspendLayout();
+            this.SaveSo.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -246,36 +247,20 @@
             this.DatabaseStatusLabel.Size = new System.Drawing.Size(85, 19);
             this.DatabaseStatusLabel.Text = "checking...";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(984, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // menuToolStripMenuItem
-            // 
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.menuToolStripMenuItem.Text = "menu";
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.24471F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.75529F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tabControl1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.TabControl, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Bahnschrift", 12F);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 513);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 537);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -311,7 +296,8 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(481, 507);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(481, 531);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel9
@@ -333,11 +319,11 @@
             // OsLangTextBox
             // 
             this.OsLangTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.OsLangTextBox.Enabled = false;
             this.OsLangTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.OsLangTextBox.Location = new System.Drawing.Point(60, 4);
             this.OsLangTextBox.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.OsLangTextBox.Name = "OsLangTextBox";
+            this.OsLangTextBox.ReadOnly = true;
             this.OsLangTextBox.Size = new System.Drawing.Size(419, 27);
             this.OsLangTextBox.TabIndex = 1;
             this.OsLangTextBox.TabStop = false;
@@ -378,7 +364,6 @@
             // ChargeRateTextBox
             // 
             this.ChargeRateTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ChargeRateTextBox.Enabled = false;
             this.ChargeRateTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ChargeRateTextBox.ForeColor = System.Drawing.Color.Black;
             this.ChargeRateTextBox.Location = new System.Drawing.Point(367, 6);
@@ -416,7 +401,6 @@
             // DriversStatusTextBox
             // 
             this.DriversStatusTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.DriversStatusTextBox.Enabled = false;
             this.DriversStatusTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DriversStatusTextBox.Location = new System.Drawing.Point(164, 6);
             this.DriversStatusTextBox.Margin = new System.Windows.Forms.Padding(0);
@@ -464,7 +448,6 @@
             // BatteryChargeTextBox
             // 
             this.BatteryChargeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BatteryChargeTextBox.Enabled = false;
             this.BatteryChargeTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.BatteryChargeTextBox.Location = new System.Drawing.Point(366, 5);
             this.BatteryChargeTextBox.Margin = new System.Windows.Forms.Padding(0);
@@ -477,7 +460,6 @@
             // BatteryHealthTextBox
             // 
             this.BatteryHealthTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BatteryHealthTextBox.Enabled = false;
             this.BatteryHealthTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.BatteryHealthTextBox.Location = new System.Drawing.Point(165, 5);
             this.BatteryHealthTextBox.Margin = new System.Windows.Forms.Padding(0);
@@ -502,16 +484,17 @@
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tableLayoutPanel8.ColumnCount = 4;
+            this.tableLayoutPanel8.ColumnCount = 5;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 179F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
             this.tableLayoutPanel8.Controls.Add(this.OsBuildTextBox, 3, 0);
             this.tableLayoutPanel8.Controls.Add(this.OsNameTextBox, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.label10, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.OemKeyCheckBox, 4, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 295);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -523,24 +506,24 @@
             // OsBuildTextBox
             // 
             this.OsBuildTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.OsBuildTextBox.Enabled = false;
             this.OsBuildTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.OsBuildTextBox.Location = new System.Drawing.Point(293, 4);
+            this.OsBuildTextBox.Location = new System.Drawing.Point(288, 4);
             this.OsBuildTextBox.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.OsBuildTextBox.Name = "OsBuildTextBox";
-            this.OsBuildTextBox.Size = new System.Drawing.Size(186, 27);
+            this.OsBuildTextBox.ReadOnly = true;
+            this.OsBuildTextBox.Size = new System.Drawing.Size(96, 27);
             this.OsBuildTextBox.TabIndex = 3;
             this.OsBuildTextBox.TabStop = false;
             // 
             // OsNameTextBox
             // 
             this.OsNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.OsNameTextBox.Enabled = false;
             this.OsNameTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.OsNameTextBox.Location = new System.Drawing.Point(60, 4);
             this.OsNameTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.OsNameTextBox.Name = "OsNameTextBox";
-            this.OsNameTextBox.Size = new System.Drawing.Size(179, 27);
+            this.OsNameTextBox.ReadOnly = true;
+            this.OsNameTextBox.Size = new System.Drawing.Size(173, 27);
             this.OsNameTextBox.TabIndex = 1;
             this.OsNameTextBox.TabStop = false;
             // 
@@ -561,13 +544,29 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(243, 8);
+            this.label10.Location = new System.Drawing.Point(238, 8);
             this.label10.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(50, 19);
             this.label10.TabIndex = 2;
             this.label10.Text = "Build:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // OemKeyCheckBox
+            // 
+            this.OemKeyCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.OemKeyCheckBox.AutoCheck = false;
+            this.OemKeyCheckBox.AutoSize = true;
+            this.OemKeyCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.OemKeyCheckBox.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.OemKeyCheckBox.Location = new System.Drawing.Point(389, 6);
+            this.OemKeyCheckBox.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.OemKeyCheckBox.Name = "OemKeyCheckBox";
+            this.OemKeyCheckBox.Size = new System.Drawing.Size(90, 23);
+            this.OemKeyCheckBox.TabIndex = 5;
+            this.OemKeyCheckBox.TabStop = false;
+            this.OemKeyCheckBox.Text = "OEM Key";
+            this.OemKeyCheckBox.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel6
             // 
@@ -594,11 +593,11 @@
             // DiagonalTextBox
             // 
             this.DiagonalTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.DiagonalTextBox.Enabled = false;
             this.DiagonalTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DiagonalTextBox.Location = new System.Drawing.Point(60, 4);
             this.DiagonalTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.DiagonalTextBox.Name = "DiagonalTextBox";
+            this.DiagonalTextBox.ReadOnly = true;
             this.DiagonalTextBox.Size = new System.Drawing.Size(66, 27);
             this.DiagonalTextBox.TabIndex = 4;
             this.DiagonalTextBox.TabStop = false;
@@ -631,11 +630,11 @@
             // OpticalTextBox
             // 
             this.OpticalTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.OpticalTextBox.Enabled = false;
             this.OpticalTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.OpticalTextBox.Location = new System.Drawing.Point(287, 4);
             this.OpticalTextBox.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.OpticalTextBox.Name = "OpticalTextBox";
+            this.OpticalTextBox.ReadOnly = true;
             this.OpticalTextBox.Size = new System.Drawing.Size(192, 27);
             this.OpticalTextBox.TabIndex = 3;
             this.OpticalTextBox.TabStop = false;
@@ -643,11 +642,11 @@
             // ResNameTextBox
             // 
             this.ResNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ResNameTextBox.Enabled = false;
             this.ResNameTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ResNameTextBox.Location = new System.Drawing.Point(126, 4);
             this.ResNameTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.ResNameTextBox.Name = "ResNameTextBox";
+            this.ResNameTextBox.ReadOnly = true;
             this.ResNameTextBox.Size = new System.Drawing.Size(92, 27);
             this.ResNameTextBox.TabIndex = 1;
             this.ResNameTextBox.TabStop = false;
@@ -675,11 +674,11 @@
             // RamTextBox
             // 
             this.RamTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.RamTextBox.Enabled = false;
             this.RamTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RamTextBox.Location = new System.Drawing.Point(287, 4);
             this.RamTextBox.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.RamTextBox.Name = "RamTextBox";
+            this.RamTextBox.ReadOnly = true;
             this.RamTextBox.Size = new System.Drawing.Size(192, 27);
             this.RamTextBox.TabIndex = 3;
             this.RamTextBox.TabStop = false;
@@ -687,11 +686,11 @@
             // CpuTextBox
             // 
             this.CpuTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.CpuTextBox.Enabled = false;
             this.CpuTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CpuTextBox.Location = new System.Drawing.Point(60, 4);
             this.CpuTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.CpuTextBox.Name = "CpuTextBox";
+            this.CpuTextBox.ReadOnly = true;
             this.CpuTextBox.Size = new System.Drawing.Size(179, 27);
             this.CpuTextBox.TabIndex = 1;
             this.CpuTextBox.TabStop = false;
@@ -745,11 +744,11 @@
             // SerialTextBox
             // 
             this.SerialTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SerialTextBox.Enabled = false;
             this.SerialTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.SerialTextBox.Location = new System.Drawing.Point(287, 4);
             this.SerialTextBox.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.SerialTextBox.Name = "SerialTextBox";
+            this.SerialTextBox.ReadOnly = true;
             this.SerialTextBox.Size = new System.Drawing.Size(192, 27);
             this.SerialTextBox.TabIndex = 3;
             this.SerialTextBox.TabStop = false;
@@ -770,11 +769,11 @@
             // ModelTextBox
             // 
             this.ModelTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ModelTextBox.Enabled = false;
             this.ModelTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ModelTextBox.Location = new System.Drawing.Point(60, 4);
             this.ModelTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.ModelTextBox.Name = "ModelTextBox";
+            this.ModelTextBox.ReadOnly = true;
             this.ModelTextBox.Size = new System.Drawing.Size(179, 27);
             this.ModelTextBox.TabIndex = 1;
             this.ModelTextBox.TabStop = false;
@@ -810,12 +809,12 @@
             // GpuMultiTextBox
             // 
             this.GpuMultiTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.GpuMultiTextBox.Enabled = false;
             this.GpuMultiTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.GpuMultiTextBox.Location = new System.Drawing.Point(60, 5);
             this.GpuMultiTextBox.Margin = new System.Windows.Forms.Padding(0, 5, 2, 5);
             this.GpuMultiTextBox.Multiline = true;
             this.GpuMultiTextBox.Name = "GpuMultiTextBox";
+            this.GpuMultiTextBox.ReadOnly = true;
             this.GpuMultiTextBox.Size = new System.Drawing.Size(419, 50);
             this.GpuMultiTextBox.TabIndex = 2;
             this.GpuMultiTextBox.TabStop = false;
@@ -855,12 +854,12 @@
             // HddNameMultiTextBox
             // 
             this.HddNameMultiTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.HddNameMultiTextBox.Enabled = false;
             this.HddNameMultiTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HddNameMultiTextBox.Location = new System.Drawing.Point(127, 5);
             this.HddNameMultiTextBox.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.HddNameMultiTextBox.Multiline = true;
             this.HddNameMultiTextBox.Name = "HddNameMultiTextBox";
+            this.HddNameMultiTextBox.ReadOnly = true;
             this.HddNameMultiTextBox.Size = new System.Drawing.Size(267, 70);
             this.HddNameMultiTextBox.TabIndex = 4;
             this.HddNameMultiTextBox.TabStop = false;
@@ -868,12 +867,12 @@
             // HddSizeMultiTextBox
             // 
             this.HddSizeMultiTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.HddSizeMultiTextBox.Enabled = false;
             this.HddSizeMultiTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HddSizeMultiTextBox.Location = new System.Drawing.Point(60, 5);
             this.HddSizeMultiTextBox.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.HddSizeMultiTextBox.Multiline = true;
             this.HddSizeMultiTextBox.Name = "HddSizeMultiTextBox";
+            this.HddSizeMultiTextBox.ReadOnly = true;
             this.HddSizeMultiTextBox.Size = new System.Drawing.Size(67, 70);
             this.HddSizeMultiTextBox.TabIndex = 3;
             this.HddSizeMultiTextBox.TabStop = false;
@@ -893,12 +892,12 @@
             // HddStatusMultiTextBox
             // 
             this.HddStatusMultiTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.HddStatusMultiTextBox.Enabled = false;
             this.HddStatusMultiTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HddStatusMultiTextBox.Location = new System.Drawing.Point(394, 5);
             this.HddStatusMultiTextBox.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.HddStatusMultiTextBox.Multiline = true;
             this.HddStatusMultiTextBox.Name = "HddStatusMultiTextBox";
+            this.HddStatusMultiTextBox.ReadOnly = true;
             this.HddStatusMultiTextBox.Size = new System.Drawing.Size(85, 70);
             this.HddStatusMultiTextBox.TabIndex = 2;
             this.HddStatusMultiTextBox.TabStop = false;
@@ -929,9 +928,9 @@
             // FingerprintCheckBox
             // 
             this.FingerprintCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.FingerprintCheckBox.AutoCheck = false;
             this.FingerprintCheckBox.AutoSize = true;
-            this.FingerprintCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.FingerprintCheckBox.Enabled = false;
+            this.FingerprintCheckBox.CheckAlign = System.Drawing.ContentAlignment.BottomRight;
             this.FingerprintCheckBox.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.FingerprintCheckBox.Location = new System.Drawing.Point(379, 3);
             this.FingerprintCheckBox.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
@@ -945,9 +944,9 @@
             // BluetoothCheckBox
             // 
             this.BluetoothCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BluetoothCheckBox.AutoCheck = false;
             this.BluetoothCheckBox.AutoSize = true;
-            this.BluetoothCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BluetoothCheckBox.Enabled = false;
+            this.BluetoothCheckBox.CheckAlign = System.Drawing.ContentAlignment.BottomRight;
             this.BluetoothCheckBox.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.BluetoothCheckBox.Location = new System.Drawing.Point(278, 3);
             this.BluetoothCheckBox.Name = "BluetoothCheckBox";
@@ -960,9 +959,9 @@
             // WwanCheckBox
             // 
             this.WwanCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.WwanCheckBox.AutoCheck = false;
             this.WwanCheckBox.AutoSize = true;
-            this.WwanCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.WwanCheckBox.Enabled = false;
+            this.WwanCheckBox.CheckAlign = System.Drawing.ContentAlignment.BottomRight;
             this.WwanCheckBox.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.WwanCheckBox.Location = new System.Drawing.Point(192, 3);
             this.WwanCheckBox.Name = "WwanCheckBox";
@@ -975,9 +974,9 @@
             // WlanCheckBox
             // 
             this.WlanCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.WlanCheckBox.AutoCheck = false;
             this.WlanCheckBox.AutoSize = true;
-            this.WlanCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.WlanCheckBox.Enabled = false;
+            this.WlanCheckBox.CheckAlign = System.Drawing.ContentAlignment.BottomRight;
             this.WlanCheckBox.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.WlanCheckBox.Location = new System.Drawing.Point(119, 3);
             this.WlanCheckBox.Name = "WlanCheckBox";
@@ -990,9 +989,9 @@
             // CamCheckBox
             // 
             this.CamCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.CamCheckBox.AutoCheck = false;
             this.CamCheckBox.AutoSize = true;
-            this.CamCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CamCheckBox.Enabled = false;
+            this.CamCheckBox.CheckAlign = System.Drawing.ContentAlignment.BottomRight;
             this.CamCheckBox.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.CamCheckBox.Location = new System.Drawing.Point(56, 3);
             this.CamCheckBox.Name = "CamCheckBox";
@@ -1002,18 +1001,351 @@
             this.CamCheckBox.Text = "CAM";
             this.CamCheckBox.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // TabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.drivers);
-            this.tabControl1.Controls.Add(this.SaveSo);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.ItemSize = new System.Drawing.Size(96, 30);
-            this.tabControl1.Location = new System.Drawing.Point(487, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(494, 507);
-            this.tabControl1.TabIndex = 1;
+            this.TabControl.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.TabControl.Controls.Add(this.diagnostics);
+            this.TabControl.Controls.Add(this.drivers);
+            this.TabControl.Controls.Add(this.SaveSo);
+            this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabControl.ItemSize = new System.Drawing.Size(96, 30);
+            this.TabControl.Location = new System.Drawing.Point(487, 3);
+            this.TabControl.Name = "TabControl";
+            this.TabControl.SelectedIndex = 0;
+            this.TabControl.Size = new System.Drawing.Size(494, 531);
+            this.TabControl.TabIndex = 1;
+            // 
+            // diagnostics
+            // 
+            this.diagnostics.Controls.Add(this.tableLayoutPanel23);
+            this.diagnostics.Location = new System.Drawing.Point(4, 34);
+            this.diagnostics.Name = "diagnostics";
+            this.diagnostics.Padding = new System.Windows.Forms.Padding(3);
+            this.diagnostics.Size = new System.Drawing.Size(486, 469);
+            this.diagnostics.TabIndex = 3;
+            this.diagnostics.Text = "Diagnostics";
+            this.diagnostics.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel23
+            // 
+            this.tableLayoutPanel23.ColumnCount = 2;
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 324F));
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel24, 1, 0);
+            this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel25, 0, 0);
+            this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
+            this.tableLayoutPanel23.RowCount = 1;
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(480, 463);
+            this.tableLayoutPanel23.TabIndex = 0;
+            // 
+            // tableLayoutPanel24
+            // 
+            this.tableLayoutPanel24.ColumnCount = 1;
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel24.Controls.Add(this.ControlPanelButton, 0, 11);
+            this.tableLayoutPanel24.Controls.Add(this.DiskMgrButton, 0, 10);
+            this.tableLayoutPanel24.Controls.Add(this.DeviceMgrButton, 0, 9);
+            this.tableLayoutPanel24.Controls.Add(this.LcdButton, 0, 0);
+            this.tableLayoutPanel24.Controls.Add(this.CameraButton, 0, 1);
+            this.tableLayoutPanel24.Controls.Add(this.AudioButton, 0, 2);
+            this.tableLayoutPanel24.Controls.Add(this.MicrophoneButton, 0, 3);
+            this.tableLayoutPanel24.Controls.Add(this.ShowKeyButton, 0, 7);
+            this.tableLayoutPanel24.Controls.Add(this.HdTuneButton, 0, 6);
+            this.tableLayoutPanel24.Controls.Add(this.KeyboardTestButton, 0, 4);
+            this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel24.Location = new System.Drawing.Point(324, 0);
+            this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
+            this.tableLayoutPanel24.RowCount = 12;
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(156, 463);
+            this.tableLayoutPanel24.TabIndex = 0;
+            // 
+            // ControlPanelButton
+            // 
+            this.ControlPanelButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ControlPanelButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ControlPanelButton.Location = new System.Drawing.Point(0, 423);
+            this.ControlPanelButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ControlPanelButton.Name = "ControlPanelButton";
+            this.ControlPanelButton.Size = new System.Drawing.Size(156, 40);
+            this.ControlPanelButton.TabIndex = 11;
+            this.ControlPanelButton.Text = "Control Panel";
+            this.ControlPanelButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ControlPanelButton.UseVisualStyleBackColor = true;
+            this.ControlPanelButton.Click += new System.EventHandler(this.ControlPanelButton_Click);
+            // 
+            // DiskMgrButton
+            // 
+            this.DiskMgrButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DiskMgrButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DiskMgrButton.Location = new System.Drawing.Point(0, 383);
+            this.DiskMgrButton.Margin = new System.Windows.Forms.Padding(0);
+            this.DiskMgrButton.Name = "DiskMgrButton";
+            this.DiskMgrButton.Size = new System.Drawing.Size(156, 40);
+            this.DiskMgrButton.TabIndex = 10;
+            this.DiskMgrButton.Text = "Disk Manager";
+            this.DiskMgrButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DiskMgrButton.UseVisualStyleBackColor = true;
+            this.DiskMgrButton.Click += new System.EventHandler(this.DiskMgrButton_Click);
+            // 
+            // DeviceMgrButton
+            // 
+            this.DeviceMgrButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DeviceMgrButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DeviceMgrButton.Location = new System.Drawing.Point(0, 343);
+            this.DeviceMgrButton.Margin = new System.Windows.Forms.Padding(0);
+            this.DeviceMgrButton.Name = "DeviceMgrButton";
+            this.DeviceMgrButton.Size = new System.Drawing.Size(156, 40);
+            this.DeviceMgrButton.TabIndex = 9;
+            this.DeviceMgrButton.Text = "Device Manager";
+            this.DeviceMgrButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DeviceMgrButton.UseVisualStyleBackColor = true;
+            this.DeviceMgrButton.Click += new System.EventHandler(this.DeviceMgrButton_Click);
+            // 
+            // LcdButton
+            // 
+            this.LcdButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LcdButton.Enabled = false;
+            this.LcdButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LcdButton.Location = new System.Drawing.Point(0, 0);
+            this.LcdButton.Margin = new System.Windows.Forms.Padding(0);
+            this.LcdButton.Name = "LcdButton";
+            this.LcdButton.Size = new System.Drawing.Size(156, 40);
+            this.LcdButton.TabIndex = 1;
+            this.LcdButton.Text = "Screen Test";
+            this.LcdButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LcdButton.UseVisualStyleBackColor = true;
+            // 
+            // CameraButton
+            // 
+            this.CameraButton.Enabled = false;
+            this.CameraButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.CameraButton.Location = new System.Drawing.Point(0, 40);
+            this.CameraButton.Margin = new System.Windows.Forms.Padding(0);
+            this.CameraButton.Name = "CameraButton";
+            this.CameraButton.Size = new System.Drawing.Size(156, 40);
+            this.CameraButton.TabIndex = 2;
+            this.CameraButton.Tag = "Camera Test     [ 2 ]";
+            this.CameraButton.Text = "Camera Test";
+            this.CameraButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CameraButton.UseVisualStyleBackColor = true;
+            this.CameraButton.Click += new System.EventHandler(this.Camera_Click);
+            // 
+            // AudioButton
+            // 
+            this.AudioButton.Enabled = false;
+            this.AudioButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.AudioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AudioButton.Location = new System.Drawing.Point(0, 80);
+            this.AudioButton.Margin = new System.Windows.Forms.Padding(0);
+            this.AudioButton.Name = "AudioButton";
+            this.AudioButton.Size = new System.Drawing.Size(156, 40);
+            this.AudioButton.TabIndex = 3;
+            this.AudioButton.Text = "Audio Test";
+            this.AudioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AudioButton.UseVisualStyleBackColor = true;
+            this.AudioButton.Click += new System.EventHandler(this.Audio_Click);
+            // 
+            // MicrophoneButton
+            // 
+            this.MicrophoneButton.Enabled = false;
+            this.MicrophoneButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.MicrophoneButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MicrophoneButton.Location = new System.Drawing.Point(0, 120);
+            this.MicrophoneButton.Margin = new System.Windows.Forms.Padding(0);
+            this.MicrophoneButton.Name = "MicrophoneButton";
+            this.MicrophoneButton.Size = new System.Drawing.Size(156, 40);
+            this.MicrophoneButton.TabIndex = 4;
+            this.MicrophoneButton.Text = "Mic. Test";
+            this.MicrophoneButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MicrophoneButton.UseVisualStyleBackColor = true;
+            this.MicrophoneButton.Click += new System.EventHandler(this.Microphone_Click);
+            // 
+            // ShowKeyButton
+            // 
+            this.ShowKeyButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.ShowKeyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ShowKeyButton.Location = new System.Drawing.Point(0, 248);
+            this.ShowKeyButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ShowKeyButton.Name = "ShowKeyButton";
+            this.ShowKeyButton.Size = new System.Drawing.Size(156, 40);
+            this.ShowKeyButton.TabIndex = 7;
+            this.ShowKeyButton.Text = "ShowKey";
+            this.ShowKeyButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ShowKeyButton.UseVisualStyleBackColor = true;
+            this.ShowKeyButton.Click += new System.EventHandler(this.ShowKey_Click);
+            // 
+            // HdTuneButton
+            // 
+            this.HdTuneButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.HdTuneButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.HdTuneButton.Location = new System.Drawing.Point(0, 208);
+            this.HdTuneButton.Margin = new System.Windows.Forms.Padding(0);
+            this.HdTuneButton.Name = "HdTuneButton";
+            this.HdTuneButton.Size = new System.Drawing.Size(156, 40);
+            this.HdTuneButton.TabIndex = 6;
+            this.HdTuneButton.Text = "HD Tune";
+            this.HdTuneButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.HdTuneButton.UseVisualStyleBackColor = true;
+            this.HdTuneButton.Click += new System.EventHandler(this.HdTune_Click);
+            // 
+            // KeyboardTestButton
+            // 
+            this.KeyboardTestButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.KeyboardTestButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.KeyboardTestButton.Location = new System.Drawing.Point(0, 160);
+            this.KeyboardTestButton.Margin = new System.Windows.Forms.Padding(0);
+            this.KeyboardTestButton.Name = "KeyboardTestButton";
+            this.KeyboardTestButton.Size = new System.Drawing.Size(156, 40);
+            this.KeyboardTestButton.TabIndex = 8;
+            this.KeyboardTestButton.Text = "Keyboard Test";
+            this.KeyboardTestButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.KeyboardTestButton.UseVisualStyleBackColor = true;
+            this.KeyboardTestButton.Click += new System.EventHandler(this.Keyboard_Click);
+            // 
+            // tableLayoutPanel25
+            // 
+            this.tableLayoutPanel25.ColumnCount = 1;
+            this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel25.Controls.Add(this.label23, 0, 2);
+            this.tableLayoutPanel25.Controls.Add(this.label22, 0, 4);
+            this.tableLayoutPanel25.Controls.Add(this.label21, 0, 0);
+            this.tableLayoutPanel25.Controls.Add(this.CamBox, 0, 1);
+            this.tableLayoutPanel25.Controls.Add(this.progressBar1, 0, 3);
+            this.tableLayoutPanel25.Controls.Add(this.MicChart, 0, 5);
+            this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel25.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel25.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel25.Name = "tableLayoutPanel25";
+            this.tableLayoutPanel25.RowCount = 6;
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 303F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel25.Size = new System.Drawing.Size(324, 463);
+            this.tableLayoutPanel25.TabIndex = 1;
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            this.label23.Location = new System.Drawing.Point(3, 324);
+            this.label23.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(70, 17);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "Speaker\'s";
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            this.label22.Location = new System.Drawing.Point(3, 384);
+            this.label22.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(84, 17);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Microphone";
+            // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            this.label21.Location = new System.Drawing.Point(3, 1);
+            this.label21.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(57, 17);
+            this.label21.TabIndex = 7;
+            this.label21.Text = "Camera";
+            // 
+            // CamBox
+            // 
+            this.CamBox.BackColor = System.Drawing.Color.DimGray;
+            this.CamBox.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
+            this.CamBox.Location = new System.Drawing.Point(0, 19);
+            this.CamBox.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.CamBox.Name = "CamBox";
+            this.CamBox.Size = new System.Drawing.Size(321, 268);
+            this.CamBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.CamBox.TabIndex = 4;
+            this.CamBox.TabStop = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.progressBar1.Location = new System.Drawing.Point(0, 344);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(0);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(321, 38);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 5;
+            this.progressBar1.Value = 1;
+            // 
+            // MicChart
+            // 
+            this.MicChart.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.MicChart.BorderlineColor = System.Drawing.Color.Silver;
+            this.MicChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea2.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
+            chartArea2.AxisX.LabelStyle.Enabled = false;
+            chartArea2.AxisX.MajorGrid.Enabled = false;
+            chartArea2.AxisX.MajorTickMark.Enabled = false;
+            chartArea2.AxisX.ScrollBar.Enabled = false;
+            chartArea2.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea2.AxisX2.IsLabelAutoFit = false;
+            chartArea2.AxisX2.MajorGrid.Enabled = false;
+            chartArea2.AxisX2.MajorTickMark.Enabled = false;
+            chartArea2.AxisX2.ScrollBar.Enabled = false;
+            chartArea2.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea2.AxisY.LabelStyle.Enabled = false;
+            chartArea2.AxisY.MajorGrid.Enabled = false;
+            chartArea2.AxisY.MajorTickMark.Enabled = false;
+            chartArea2.AxisY.ScrollBar.Enabled = false;
+            chartArea2.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea2.AxisY2.MajorGrid.Enabled = false;
+            chartArea2.AxisY2.MajorTickMark.Enabled = false;
+            chartArea2.AxisY2.ScrollBar.Enabled = false;
+            chartArea2.BackColor = System.Drawing.SystemColors.ControlLight;
+            chartArea2.Name = "ChartArea1";
+            this.MicChart.ChartAreas.Add(chartArea2);
+            this.MicChart.IsSoftShadows = false;
+            legend2.Enabled = false;
+            legend2.Name = "Legend1";
+            this.MicChart.Legends.Add(legend2);
+            this.MicChart.Location = new System.Drawing.Point(0, 404);
+            this.MicChart.Margin = new System.Windows.Forms.Padding(0);
+            this.MicChart.Name = "MicChart";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.MicChart.Series.Add(series2);
+            this.MicChart.Size = new System.Drawing.Size(321, 58);
+            this.MicChart.TabIndex = 6;
+            this.MicChart.Text = "chart1";
+            this.MicChart.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.Normal;
             // 
             // drivers
             // 
@@ -1147,158 +1479,6 @@
             this.DriversFilesListBox.Size = new System.Drawing.Size(298, 175);
             this.DriversFilesListBox.TabIndex = 3;
             // 
-            // SaveSo
-            // 
-            this.SaveSo.Controls.Add(this.tableLayoutPanel20);
-            this.SaveSo.Location = new System.Drawing.Point(4, 34);
-            this.SaveSo.Name = "SaveSo";
-            this.SaveSo.Size = new System.Drawing.Size(486, 469);
-            this.SaveSo.TabIndex = 2;
-            this.SaveSo.Text = "Save";
-            this.SaveSo.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel20
-            // 
-            this.tableLayoutPanel20.ColumnCount = 1;
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 0, 1);
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel22, 0, 2);
-            this.tableLayoutPanel20.Controls.Add(this.button3, 0, 3);
-            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
-            this.tableLayoutPanel20.RowCount = 8;
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(486, 469);
-            this.tableLayoutPanel20.TabIndex = 0;
-            // 
-            // tableLayoutPanel21
-            // 
-            this.tableLayoutPanel21.ColumnCount = 4;
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.tableLayoutPanel21.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel21.Controls.Add(this.label18, 0, 0);
-            this.tableLayoutPanel21.Controls.Add(this.label19, 2, 0);
-            this.tableLayoutPanel21.Controls.Add(this.textBox2, 3, 0);
-            this.tableLayoutPanel21.Location = new System.Drawing.Point(0, 4);
-            this.tableLayoutPanel21.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
-            this.tableLayoutPanel21.RowCount = 1;
-            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel21.Size = new System.Drawing.Size(486, 35);
-            this.tableLayoutPanel21.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(96, 4);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(105, 27);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TabStop = false;
-            // 
-            // label18
-            // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(3, 8);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(90, 19);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Sale Order:";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(274, 8);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(110, 19);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "Performed by:";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(387, 4);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(97, 27);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.TabStop = false;
-            // 
-            // tableLayoutPanel22
-            // 
-            this.tableLayoutPanel22.ColumnCount = 2;
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel22.Controls.Add(this.label20, 0, 0);
-            this.tableLayoutPanel22.Controls.Add(this.listBox3, 1, 0);
-            this.tableLayoutPanel22.Location = new System.Drawing.Point(0, 59);
-            this.tableLayoutPanel22.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
-            this.tableLayoutPanel22.RowCount = 1;
-            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(486, 69);
-            this.tableLayoutPanel22.TabIndex = 1;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 15);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(68, 38);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Licence label:";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 19;
-            this.listBox3.Items.AddRange(new object[] {
-            "No COA",
-            "Win10 Pro CMAR",
-            "Win10 Pro RRPC",
-            "Win10 Home CMAR",
-            "Win10 Pro OEM",
-            "Win10 Home OEM",
-            "Win 8 OEM",
-            "Win 7 Pro COA",
-            "Win 7 Home Premium"});
-            this.listBox3.Location = new System.Drawing.Point(77, 3);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(406, 61);
-            this.listBox3.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(313, 138);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(170, 44);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Save Spec.";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // SoundTimer
             // 
             this.SoundTimer.Tick += new System.EventHandler(this.SoundTimer_Tick);
@@ -1336,331 +1516,197 @@
             this.TestsBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.TestsBackgroundWorker_DoWork);
             this.TestsBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.TestsBackgroundWorker_ProgressChanged);
             // 
-            // tabPage1
+            // tableLayoutPanel21
             // 
-            this.tabPage1.Controls.Add(this.tableLayoutPanel23);
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(486, 469);
-            this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "Diagnostics";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel21.ColumnCount = 1;
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel26, 0, 0);
+            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel28, 0, 2);
+            this.tableLayoutPanel21.Controls.Add(this.label18, 0, 3);
+            this.tableLayoutPanel21.Controls.Add(this.textBox1, 0, 4);
+            this.tableLayoutPanel21.Controls.Add(this.SaveToDbButton, 0, 8);
+            this.tableLayoutPanel21.Controls.Add(this.EditSpecButton, 0, 7);
+            this.tableLayoutPanel21.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel21.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
+            this.tableLayoutPanel21.RowCount = 9;
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 115F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel21.Size = new System.Drawing.Size(486, 493);
+            this.tableLayoutPanel21.TabIndex = 4;
             // 
-            // tableLayoutPanel23
+            // textBox1
             // 
-            this.tableLayoutPanel23.ColumnCount = 2;
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 324F));
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel24, 1, 0);
-            this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel25, 0, 0);
-            this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel23.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
-            this.tableLayoutPanel23.RowCount = 1;
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(480, 463);
-            this.tableLayoutPanel23.TabIndex = 0;
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.Location = new System.Drawing.Point(5, 149);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(478, 92);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.TabStop = false;
             // 
-            // tableLayoutPanel24
+            // label18
             // 
-            this.tableLayoutPanel24.ColumnCount = 1;
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel24.Controls.Add(this.button4, 0, 11);
-            this.tableLayoutPanel24.Controls.Add(this.button2, 0, 10);
-            this.tableLayoutPanel24.Controls.Add(this.button1, 0, 9);
-            this.tableLayoutPanel24.Controls.Add(this.LcdButton, 0, 0);
-            this.tableLayoutPanel24.Controls.Add(this.CameraButton, 0, 1);
-            this.tableLayoutPanel24.Controls.Add(this.AudioButton, 0, 2);
-            this.tableLayoutPanel24.Controls.Add(this.MicrophoneButton, 0, 3);
-            this.tableLayoutPanel24.Controls.Add(this.ShowKeyButton, 0, 7);
-            this.tableLayoutPanel24.Controls.Add(this.HdTuneButton, 0, 6);
-            this.tableLayoutPanel24.Controls.Add(this.KeyboardTestButton, 0, 4);
-            this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel24.Location = new System.Drawing.Point(324, 0);
-            this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
-            this.tableLayoutPanel24.RowCount = 12;
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel24.Size = new System.Drawing.Size(156, 463);
-            this.tableLayoutPanel24.TabIndex = 0;
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(3, 119);
+            this.label18.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(91, 19);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Comments:";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // LcdButton
+            // tableLayoutPanel28
             // 
-            this.LcdButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LcdButton.Enabled = false;
-            this.LcdButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LcdButton.Location = new System.Drawing.Point(0, 0);
-            this.LcdButton.Margin = new System.Windows.Forms.Padding(0);
-            this.LcdButton.Name = "LcdButton";
-            this.LcdButton.Size = new System.Drawing.Size(156, 40);
-            this.LcdButton.TabIndex = 1;
-            this.LcdButton.Text = "Screen Test";
-            this.LcdButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LcdButton.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.tableLayoutPanel28.ColumnCount = 2;
+            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel28.Controls.Add(this.label27, 0, 0);
+            this.tableLayoutPanel28.Controls.Add(this.comboBox1, 1, 0);
+            this.tableLayoutPanel28.Location = new System.Drawing.Point(0, 80);
+            this.tableLayoutPanel28.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel28.Name = "tableLayoutPanel28";
+            this.tableLayoutPanel28.RowCount = 1;
+            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel28.Size = new System.Drawing.Size(486, 34);
+            this.tableLayoutPanel28.TabIndex = 3;
             // 
-            // CameraButton
+            // comboBox1
             // 
-            this.CameraButton.Enabled = false;
-            this.CameraButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.CameraButton.Location = new System.Drawing.Point(0, 40);
-            this.CameraButton.Margin = new System.Windows.Forms.Padding(0);
-            this.CameraButton.Name = "CameraButton";
-            this.CameraButton.Size = new System.Drawing.Size(156, 40);
-            this.CameraButton.TabIndex = 2;
-            this.CameraButton.Tag = "Camera Test     [ 2 ]";
-            this.CameraButton.Text = "Camera Test";
-            this.CameraButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CameraButton.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(158, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(325, 27);
+            this.comboBox1.TabIndex = 5;
             // 
-            // AudioButton
+            // label27
             // 
-            this.AudioButton.Enabled = false;
-            this.AudioButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.AudioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AudioButton.Location = new System.Drawing.Point(0, 80);
-            this.AudioButton.Margin = new System.Windows.Forms.Padding(0);
-            this.AudioButton.Name = "AudioButton";
-            this.AudioButton.Size = new System.Drawing.Size(156, 40);
-            this.AudioButton.TabIndex = 3;
-            this.AudioButton.Text = "Audio Test";
-            this.AudioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AudioButton.UseVisualStyleBackColor = true;
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(3, 5);
+            this.label27.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(144, 19);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "Valid licence label:";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // MicrophoneButton
+            // tableLayoutPanel26
             // 
-            this.MicrophoneButton.Enabled = false;
-            this.MicrophoneButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.MicrophoneButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.MicrophoneButton.Location = new System.Drawing.Point(0, 120);
-            this.MicrophoneButton.Margin = new System.Windows.Forms.Padding(0);
-            this.MicrophoneButton.Name = "MicrophoneButton";
-            this.MicrophoneButton.Size = new System.Drawing.Size(156, 40);
-            this.MicrophoneButton.TabIndex = 4;
-            this.MicrophoneButton.Text = "Mic. Test";
-            this.MicrophoneButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.MicrophoneButton.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.tableLayoutPanel26.ColumnCount = 4;
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel26.Controls.Add(this.textBox5, 3, 0);
+            this.tableLayoutPanel26.Controls.Add(this.textBox4, 1, 0);
+            this.tableLayoutPanel26.Controls.Add(this.label26, 2, 0);
+            this.tableLayoutPanel26.Controls.Add(this.label19, 0, 0);
+            this.tableLayoutPanel26.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel26.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel26.Name = "tableLayoutPanel26";
+            this.tableLayoutPanel26.RowCount = 1;
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel26.Size = new System.Drawing.Size(486, 40);
+            this.tableLayoutPanel26.TabIndex = 2;
             // 
-            // HdTuneButton
+            // label19
             // 
-            this.HdTuneButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.HdTuneButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.HdTuneButton.Location = new System.Drawing.Point(0, 208);
-            this.HdTuneButton.Margin = new System.Windows.Forms.Padding(0);
-            this.HdTuneButton.Name = "HdTuneButton";
-            this.HdTuneButton.Size = new System.Drawing.Size(156, 40);
-            this.HdTuneButton.TabIndex = 6;
-            this.HdTuneButton.Text = "HD Tune";
-            this.HdTuneButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.HdTuneButton.UseVisualStyleBackColor = true;
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label19.Location = new System.Drawing.Point(6, 10);
+            this.label19.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(58, 19);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Log ID:";
             // 
-            // ShowKeyButton
+            // label26
             // 
-            this.ShowKeyButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.ShowKeyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ShowKeyButton.Location = new System.Drawing.Point(0, 248);
-            this.ShowKeyButton.Margin = new System.Windows.Forms.Padding(0);
-            this.ShowKeyButton.Name = "ShowKeyButton";
-            this.ShowKeyButton.Size = new System.Drawing.Size(156, 40);
-            this.ShowKeyButton.TabIndex = 7;
-            this.ShowKeyButton.Text = "ShowKey";
-            this.ShowKeyButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ShowKeyButton.UseVisualStyleBackColor = true;
+            this.label26.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(232, 10);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(110, 19);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "Performed by:";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // KeyboardTestButton
+            // textBox4
             // 
-            this.KeyboardTestButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
-            this.KeyboardTestButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.KeyboardTestButton.Location = new System.Drawing.Point(0, 160);
-            this.KeyboardTestButton.Margin = new System.Windows.Forms.Padding(0);
-            this.KeyboardTestButton.Name = "KeyboardTestButton";
-            this.KeyboardTestButton.Size = new System.Drawing.Size(156, 40);
-            this.KeyboardTestButton.TabIndex = 8;
-            this.KeyboardTestButton.Text = "Keyboard Test";
-            this.KeyboardTestButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.KeyboardTestButton.UseVisualStyleBackColor = true;
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox4.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox4.Location = new System.Drawing.Point(64, 6);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(131, 27);
+            this.textBox4.TabIndex = 4;
+            this.textBox4.TabStop = false;
             // 
-            // button1
+            // textBox5
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Enabled = false;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(0, 343);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 40);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Device Manager";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox5.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox5.Location = new System.Drawing.Point(345, 6);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(138, 27);
+            this.textBox5.TabIndex = 4;
+            this.textBox5.TabStop = false;
             // 
-            // button2
+            // SaveSo
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(0, 383);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 40);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Disk Manager";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.SaveSo.Controls.Add(this.tableLayoutPanel21);
+            this.SaveSo.Location = new System.Drawing.Point(4, 34);
+            this.SaveSo.Name = "SaveSo";
+            this.SaveSo.Size = new System.Drawing.Size(486, 493);
+            this.SaveSo.TabIndex = 2;
+            this.SaveSo.Text = "Save";
+            this.SaveSo.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // EditSpecButton
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Enabled = false;
-            this.button4.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(0, 423);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(156, 40);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Control Panel";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
+            this.EditSpecButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditSpecButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.EditSpecButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EditSpecButton.Location = new System.Drawing.Point(330, 389);
+            this.EditSpecButton.Margin = new System.Windows.Forms.Padding(0);
+            this.EditSpecButton.Name = "EditSpecButton";
+            this.EditSpecButton.Size = new System.Drawing.Size(156, 40);
+            this.EditSpecButton.TabIndex = 8;
+            this.EditSpecButton.Text = "Edit spec.";
+            this.EditSpecButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EditSpecButton.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel25
+            // SaveToDbButton
             // 
-            this.tableLayoutPanel25.ColumnCount = 1;
-            this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel25.Controls.Add(this.label23, 0, 2);
-            this.tableLayoutPanel25.Controls.Add(this.label22, 0, 4);
-            this.tableLayoutPanel25.Controls.Add(this.label21, 0, 0);
-            this.tableLayoutPanel25.Controls.Add(this.CamBox, 0, 1);
-            this.tableLayoutPanel25.Controls.Add(this.progressBar1, 0, 3);
-            this.tableLayoutPanel25.Controls.Add(this.MicChart, 0, 5);
-            this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel25.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel25.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel25.Name = "tableLayoutPanel25";
-            this.tableLayoutPanel25.RowCount = 6;
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 303F));
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel25.Size = new System.Drawing.Size(324, 463);
-            this.tableLayoutPanel25.TabIndex = 1;
-            // 
-            // CamBox
-            // 
-            this.CamBox.BackColor = System.Drawing.Color.DimGray;
-            this.CamBox.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
-            this.CamBox.Location = new System.Drawing.Point(0, 19);
-            this.CamBox.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.CamBox.Name = "CamBox";
-            this.CamBox.Size = new System.Drawing.Size(321, 268);
-            this.CamBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.CamBox.TabIndex = 4;
-            this.CamBox.TabStop = false;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.progressBar1.Location = new System.Drawing.Point(0, 344);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(0);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(321, 38);
-            this.progressBar1.Step = 1;
-            this.progressBar1.TabIndex = 5;
-            this.progressBar1.Value = 1;
-            // 
-            // MicChart
-            // 
-            this.MicChart.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.MicChart.BorderlineColor = System.Drawing.Color.Silver;
-            this.MicChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
-            chartArea1.AxisX.LabelStyle.Enabled = false;
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisX.MajorTickMark.Enabled = false;
-            chartArea1.AxisX.ScrollBar.Enabled = false;
-            chartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisX2.IsLabelAutoFit = false;
-            chartArea1.AxisX2.MajorGrid.Enabled = false;
-            chartArea1.AxisX2.MajorTickMark.Enabled = false;
-            chartArea1.AxisX2.ScrollBar.Enabled = false;
-            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisY.LabelStyle.Enabled = false;
-            chartArea1.AxisY.MajorGrid.Enabled = false;
-            chartArea1.AxisY.MajorTickMark.Enabled = false;
-            chartArea1.AxisY.ScrollBar.Enabled = false;
-            chartArea1.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisY2.MajorGrid.Enabled = false;
-            chartArea1.AxisY2.MajorTickMark.Enabled = false;
-            chartArea1.AxisY2.ScrollBar.Enabled = false;
-            chartArea1.BackColor = System.Drawing.SystemColors.ControlLight;
-            chartArea1.Name = "ChartArea1";
-            this.MicChart.ChartAreas.Add(chartArea1);
-            this.MicChart.IsSoftShadows = false;
-            legend1.Enabled = false;
-            legend1.Name = "Legend1";
-            this.MicChart.Legends.Add(legend1);
-            this.MicChart.Location = new System.Drawing.Point(0, 404);
-            this.MicChart.Margin = new System.Windows.Forms.Padding(0);
-            this.MicChart.Name = "MicChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.MicChart.Series.Add(series1);
-            this.MicChart.Size = new System.Drawing.Size(324, 58);
-            this.MicChart.TabIndex = 6;
-            this.MicChart.Text = "chart1";
-            this.MicChart.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.Normal;
-            // 
-            // label21
-            // 
-            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            this.label21.Location = new System.Drawing.Point(3, 1);
-            this.label21.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(57, 17);
-            this.label21.TabIndex = 7;
-            this.label21.Text = "Camera";
-            // 
-            // label22
-            // 
-            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            this.label22.Location = new System.Drawing.Point(3, 384);
-            this.label22.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(84, 17);
-            this.label22.TabIndex = 8;
-            this.label22.Text = "Microphone";
-            // 
-            // label23
-            // 
-            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            this.label23.Location = new System.Drawing.Point(3, 324);
-            this.label23.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(70, 17);
-            this.label23.TabIndex = 9;
-            this.label23.Text = "Speaker\'s";
+            this.SaveToDbButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveToDbButton.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F);
+            this.SaveToDbButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SaveToDbButton.Location = new System.Drawing.Point(330, 452);
+            this.SaveToDbButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SaveToDbButton.Name = "SaveToDbButton";
+            this.SaveToDbButton.Size = new System.Drawing.Size(156, 40);
+            this.SaveToDbButton.TabIndex = 9;
+            this.SaveToDbButton.Text = "Save to database";
+            this.SaveToDbButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SaveToDbButton.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
@@ -1669,17 +1715,13 @@
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
@@ -1702,26 +1744,27 @@
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.drivers.ResumeLayout(false);
-            this.tableLayoutPanel17.ResumeLayout(false);
-            this.tableLayoutPanel19.ResumeLayout(false);
-            this.tableLayoutPanel19.PerformLayout();
-            this.tableLayoutPanel18.ResumeLayout(false);
-            this.tableLayoutPanel18.PerformLayout();
-            this.SaveSo.ResumeLayout(false);
-            this.tableLayoutPanel20.ResumeLayout(false);
-            this.tableLayoutPanel21.ResumeLayout(false);
-            this.tableLayoutPanel21.PerformLayout();
-            this.tableLayoutPanel22.ResumeLayout(false);
-            this.tableLayoutPanel22.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
+            this.TabControl.ResumeLayout(false);
+            this.diagnostics.ResumeLayout(false);
             this.tableLayoutPanel23.ResumeLayout(false);
             this.tableLayoutPanel24.ResumeLayout(false);
             this.tableLayoutPanel25.ResumeLayout(false);
             this.tableLayoutPanel25.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CamBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MicChart)).EndInit();
+            this.drivers.ResumeLayout(false);
+            this.tableLayoutPanel17.ResumeLayout(false);
+            this.tableLayoutPanel19.ResumeLayout(false);
+            this.tableLayoutPanel19.PerformLayout();
+            this.tableLayoutPanel18.ResumeLayout(false);
+            this.tableLayoutPanel18.PerformLayout();
+            this.tableLayoutPanel21.ResumeLayout(false);
+            this.tableLayoutPanel21.PerformLayout();
+            this.tableLayoutPanel28.ResumeLayout(false);
+            this.tableLayoutPanel28.PerformLayout();
+            this.tableLayoutPanel26.ResumeLayout(false);
+            this.tableLayoutPanel26.PerformLayout();
+            this.SaveSo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1730,8 +1773,6 @@
         #endregion
 
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
@@ -1774,8 +1815,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.TextBox DriversStatusTextBox;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage SaveSo;
+        private System.Windows.Forms.TabControl TabControl;
         private System.Windows.Forms.TextBox DiagonalTextBox;
         private System.Windows.Forms.Timer SoundTimer;
         private System.Windows.Forms.Timer MicTimer;
@@ -1797,16 +1837,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button DriversRunFileButton;
         private System.Windows.Forms.ListBox DriversFilesListBox;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel NetworkStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
@@ -1819,12 +1849,12 @@
         private System.ComponentModel.BackgroundWorker DriversBackgroundWorker;
         private System.ComponentModel.BackgroundWorker SpecBackgroundWorker;
         private System.ComponentModel.BackgroundWorker TestsBackgroundWorker;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage diagnostics;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ControlPanelButton;
+        private System.Windows.Forms.Button DiskMgrButton;
+        private System.Windows.Forms.Button DeviceMgrButton;
         private System.Windows.Forms.Button KeyboardTestButton;
         private System.Windows.Forms.Button LcdButton;
         private System.Windows.Forms.Button CameraButton;
@@ -1839,6 +1869,21 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.CheckBox OemKeyCheckBox;
+        private System.Windows.Forms.TabPage SaveSo;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button SaveToDbButton;
+        private System.Windows.Forms.Button EditSpecButton;
     }
 }
 

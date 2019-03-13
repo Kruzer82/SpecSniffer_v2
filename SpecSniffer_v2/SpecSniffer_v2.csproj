@@ -143,6 +143,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\HDTunePro.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\keyboardtestutility.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ShowKeyPlus.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\testsound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
