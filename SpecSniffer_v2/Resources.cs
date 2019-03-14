@@ -60,8 +60,6 @@ namespace SpecSniffer_v2
             {"2560×1600", "WQXGA"}
         };
 
-
-
         public static readonly string RunPath = System.IO.Path.GetDirectoryName((new System.Uri(Assembly
                 .GetExecutingAssembly()
                 .CodeBase)).AbsolutePath)
@@ -74,5 +72,9 @@ namespace SpecSniffer_v2
         {
             return string.Format($"{RunPath}\\{folder}\\{fileName}");
         }
+
+
+
+
     }
 }

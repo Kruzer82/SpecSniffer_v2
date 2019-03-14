@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Net;
 using System.Threading;
@@ -33,6 +34,8 @@ namespace SpecSniffer_v2
 
             if (_spec.BatteryCharge() != "n/a")
                 ChargeTimer.Enabled = true;
+            MySql database=new MySql("127.0.0.1","3310","cuser","msasia","log_instalacja");
+            MessageBox.Show(database.CheckConnection().ToString());
         }
 
         #region #### Timers ####
